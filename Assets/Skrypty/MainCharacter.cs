@@ -4,7 +4,8 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MainCharacter : MonoBehaviour 
 {
-	public float WspRuchu;
+	public float MoveVelocityFactor;
+	public GameObject Fireball;
 
 	void Start () 
 	{
@@ -41,6 +42,30 @@ public class MainCharacter : MonoBehaviour
 			GetComponent<Animator>().SetInteger("Direction", 2);
 		}
 
-		GetComponent<Rigidbody2D>().velocity = new Vector2 (xAxis * WspRuchu, yAxis * WspRuchu);
+		GetComponent<Rigidbody2D>().velocity = new Vector2(xAxis * MoveVelocityFactor, yAxis * MoveVelocityFactor);
+
+		if(Input.GetKeyDown(KeyCode.W))
+		{
+			ThrowFireball(new Vector3(0, 5), new Vector2(0, 100));
+		}
+		if (Input.GetKeyDown(KeyCode.S))
+		{
+			ThrowFireball(new Vector3(0, -5), new Vector2(0, -100));
+		}
+		if (Input.GetKeyDown(KeyCode.A))
+		{
+			ThrowFireball(new Vector3(-5, 0), new Vector2(-100, 0));
+		}
+		if (Input.GetKeyDown(KeyCode.D))
+		{
+			ThrowFireball(new Vector3(5, 0), new Vector2(100, 0));
+		}
+	}
+
+	private void ThrowFireball(Vector3 offset, Vector2 velocity)
+	{
+		var fireball = Instantiate(Fireball);
+		fireball.transform.position = this.transform.position + offset;
+		fireball.GetComponent<Rigidbody2D>().velocity = velocity;
 	}
 }
