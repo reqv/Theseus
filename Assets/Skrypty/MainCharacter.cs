@@ -4,12 +4,28 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MainCharacter : MonoBehaviour 
 {
-	public float MoveVelocityFactor;
-	public GameObject Fireball;
+	/// <summary>
+	/// Współczynnik prędkości ruchu gracza
+	/// </summary>
+	#region Serialized Fields
+	[SerializeField]
+	private float _moveVelocityFactor;
+	[SerializeField]
+	private float _throwDelay;
+	[SerializeField]
+	private float _fireballVelocity;
+	[SerializeField]
+	private GameObject _fireball;
+	#endregion
+
+	private float _actualThrowDelay = 0;
+	private Rigidbody2D _rigidbody2D;
+	private Animator _animator;
 
 	void Start () 
 	{
-	
+		_rigidbody2D = GetComponent<Rigidbody2D>();
+		_animator = GetComponent<Animator>();
 	}
 	
 	void Update () 
@@ -17,54 +33,82 @@ public class MainCharacter : MonoBehaviour
 		var xAxis = Input.GetAxis ("Horizontal");
 		var yAxis = Input.GetAxis ("Vertical");
 
-		if (Mathf.Abs(xAxis) > 0 || Mathf.Abs(yAxis) > 0)
+		_rigidbody2D.velocity = new Vector2(xAxis * _moveVelocityFactor, yAxis * _moveVelocityFactor);
+
+		UpdateAnimator(xAxis, yAxis);
+		CheckThrow();
+	}
+
+	private void UpdateAnimator(float xAxis, float yAxis)
+	{
+		if (Mathf.Abs(xAxis) > 0
+			|| Mathf.Abs(yAxis) > 0)
 		{
-			GetComponent<Animator>().SetBool("IsWalking", true);
+			_animator.SetBool("IsWalking", true);
 		}
 		else
-			GetComponent<Animator>().SetBool("IsWalking", false);
+			_animator.SetBool("IsWalking", false);
 
-		if (xAxis > 0)
+		if (_rigidbody2D.velocity.x > 0)
 		{
-			GetComponent<Animator>().SetInteger("Direction", 1);
+			_animator.SetInteger("Direction", 1);
 		}
-		else if (xAxis < 0)
+		else if (_rigidbody2D.velocity.x < 0)
 		{
-			GetComponent<Animator>().SetInteger("Direction", 3);
-		}
-
-		if (yAxis > 0)
-		{
-			GetComponent<Animator>().SetInteger("Direction", 0);
-		}
-		else if (yAxis < 0)
-		{
-			GetComponent<Animator>().SetInteger("Direction", 2);
+			_animator.SetInteger("Direction", 3);
 		}
 
-		GetComponent<Rigidbody2D>().velocity = new Vector2(xAxis * MoveVelocityFactor, yAxis * MoveVelocityFactor);
+		if (_rigidbody2D.velocity.y > 0)
+		{
+			_animator.SetInteger("Direction", 0);
+		}
+		else if (_rigidbody2D.velocity.y < 0)
+		{
+			_animator.SetInteger("Direction", 2);
+		}
 
-		if(Input.GetKeyDown(KeyCode.W))
+	}
+
+	private void CheckThrow()
+	{
+		_actualThrowDelay += Time.deltaTime;
+		if (_actualThrowDelay > _throwDelay)
 		{
-			ThrowFireball(new Vector3(0, 5), new Vector2(0, 100));
-		}
-		if (Input.GetKeyDown(KeyCode.S))
-		{
-			ThrowFireball(new Vector3(0, -5), new Vector2(0, -100));
-		}
-		if (Input.GetKeyDown(KeyCode.A))
-		{
-			ThrowFireball(new Vector3(-5, 0), new Vector2(-100, 0));
-		}
-		if (Input.GetKeyDown(KeyCode.D))
-		{
-			ThrowFireball(new Vector3(5, 0), new Vector2(100, 0));
+			if (Input.GetKey(KeyCode.W))
+			{
+				ThrowFireball(new Vector3(0, 5), new Vector2(0, _fireballVelocity)
+					+ new Vector2(_rigidbody2D.velocity.x, 0));
+				_actualThrowDelay = 0;
+				return;
+			}
+			if (Input.GetKey(KeyCode.S))
+			{
+				ThrowFireball(new Vector3(0, -5), new Vector2(0, -_fireballVelocity)
+					+ new Vector2(_rigidbody2D.velocity.x, 0));
+				_actualThrowDelay = 0;
+				return;
+			}
+			if (Input.GetKey(KeyCode.A))
+			{
+				ThrowFireball(new Vector3(-5, 0), new Vector2(-_fireballVelocity, 0)
+					+ new Vector2(0, _rigidbody2D.velocity.y));
+				_actualThrowDelay = 0;
+				return;
+			}
+			if (Input.GetKey(KeyCode.D))
+			{
+				ThrowFireball(new Vector3(5, 0), new Vector2(_fireballVelocity, 0)
+					+ new Vector2(0, _rigidbody2D.velocity.y));
+				_actualThrowDelay = 0;
+				return;
+			}
+
 		}
 	}
 
 	private void ThrowFireball(Vector3 offset, Vector2 velocity)
 	{
-		var fireball = Instantiate(Fireball);
+		var fireball = Instantiate(_fireball);
 		fireball.transform.position = this.transform.position + offset;
 		fireball.GetComponent<Rigidbody2D>().velocity = velocity;
 	}
