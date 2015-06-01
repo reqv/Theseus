@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6103578}
   - 114: {fileID: 11494624}
   m_Layer: 0
-  m_Name: snake_STATIC(noAnim)
+  m_Name: staticSnakeWithoutAnim
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

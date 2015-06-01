@@ -128,8 +128,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 153242, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
       propertyPath: m_Name
-      value: snake_STATIC(noAnim) 4
+      value: staticSnakeWithoutAnim 4
       objectReference: {fileID: 0}
+    - target: {fileID: 21250582, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a6ca0316fdc06242b92b7e7e03ae876,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
   m_IsPrefabParent: 0
@@ -217,7 +222,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!1 &889190279 stripped
+--- !u!1 &889190279
 GameObject:
   m_PrefabParentObject: {fileID: 145376, guid: cc3c93e61d500844082fbbef51a51a63, type: 2}
   m_PrefabInternal: {fileID: 1065456979}
@@ -275,8 +280,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 153242, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
       propertyPath: m_Name
-      value: snake_STATIC(noAnim) 5
+      value: staticSnakeWithoutAnim 5
       objectReference: {fileID: 0}
+    - target: {fileID: 21250582, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a6ca0316fdc06242b92b7e7e03ae876,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
   m_IsPrefabParent: 0
@@ -321,8 +331,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 153242, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
       propertyPath: m_Name
-      value: snake_STATIC(noAnim) 1
+      value: staticSnakeWithoutAnim 1
       objectReference: {fileID: 0}
+    - target: {fileID: 21250582, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a6ca0316fdc06242b92b7e7e03ae876,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
   m_IsPrefabParent: 0
@@ -441,8 +456,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 153242, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
       propertyPath: m_Name
-      value: snake_STATIC(noAnim) 3
+      value: staticSnakeWithoutAnim 3
       objectReference: {fileID: 0}
+    - target: {fileID: 21250582, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a6ca0316fdc06242b92b7e7e03ae876,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
   m_IsPrefabParent: 0
@@ -485,6 +505,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21250582, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a6ca0316fdc06242b92b7e7e03ae876,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
   m_IsPrefabParent: 0
@@ -529,8 +554,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 153242, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
       propertyPath: m_Name
-      value: snake_STATIC(noAnim) 2
+      value: staticSnakeWithoutAnim 2
       objectReference: {fileID: 0}
+    - target: {fileID: 21250582, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a6ca0316fdc06242b92b7e7e03ae876,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4fa6a1242ed6e1489e06fd4d399eaf8, type: 2}
   m_IsPrefabParent: 0
