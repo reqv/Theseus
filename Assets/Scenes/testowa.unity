@@ -256,7 +256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54c8f8fd2ead314aaf387e25d7eb832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WspRuchu: 50
+  _moveVelocityFactor: 50
+  _throwDelay: .5
+  _fireballVelocity: 150
+  _fireball: {fileID: 145376, guid: cc3c93e61d500844082fbbef51a51a63, type: 2}
 --- !u!50 &1586629279
 Rigidbody2D:
   m_ObjectHideFlags: 0
