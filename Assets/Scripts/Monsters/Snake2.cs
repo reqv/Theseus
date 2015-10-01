@@ -54,12 +54,11 @@ public class Snake2 : MonoBehaviour {
 
     void Walking()
     {
-        Debug.Log("dist = " + Vector2.Distance(rig2D.position, freedest));
+        //Debug.Log("dist = " + Vector2.Distance(rig2D.position, freedest));
        // Debug.Log("x = " + rig2D.position.x+" -> "+freedest.x);
       //  Debug.Log("y = " + rig2D.position.y + " -> " + freedest.y);
         if (Vector2.Distance(rig2D.position, freedest) > 1)
         {
-
             if (rig2D.position.x - freedest.x < 0)
                 axis.x = 1;
             else
@@ -75,7 +74,7 @@ public class Snake2 : MonoBehaviour {
         {
             rand = new System.Random();
             freedest = new Vector2(rig2D.position.x + rand.Next(-5,5),rig2D.position.y +  rand.Next(-5,5));
-            Debug.LogWarning("dest changed: "+freedest.x + " | "+freedest.y);
+           // Debug.LogWarning("dest changed: "+freedest.x + " | "+freedest.y);
         }
     }
 }
