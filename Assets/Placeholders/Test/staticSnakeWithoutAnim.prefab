@@ -33,19 +33,20 @@ Transform:
   m_RootOrder: 0
 --- !u!50 &5094414
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153242}
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: .5
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &6103578
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -67,12 +68,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 153242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5ed597e5e16d8e488b4d97a018ea0e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a0779bb1a3fcb04cb8e97eb7ca69527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 2
   range: 20
-  attackDist: 4
+  attackDistance: 1
+  patrolRange: 10
+  chaseAdditionalSpeed: 10
 --- !u!212 &21250582
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -105,7 +108,31 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: patrolRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: chaseAdditionalSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attackDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LinearDrag
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 153242}
