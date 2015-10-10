@@ -71,11 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0779bb1a3fcb04cb8e97eb7ca69527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2
-  range: 20
-  attackDistance: 1
-  patrolRange: 10
-  chaseAdditionalSpeed: 10
+  _maxSpeed: 2
+  _range: 15
+  _attackDistance: 1
+  _patrolRange: 10
+  _chaseAdditionalSpeed: 8
 --- !u!212 &21250582
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -132,6 +132,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LinearDrag
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _range
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _attackDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _patrolRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _chaseAdditionalSpeed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

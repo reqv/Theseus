@@ -3,18 +3,21 @@ using System.Collections;
 
 public class Snake : Monster {
 
-    private Transform target;
-    private Rigidbody2D rig2D;
-	private Vector2 axis,collisionAxis,freeais,freedest;
-	private float personalMaxSpeed;		// podmiana dla maxSpeed / ze wzgledu na dodawanie predkosci
-	public int chaseAdditionalSpeed;	// dodajemy do predkosci poruszania jak zobaczy gracza
+    private Transform _targetToAttack;
+    private Rigidbody2D _snakeRig2D;
+	private Vector2 _axis,_collisionAxis,_freeDestination;	//zmienne odpowiedzialne za pamietanie kierunku poruszania i celu podróży obiektu
+	private float _personalMaxSpeed;		// podmiana dla _maxSpeed / ze wzgledu na dodawanie predkosci
+	
+	[Tooltip ("Prędkość dodawana przy spostrzeżeniu gracza.")]
+	[SerializeField]
+	private int _chaseAdditionalSpeed;
 
 	override public void Start () {
 		base.Start();
-		personalMaxSpeed = maxSpeed;
-        rig2D = GetComponent<Rigidbody2D>();
-        axis = new Vector2(0, 0);
-        freedest = new Vector2(rig2D.position.x, rig2D.position.y);
+		_personalMaxSpeed = _maxSpeed;
+        _snakeRig2D = GetComponent<Rigidbody2D>();
+        _axis = new Vector2(0, 0);
+        _freeDestination = new Vector2(_snakeRig2D.position.x, _snakeRig2D.position.y);
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
@@ -22,35 +25,35 @@ public class Snake : Monster {
 		if (other.gameObject.tag == "Player") {
 			Destroy(other.gameObject);		// ######################## chwilowe rozwiazanie ( usuwanie gracza ) ########################
 		}
-		collisionAxis = axis;
+		_collisionAxis = _axis;
 	}
 
 	void OnCollisionStay2D(Collision2D other)
 	{
-		if(collisionAxis.y < 0){
-			freedest.y = rig2D.position.y + patrolRange;
+		if(_collisionAxis.y < 0){
+			_freeDestination.y = _snakeRig2D.position.y + _patrolRange;
 		}
 		else{
-			freedest.y = rig2D.position.y - patrolRange;
+			_freeDestination.y = _snakeRig2D.position.y - _patrolRange;
 		}
 		
-		if(collisionAxis.x < 0){
-			freedest.x = rig2D.position.x + patrolRange;
+		if(_collisionAxis.x < 0){
+			_freeDestination.x = _snakeRig2D.position.x + _patrolRange;
 		}
 		else{
-			freedest.x = rig2D.position.x - patrolRange;
+			_freeDestination.x = _snakeRig2D.position.x - _patrolRange;
 		}
 	}
 
 	void FixedUpdate () {
 		float distance = float.MaxValue;
 		if (GameObject.FindGameObjectWithTag ("Player") != null) {
-			target = GameObject.FindGameObjectWithTag("Player").transform;
-			distance = Vector2.Distance(transform.position,target.position);
+			_targetToAttack = GameObject.FindGameObjectWithTag("Player").transform;
+			distance = Vector2.Distance(transform.position,_targetToAttack.position);
 		}
-        if (distance <= attackDistance)
+        if (distance <= _attackDistance)
             Attack();
-        else if (distance <= range)
+        else if (distance <= _range)
             Chase();
         else
             Walking();
@@ -63,39 +66,39 @@ public class Snake : Monster {
 
     void Chase()
     {
-		if (maxSpeed == personalMaxSpeed)
-			personalMaxSpeed += chaseAdditionalSpeed;
-        axis = target.position - transform.position;
-        if (axis.x < 0)
-            axis.x = -1;
+		if (_maxSpeed == _personalMaxSpeed)
+			_personalMaxSpeed += _chaseAdditionalSpeed;
+        _axis = _targetToAttack.position - transform.position;
+        if (_axis.x < 0)
+            _axis.x = -1;
         else
-            axis.x = 1;
-        if (axis.y < 0)
-            axis.y = -1;
+            _axis.x = 1;
+        if (_axis.y < 0)
+            _axis.y = -1;
         else
-            axis.y = 1;
-        rig2D.AddForce(axis * personalMaxSpeed);
+            _axis.y = 1;
+        _snakeRig2D.AddForce(_axis * _personalMaxSpeed);
     }
 
     void Walking()
     {
-		if (maxSpeed != personalMaxSpeed)
-			personalMaxSpeed = maxSpeed;
-        if (Vector2.Distance(rig2D.position, freedest) >= 1)
+		if (_maxSpeed != _personalMaxSpeed)
+			_personalMaxSpeed = _maxSpeed;
+        if (Vector2.Distance(_snakeRig2D.position, _freeDestination) >= 1)
         {
-            if (rig2D.position.x - freedest.x < 0)
-                axis.x = 1;
+            if (_snakeRig2D.position.x - _freeDestination.x < 0)
+                _axis.x = 1;
             else
-                axis.x = -1;
-            if (rig2D.position.y - freedest.y < 0)
-                axis.y = 1;
+                _axis.x = -1;
+            if (_snakeRig2D.position.y - _freeDestination.y < 0)
+                _axis.y = 1;
             else
-                axis.y = -1;
-            rig2D.AddForce(axis * personalMaxSpeed);
+                _axis.y = -1;
+            _snakeRig2D.AddForce(_axis * _personalMaxSpeed);
         }
             else
         {
-			freedest = new Vector2(rig2D.position.x + getRandomNumber(-patrolRange,patrolRange),rig2D.position.y +  getRandomNumber(-patrolRange,patrolRange));
+			_freeDestination = new Vector2(_snakeRig2D.position.x + getRandomNumber(-_patrolRange,_patrolRange),_snakeRig2D.position.y +  getRandomNumber(-_patrolRange,_patrolRange));
         }
     }
 }
