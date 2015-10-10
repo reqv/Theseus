@@ -1,87 +1,88 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &153242
+--- !u!1 &159788
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 492460}
-  - 212: {fileID: 21250582}
-  - 50: {fileID: 5094414}
-  - 61: {fileID: 6103578}
-  - 114: {fileID: 11494624}
+  - 4: {fileID: 441720}
+  - 212: {fileID: 21296378}
+  - 50: {fileID: 5058190}
+  - 58: {fileID: 5824280}
+  - 114: {fileID: 11414558}
   m_Layer: 0
-  m_Name: staticSnakeWithoutAnim
+  m_Name: spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &492460
+--- !u!4 &441720
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153242}
+  m_GameObject: {fileID: 159788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 4.46986914, y: 5.20078087, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5094414
+--- !u!50 &5058190
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153242}
-  m_Mass: 1
-  m_LinearDrag: .5
-  m_AngularDrag: .0500000007
+  m_GameObject: {fileID: 159788}
+  m_Mass: .25
+  m_LinearDrag: 0
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6103578
-BoxCollider2D:
+--- !u!58 &5824280
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153242}
+  m_GameObject: {fileID: 159788}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .164665222, y: .296396255}
+  m_Offset: {x: .0500000007, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2.73854971, y: 4.38720703}
---- !u!114 &11494624
+  m_Radius: .385818094
+--- !u!114 &11414558
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153242}
+  m_GameObject: {fileID: 159788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0779bb1a3fcb04cb8e97eb7ca69527, type: 3}
+  m_Script: {fileID: 11500000, guid: c3f37340fc8d4ff4589d8fdca26fffea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeed: 2
-  _range: 15
-  _attackDistance: 1
-  _patrolRange: 10
-  _chaseAdditionalSpeed: 8
---- !u!212 &21250582
+  _maxSpeed: 3
+  _range: 20
+  _attackDistance: 5
+  _patrolRange: 0
+  _spiderAttackDelay: 1
+  _spiderDelayAfterAttack: 1
+--- !u!212 &21296378
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153242}
+  m_GameObject: {fileID: 159788}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -89,8 +90,8 @@ SpriteRenderer:
   - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
@@ -100,7 +101,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a6ca0316fdc06242b92b7e7e03ae876, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bbe090e3eb091ca43bff25d93a3a46e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -110,54 +111,54 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: patrolRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: maxSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: chaseAdditionalSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: attackDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LinearDrag
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
       propertyPath: _maxSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _range
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _attackDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _spiderAttackDelay
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: _patrolRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: _chaseAdditionalSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.z
+      propertyPath: m_GravityScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _spiderSleepMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _spiderDelayAfterAttack
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 153242}
+  m_RootGameObject: {fileID: 159788}
   m_IsPrefabParent: 1
