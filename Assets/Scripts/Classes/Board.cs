@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Board
 {
@@ -30,7 +31,7 @@ public class Board
         Shop = 5
 
     }
-    private Random _rand = new Random();
+    private Random _rand;
     private int _minRoomCount = 15;
     private int _maxRoomCount = 20;
 
@@ -71,12 +72,21 @@ public class Board
                 board[i, j] = 0;
     }
 
-    public void FillBoard()
+    public void FillBoard(string seed = "")
     {
-        int roomOffset = 3;
-        int roomCoreCount = 3;
+        const int roomOffset = 3;
+        const int roomCoreCount = 3;
+        const int seedLength = 6;
 
         BoardTab[HalfOfBoardSize, HalfOfBoardSize] = (int)Cell.Start;
+        if (string.IsNullOrEmpty(seed))
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var randomr = new Random();
+            seed = new string(Enumerable.Repeat(chars, seedLength).Select(s => s[randomr.Next(s.Length)]).ToArray());
+        }
+
+        _rand = new Random(seed.GetHashCode());
         RandomNeighbors(1);
         MakeCoreRoom(roomOffset, roomCoreCount);
     }
