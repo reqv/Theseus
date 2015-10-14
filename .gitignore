@@ -19,6 +19,12 @@ sysinfo.txt
 /*.user
 /*.unityproj
 /*.booproj
+
+# =================== #
+# Visual Studio Tools #
+# =================== #
+*/UnityVS*
+*/UnityVS.meta
  
 # ============ #
 # OS generated #
