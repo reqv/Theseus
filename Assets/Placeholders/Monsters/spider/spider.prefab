@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 441720}
   - 212: {fileID: 21296378}
   - 50: {fileID: 5058190}
-  - 58: {fileID: 5824280}
+  - 58: {fileID: 5882996}
   - 114: {fileID: 11414558}
   m_Layer: 0
   m_Name: spider
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 159788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.46986914, y: 5.20078087, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -47,7 +47,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5824280
+--- !u!58 &5882996
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -57,9 +57,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .0500000007, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .385818094
+  m_Radius: 10
 --- !u!114 &11414558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 159788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f37340fc8d4ff4589d8fdca26fffea, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c87b681d8fadfe4f9d6c0d9cd4741e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxSpeed: 3
@@ -157,6 +157,34 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _spiderDelayAfterAttack
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
