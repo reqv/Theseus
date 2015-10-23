@@ -2,25 +2,57 @@
 using System.Collections.Generic;
 using System.Linq;
 
+/**
+ * <summary>
+ * 	Klasa generująca proceduralnie planszę danego poziomu. 
+ * </summary>
+ * <remarks>
+ * 	Klasa odpowiadająca za wygenerowanie rozmieszczenia pokoi.
+ * </remarks>
+ */
 public class Board
 {
+    /**
+     * <summary>
+     * 	Klasa pomocnicza do określania współrzędnych. 
+     * </summary>
+     * <remarks>
+     * 	Klasa pomocna przy kopiowaniu współrzędnych tabeli w jednej z metod.
+     * </remarks>
+     */
     private class Coords
     {
+
+        /// <summary>
+        /// Współrzędna X
+        /// </summary>
         public int X
         {
             get; set;
         }
+        /// <summary>
+        /// Współrzędna Y
+        /// </summary>
         public int Y
         {
             get; set;
         }
 
+        /// <summary>
+        /// Konstruktor klasy Coords przyjmujący dwie wartości.
+        /// </summary>
+        /// <param name="x">Współrzędna X</param>
+        /// <param name="y">Współrzędna Y</param>
         public Coords(int x, int y)
         {
             X = x;
             Y = y;
         }
     }
+
+    /// <summary>
+    /// Enumerator odpowiadający za rodzaje pokoi (komórek na planszy).
+    /// </summary>
     private enum Cell
     {
         Empty = 0,
@@ -31,11 +63,47 @@ public class Board
         Shop = 5
 
     }
+
+    /// <summary>
+    /// Obiekt klasy Random odpowiadający za losowanie.
+    /// </summary>
     private Random _rand;
-    private int _minRoomCount = 15;
-    private int _maxRoomCount = 20;
+    /// <summary>
+    /// Minimalna ilość pokoi.
+    /// </summary>
+    public int MinRoomCount
+    {
+        get
+        {
+            return MinRoomCount;
+        }
+        set
+        {
+            value = 15;
+        }
+    }
+    /// <summary>
+    /// Maksymalna ilość pokoi.
+    /// </summary>
+    public int MaxRoomCount
+    {
+        get
+        {
+            return MaxRoomCount;
+        }
+        set
+        {
+            value = 20;
+        }
+    }
 
     private int _boardSize;
+    /// <summary>
+    /// Właściwość klasy Board określająca rozmiar planszy.
+    /// </summary>
+    /// <value>
+    /// Rozmiar planszy.
+    /// </value>
     public int BoardSize
     {
         get
@@ -48,23 +116,40 @@ public class Board
             _boardSize = value;
         }
     }
+
+    /// <summary>
+    /// Tablica zawierająca informację o rozmieszczeniu pokoi.
+    /// </summary>
     public int[,] BoardTab
     {
         get;
         set;
     }
+
+    /// <summary>
+    /// Połowa rozmiaru planszy.
+    /// </summary>
     public int HalfOfBoardSize
     {
         get;
         private set;
     }
 
+    /// <summary>
+    /// Konstruktor klasy Board określający rozmiar planszy.
+    /// </summary>
+    /// <param name="boardSize">Rozmiar planszy.</param>
     public Board(int boardSize)
     {
         BoardTab = new int[boardSize, boardSize];
         BoardSize = boardSize;
     }
 
+    /// <summary>
+    /// Metoda odpowiedzialna za wyczyszczenie planszy (wypełnia komórki wartością 0).
+    /// </summary>
+    /// <param name="boardSize">Rozmiar planszy.</param>
+    /// <param name="board">Czyszczona plansza.</param>
     public void ResetBoard(int boardSize, int[,] board)
     {
         for (int i = 0; i < boardSize; i++)
@@ -72,13 +157,17 @@ public class Board
                 board[i, j] = 0;
     }
 
-    public void FillBoard(string seed = "")
+    /// <summary>
+    /// Główna metoda odpowiedzialna za wygenerowanie rozmieszczenia pokoi.
+    /// </summary>
+    /// <param name="seed">Ziarno losowości (domyślnie pusty). Jeśli puste generuje nowe ziarno.</param>
+    /// <returns>Zwraca ziarno rozmieszczenia pokoi.</returns>
+    public string FillBoard(string seed = "")
     {
         const int roomOffset = 3;
         const int roomCoreCount = 3;
-        const int seedLength = 6;
+        const int seedLength = 7;
 
-        BoardTab[HalfOfBoardSize, HalfOfBoardSize] = (int)Cell.Start;
         if (string.IsNullOrEmpty(seed))
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -87,11 +176,22 @@ public class Board
         }
 
         _rand = new Random(seed.GetHashCode());
+
+        BoardTab[HalfOfBoardSize, HalfOfBoardSize] = (int)Cell.Start;
         RandomNeighbors(1);
         MakeCoreRoom(roomOffset, roomCoreCount);
+
+        return seed;
     }
 
-    private void RandomNeighbors(int roomCounter, bool isStartingRoom = true)
+    /// <summary>
+    /// Metoda pomocnicza odpowiadająca za ilość sąsiadów danej komórki.
+    /// </summary>
+    /// <remarks>
+    /// Metoda pomocniczna wykorzystywana w metodzie <see cref="FillBoard(string)"./>
+    /// </remarks>
+    /// <param name="roomCounter">Liczba pokoi znajdujących się już w tabeli.</param>
+    private void RandomNeighbors(int roomCounter)
     {
         bool isRandomized = false;
 
@@ -114,19 +214,27 @@ public class Board
                         else if (j == jUpperLimit)
                             jUpperLimit = jUpperLimit == 0 ? 0 : jUpperLimit - 1;
                     }
-                    if (roomCounter >= _minRoomCount)
+                    if (roomCounter >= MinRoomCount)
                     {
                         isRandomized = true;
                     }
-                    if (roomCounter >= _maxRoomCount)
+                    if (roomCounter >= MaxRoomCount)
                         break;
                 }
-                if (roomCounter >= _maxRoomCount)
+                if (roomCounter >= MaxRoomCount)
                     break;
             }
         } while (!isRandomized);
     }
 
+    /// <summary>
+    /// Metoda pomocnicza zliczająca sąsiadów danej komórki tabeli.
+    /// </summary>
+    /// <param name="x">Indeks wiersza tabeli.</param>
+    /// <param name="y">Indeks kolumny tabeli.</param>
+    /// <param name="hasCloseNeighbours">Parametr typu out zwracający nam informację o tym czy dana komórka ma sąsiada w kierunku N/E/S/W.</param>
+    /// <param name="checkOnlyCloseNeighbours">Parametr domyślny (false) decydujący o tym czy mają być sprawdzani wszyscy sąsiedzi wokół komórki czy tylko w podstawowych kierunkach N/E/S/W.</param>
+    /// <returns>Metoda zwraca ilość sąsiadów</returns>
     private int NumberOfNeighbors(int x, int y, out bool hasCloseNeighbours, bool checkOnlyCloseNeighbours = false)
     {
         hasCloseNeighbours = false;
@@ -182,6 +290,12 @@ public class Board
         return numOfNeighbors;
     }
 
+    /// <summary>
+    /// Metoda pomocnicza tworząca pokój na podstawie prawdopodobieństwa i ilości sąsiadów dla danego pola.
+    /// </summary>
+    /// <param name="x">Indeks wiersza tabeli.</param>
+    /// <param name="y">Indeks kolumny tabeli.</param>
+    /// <returns>Metoda zwraca informację czy pokój został stworzony.</returns>
     private bool MakeRoom(int x, int y)
     {
         bool hasCloseNeighbours;
@@ -234,6 +348,11 @@ public class Board
         return isMaked;
     }
 
+    /// <summary>
+    /// Metoda tworząca unikalne pokoje.
+    /// </summary>
+    /// <param name="roomOffset">Indeks w <see cref="Cell"/> pierwszego z unikalnych pokoi.</param>
+    /// <param name="roomCoreCount">Ilość unikalnych pokoi.</param>
     private void MakeCoreRoom(int roomOffset, int roomCoreCount)
     {
         List<Coords> singleRoomList = new List<Coords>();
