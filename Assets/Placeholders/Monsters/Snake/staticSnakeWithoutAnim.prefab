@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5094414}
   - 61: {fileID: 6103578}
   - 114: {fileID: 11494624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: staticSnakeWithoutAnim
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 21.1000004, y: 5.9000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0779bb1a3fcb04cb8e97eb7ca69527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeed: 2
+  _maxSpeed: 1
   _range: 15
   _attackDistance: 1
   _patrolRange: 10
@@ -135,7 +135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _maxSpeed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _range
@@ -156,6 +156,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 /**
  * <summary>
@@ -16,14 +15,14 @@ public class Spider : Monster {
 	/// <summary>
 	/// 	Parametr oczekiwania pająka na atak po wykryciu ofiary
 	/// </summary>
-	private long _spiderAttackDelay;
+	private byte _spiderAttackDelay;
 
 	[Tooltip ("Minimalny czas oczekiwania po wykonaniu ataku do wykonania następnego(w sekundach), wartosc musi być wieksza od 0")]
 	[SerializeField]
 	/// <summary>
 	/// 	Parametr opisujący czas oczekiwania po dokonanym ataku
 	/// </summary>
-	private long _spiderDelayAfterAttack;
+	private byte _spiderDelayAfterAttack;
 
 	/// <summary>
 	/// 	Parametr sprawdzający, czy pająk jest zdolny do ataku
@@ -33,18 +32,13 @@ public class Spider : Monster {
 	/// <summary>
 	/// 	Parametr trzymający czas w sekundach w którym nastąpi atak
 	/// </summary>
-	private double _timeToAttack;
+	private float _timeToAttack;
 
 	/// <summary>
 	/// 	Parametr trzymający czas w sekundach w którym pająk znów bedzie aktywny
 	/// </summary>
-	private double _timeToWait;
-
-	/// <summary>
-	/// 	Wektor trzymający dany cel podróży wybrany przez pająka
-	/// </summary>
-	private Vector2 _spiderDestination;
-
+	private float _timeToWait;
+	
 	/// <summary>
 	/// 	Parametr sprawdzający, czy pająk wybrał już cel swojego ataku
 	/// </summary>
@@ -56,7 +50,7 @@ public class Spider : Monster {
 	public override void Start () {
 		base.Start ();
 		_Rig2D = GetComponent<Rigidbody2D>();
-		_axis = new Vector2(0, 0);
+		_axis = Vector2.zero;
 	}
 
 	/// <summary>
@@ -71,34 +65,52 @@ public class Spider : Monster {
 	/// 	Zaimplementowana metoda pozwalająca na ściganie obiektu
 	/// </summary>
 	/// <remarks>
-	/// 	W przypadku pająka - gdy zobaczy ofiarę szykuję się do skoku w jej strone
+	/// 	W przypadku pająka - gdy zobaczy ofiarę szykuję się do skoku w jej strone po czym odpoczywa.
 	/// </remarks>
 	public override void Chase()
 	{
 		if (_readyToAttack) {
 
-			if(Time.time >= _timeToAttack)
+			WhereIsATarget(_targetToAttack.transform.position);
+			if(_axis.x > 0 && !_facingRight)
+				Flip ();
+			if(_axis.x < 0 && _facingRight)
+				Flip ();
+
+			if(_timeToAttack < 0)
 			{
 				if(!_hasTarget)
 				{
-					_spiderDestination.x = _targetToAttack.position.x;
-					_spiderDestination.y = _targetToAttack.position.y;
-					_spiderDestination -= _Rig2D.position;
-					_Rig2D.velocity = _spiderDestination*_maxSpeed;
+					_axis.x = _targetToAttack.position.x;
+					_axis.y = _targetToAttack.position.y;
+					_axis -= _Rig2D.position;
+					_Rig2D.AddForce(_axis * _maxSpeed,ForceMode2D.Impulse);
 					_hasTarget = true;
 				}
 
-				if(Time.time >= _timeToWait)
+				if(_timeToWait < 0)
 				{
 					_hasTarget = false;
 					_readyToAttack = false;
-					_Rig2D.MovePosition (_Rig2D.position);
+					_Rig2D.velocity = Vector2.zero;
 				}
+				else
+					_timeToWait -= Time.deltaTime;
+			}
+			else
+			{
+				_timeToAttack -= Time.deltaTime;
 			}
 
 		} else {
-			_timeToAttack = Time.time + _spiderAttackDelay;
-			_timeToWait = _timeToAttack+_spiderDelayAfterAttack;
+			WhereIsATarget(_targetToAttack.transform.position);
+			if(_axis.x > 0 && !_facingRight)
+				Flip ();
+			if(_axis.x < 0 && _facingRight)
+				Flip ();
+
+			_timeToAttack = _spiderAttackDelay;
+			_timeToWait = _spiderDelayAfterAttack;
 			_readyToAttack = true;
 
 		}
@@ -113,6 +125,7 @@ public class Spider : Monster {
 	public override void Walking()
 	{
 		_readyToAttack = false;
-		_Rig2D.MovePosition (_Rig2D.position);
+		_hasTarget = false;
+		_Rig2D.velocity = Vector2.zero;
 	}
 }
