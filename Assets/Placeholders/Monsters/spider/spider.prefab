@@ -39,7 +39,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159788}
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0
   m_GravityScale: 0
   m_IsKinematic: 0
@@ -74,7 +74,6 @@ MonoBehaviour:
   _maxSpeed: 3
   _range: 20
   _attackDistance: 5
-  _patrolRange: 0
   _spiderAttackDelay: 1
   _spiderDelayAfterAttack: 1
 --- !u!212 &21296378
@@ -189,6 +188,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LinearDrag
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -17,6 +17,13 @@ public class Snake : Monster {
 	/// </summary>
 	private int _chaseAdditionalSpeed;
 
+	[Tooltip ("Zasięg ustalania nowego celu podróży od punktu w którym znajduje się Wąż.")]
+	[SerializeField]
+	/// <summary>
+	/// 	Parametr serializowany, określa na jaką odległość może zostać obliczona nowy cel drogi węża.
+	/// </summary>
+	private int _patrolRange;
+
 	/// <summary>
 	/// 	Parametr podmieniający parametr rodzica _maxSpeed ze względu na dodawaną do niego prędkość
 	/// </summary>
@@ -28,8 +35,6 @@ public class Snake : Monster {
 	override public void Start () {
 		base.Start();
 		_personalMaxSpeed = _maxSpeed;
-        _Rig2D = GetComponent<Rigidbody2D>();
-        _axis = new Vector2(0, 0);
         _freeDestination = new Vector2(_Rig2D.position.x, _Rig2D.position.y);
 	}
 

@@ -50,8 +50,6 @@ public class Gargoyle : Monster {
 	override public void Start () {
 		base.Start();
 		_timeToRelease = 2;
-		_Rig2D = GetComponent<Rigidbody2D>();
-		_axis = Vector2.zero;
 		_startingPosition = (Vector2)transform.position;
 		if (_lookAtLeft)
 			Flip ();
@@ -101,6 +99,7 @@ public class Gargoyle : Monster {
 			if(_timeToRelease < 0)
 			{
 				_Rig2D.MovePosition(_startingPosition);
+				this.gameObject.layer = 8;
 				_timeToRelease = 2;
 				_freed = false;
 				_locateATarget = false;

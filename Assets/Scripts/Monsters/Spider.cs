@@ -49,8 +49,6 @@ public class Spider : Monster {
 	/// </summary>
 	public override void Start () {
 		base.Start ();
-		_Rig2D = GetComponent<Rigidbody2D>();
-		_axis = Vector2.zero;
 	}
 
 	/// <summary>

@@ -15,8 +15,6 @@ public class Bat : Monster {
 	/// </summary>
 	override public void Start () {
 		base.Start();
-		_Rig2D = GetComponent<Rigidbody2D>();
-		_axis = Vector2.zero;
 	}
 
 	/// <summary>

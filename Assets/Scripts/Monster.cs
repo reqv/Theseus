@@ -8,7 +8,7 @@
  * 	Klasa rodzica dla wszystkich przeciwników w grze, zawiera podstawową implementacje każdego potwora.
  * </remarks>
  */
-public abstract class Monster : MonoBehaviour {
+public abstract class Monster : TheseusGameObject {
 
 	/// <summary>
 	/// 	Parametr trzymajacy aktualna pozycje gracza
@@ -40,7 +40,6 @@ public abstract class Monster : MonoBehaviour {
 	/// </summary>
 	protected bool _facingRight = true;
 
-
 	[Tooltip ("Maksymalne przyspieszenie obiektu.")]
 	[SerializeField]
 	/// <summary>
@@ -62,18 +61,12 @@ public abstract class Monster : MonoBehaviour {
 	/// </summary>
 	protected float _attackDistance;
 
-	[Tooltip ("Zasięg ustalania nowego celu podróży od punktu w którym znajduje się obiekt.")]
-	[SerializeField]
-	/// <summary>
-	/// 	Parametr serializowany, określa na jaką odległość może wyruszyć obiekt ( liczone od aktualnej pozycji obiektu )
-	/// </summary>
-	protected int _patrolRange;
-
 	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia obiektu
 	/// </summary>
 	public virtual void Start () {
-	
+		_Rig2D = GetComponent<Rigidbody2D>();
+		_axis = Vector2.zero;
 	}
 
 	/// <summary>
@@ -201,16 +194,5 @@ public abstract class Monster : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-	}
-
-	/// <summary>
-	/// 	Metoda pozwalająca na losowanie liczb całkowitych
-	/// </summary>
-	/// <param name="min">Minimalna wartość losowana</param>
-	/// <param name="min">Maksymalna wartość losowana</param>
-	/// <returns>Liczba całkowita z danego w parametrach funkcji przedziału</returns>
-	protected int RandomNumber(int min,int max){
-		int myNumber = Random.Range(min, max);
-		return myNumber;
 	}
 }
