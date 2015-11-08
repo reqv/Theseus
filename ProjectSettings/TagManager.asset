@@ -3,16 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-<<<<<<< HEAD
-  - Wall
-  - Doors
-  - Corner
-=======
-  - Enemy
-  - Player
-  - Item
->>>>>>> c988aed30ab75eb3052d2af5d49c8fc66b18cec8
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -49,16 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: FloorsAndWalls
-    uniqueID: 4109605829
-    locked: 0
-  - name: Doors
-    uniqueID: 2773928657
-    locked: 0
-  - name: Items
-    uniqueID: 3635325141
-    locked: 0
-  - name: Characters
-    uniqueID: 3526850955
     locked: 0
