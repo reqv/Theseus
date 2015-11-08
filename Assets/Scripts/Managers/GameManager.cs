@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private int _actualPositionX;
     private int _actualPositionY;
 
-    private int _level = 3;
+    private int _level = 1;
 
     // Use this for initialization
     void Awake ()
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-        roomManager = GetComponent<RoomManager>();
+        //roomManager = GetComponent<RoomManager>();
         InitGame();
     }
 

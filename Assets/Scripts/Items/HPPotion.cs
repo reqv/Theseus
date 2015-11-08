@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class HPPotion : Item {
+public class HpPotion : Item {
 
 	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia mikstury

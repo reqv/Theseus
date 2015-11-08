@@ -20,11 +20,9 @@ public class RoomManager : MonoBehaviour
 
     public int columns;
     public int rows;
-    public Count wallCount = new Count(5, 9);
     public Count foodCount = new Count(1, 5);
     public GameObject exit;
     public GameObject[] floorTiles;
-    public GameObject[] wallTiles;
     public GameObject[] foodTiles;
     public GameObject[] enemyTiles;
     public GameObject[] outerWallTiles;
