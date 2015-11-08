@@ -4,9 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Wall
   - Doors
   - Corner
+=======
+  - Enemy
+  - Player
+  - Item
+>>>>>>> c988aed30ab75eb3052d2af5d49c8fc66b18cec8
   layers:
   - Default
   - TransparentFX
@@ -16,8 +22,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - WalkingMonsters
+  - FlyingMonsters
   - 
   - 
   - 
