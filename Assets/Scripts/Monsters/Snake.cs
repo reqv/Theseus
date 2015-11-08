@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-
 
 /**
  * <summary>
@@ -19,6 +17,13 @@ public class Snake : Monster {
 	/// </summary>
 	private int _chaseAdditionalSpeed;
 
+	[Tooltip ("Zasięg ustalania nowego celu podróży od punktu w którym znajduje się Wąż.")]
+	[SerializeField]
+	/// <summary>
+	/// 	Parametr serializowany, określa na jaką odległość może zostać obliczona nowy cel drogi węża.
+	/// </summary>
+	private int _patrolRange;
+
 	/// <summary>
 	/// 	Parametr podmieniający parametr rodzica _maxSpeed ze względu na dodawaną do niego prędkość
 	/// </summary>
@@ -30,8 +35,6 @@ public class Snake : Monster {
 	override public void Start () {
 		base.Start();
 		_personalMaxSpeed = _maxSpeed;
-        _Rig2D = GetComponent<Rigidbody2D>();
-        _axis = new Vector2(0, 0);
         _freeDestination = new Vector2(_Rig2D.position.x, _Rig2D.position.y);
 	}
 
@@ -92,15 +95,7 @@ public class Snake : Monster {
     {
 		if (_maxSpeed == _personalMaxSpeed)
 			_personalMaxSpeed += _chaseAdditionalSpeed;
-        _axis = _targetToAttack.position - transform.position;
-        if (_axis.x < 0)
-            _axis.x = -1;
-        else
-            _axis.x = 1;
-        if (_axis.y < 0)
-            _axis.y = -1;
-        else
-            _axis.y = 1;
+		WhereIsATarget (_targetToAttack.transform.position);
         _Rig2D.AddForce(_axis * _personalMaxSpeed);
     }
 
@@ -115,21 +110,14 @@ public class Snake : Monster {
     {
 		if (_maxSpeed != _personalMaxSpeed)
 			_personalMaxSpeed = _maxSpeed;
-        if (Vector2.Distance(_Rig2D.position, _freeDestination) >= 1)
+        if (WhereIsATarget(_freeDestination,true) >= 1)
         {
-            if (_Rig2D.position.x - _freeDestination.x < 0)
-                _axis.x = 1;
-            else
-                _axis.x = -1;
-            if (_Rig2D.position.y - _freeDestination.y < 0)
-                _axis.y = 1;
-            else
-                _axis.y = -1;
+			WhereIsATarget(_freeDestination);
             _Rig2D.AddForce(_axis * _personalMaxSpeed);
         }
             else
         {
-			_freeDestination = new Vector2(_Rig2D.position.x + getRandomNumber(-_patrolRange,_patrolRange),_Rig2D.position.y +  getRandomNumber(-_patrolRange,_patrolRange));
+			_freeDestination = new Vector2(_Rig2D.position.x + RandomNumber(-_patrolRange,_patrolRange),_Rig2D.position.y +  RandomNumber(-_patrolRange,_patrolRange));
         }
     }
 }
