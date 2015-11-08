@@ -1,0 +1,29 @@
+/*! \mainpage O grze
+ *
+ * \section intro_sec Wprowadzenie
+ *
+ * Theseus The Game jest grą opartą na widoku 2D (Top Perspective View), w której gracz przenosi się do mitologii greckiej, a dokładniej wcieli się w tytułowego herosa ateńskiego - Tezeusza. Ochotnika, który zgłosił się zostać jednym z siedmiu chłopców złożonych w ofierze Minotaurowi, zamieszkującego Labirynt Dedala. Celem gracza będzie odnalezienie Minotaura, pokonanie go i uratowanie pozostałych osób zesłanych do podziemi pałacu w Knossos. Gra stworzona jest na silniku Unity.
+ *
+ * \section features_sec Cechy gry
+ *
+ * - Gra będzie podzielona na rozdziały.
+ * - W każdym rozdziale będzie 5 poziomów.
+ * - W każdym poziomie będzie wygenerowana losowa (z danego niewielkiego przedziału) ilość pomieszczeń.
+ * - W każdym poziomie będzie pokój finałowy w którym będzie Strażnik pilnujący zejścia do kolejnej części labiryntu.
+ * - Każdy pokój będzie miał drzwi umiejscowione po środku ścian (cztery kierunki - N, E, S, W).
+ * - Ilość drzwi (max. 4 na pokój) będzie generowana na podstawie innych pokoi.
+ * - Gra będzie zapisywać się tylko i wyłącznie po przejściu rozdziału (albo wcale).
+ * - Po przegranej grze gracz musi zacząć od nowa tracąc postęp (chyba, że udało mu się przejść rozdział).
+ * - Z każdą nową grą każde pomieszczenie, ich rozkład, potwory, przedmioty itp. będą generowane losowo (gra będzie za każdym razem inna, co za tym idzie trudniejsza).
+ * - W labiryncie będzie można spotkać ludzi, którzy będą się przyłączać lub dadzą jakiś przedmiot/pomocnika.
+ * - Po przejściu pierwszego poziomu gracz otrzyma od Ariadny nić w postaci mini mapy (być może będzie to [płatne] DLC do gry)
+ * - Celem gracza będzie przejść wszystkie poziomy i zabić Minotaura.
+ *
+ * \section authors_sec Autorzy gry
+ *
+ * - <a href="https://pl.linkedin.com/in/lukaszrabiec">Łukasz "w0okiee" Rabiec</a> - Lider zespołu. Odpowiedzialny za algorytm generowania pomieszczeń oraz linię fabularną.
+ * - <a href="https://pl.linkedin.com/pub/jakub-majewski/98/b6a/b12">Jakub "Dzejkopp" Majewski</a> - Programista Unity. Odpowiedzialny za mechanikę gracza oraz środowisko Unity.
+ * - Wojciech "Wojtas" Janeczek </a> - Programista Unity. Odpowiedzialny za sztuczną inteligencję.
+ * - <a href="http://www.aviene.pl"> Dominika "Aviene" Różycka </a> - Grafik. Odpowiedzialna za grafikę pomieszczeń, logo oraz menu.
+ * - Michał "Anioł" Walkowski </a> - Grafik. Odpowiedzialny za wygląd przeciwników i innych postaci.
+ */

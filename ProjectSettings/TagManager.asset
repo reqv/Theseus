@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
+  - Wall
+  - Doors
+  - Corner
   layers:
   - Default
   - TransparentFX
@@ -42,12 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
+  - name: FloorsAndWalls
     uniqueID: 4109605829
     locked: 0
-  - name: Enemy
+  - name: Doors
     uniqueID: 2773928657
     locked: 0
-  - name: Background
+  - name: Items
+    uniqueID: 3635325141
+    locked: 0
+  - name: Characters
     uniqueID: 3526850955
     locked: 0

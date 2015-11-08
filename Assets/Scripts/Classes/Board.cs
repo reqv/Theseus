@@ -51,15 +51,33 @@ public class Board
     }
 
     /// <summary>
-    /// Enumerator odpowiadający za rodzaje pokoi (komórek na planszy).
+    /// Enumerator odpowiadający za rodzaje pokoi (komórek w tabeli).
     /// </summary>
     private enum Cell
     {
+        /// <summary>
+        /// Brak pokoju
+        /// </summary>
         Empty = 0,
+        /// <summary>
+        /// Zwykły pokój
+        /// </summary>
         Common = 1,
+        /// <summary>
+        /// Pokój startowy
+        /// </summary>
         Start = 2,
+        /// <summary>
+        /// Pokój ze Strażnikiem
+        /// </summary>
         Boss = 3,
+        /// <summary>
+        /// Pokój z unikalnym przedmiotem
+        /// </summary>
         Premium = 4,
+        /// <summary>
+        /// Pokój ze sklepem
+        /// </summary>
         Shop = 5
 
     }
@@ -69,7 +87,7 @@ public class Board
     /// </summary>
     private Random _rand;
     /// <summary>
-    /// Minimalna ilość pokoi.
+    /// Minimalna ilość pokoi (domyślnie 15).
     /// </summary>
     public int MinRoomCount
     {
@@ -83,7 +101,7 @@ public class Board
         }
     }
     /// <summary>
-    /// Maksymalna ilość pokoi.
+    /// Maksymalna ilość pokoi (domyślnie 20).
     /// </summary>
     public int MaxRoomCount
     {
@@ -97,7 +115,6 @@ public class Board
         }
     }
 
-    private int _boardSize;
     /// <summary>
     /// Właściwość klasy Board określająca rozmiar planszy.
     /// </summary>
@@ -108,12 +125,12 @@ public class Board
     {
         get
         {
-            return _boardSize;
+            return BoardSize;
         }
         set
         {
             HalfOfBoardSize = value / 2;
-            _boardSize = value;
+            BoardSize = value;
         }
     }
 
@@ -127,7 +144,7 @@ public class Board
     }
 
     /// <summary>
-    /// Połowa rozmiaru planszy.
+    /// Połowa rozmiaru planszy, ustawiana w konstruktorze klasy <see cref="Board"/>.
     /// </summary>
     public int HalfOfBoardSize
     {
@@ -161,7 +178,7 @@ public class Board
     /// Główna metoda odpowiedzialna za wygenerowanie rozmieszczenia pokoi.
     /// </summary>
     /// <param name="seed">Ziarno losowości (domyślnie pusty). Jeśli puste generuje nowe ziarno.</param>
-    /// <returns>Zwraca ziarno rozmieszczenia pokoi.</returns>
+    /// <returns>Ziarno rozmieszczenia pokoi.</returns>
     public string FillBoard(string seed = "")
     {
         const int roomOffset = 3;
@@ -185,11 +202,8 @@ public class Board
     }
 
     /// <summary>
-    /// Metoda pomocnicza odpowiadająca za ilość sąsiadów danej komórki.
+    /// Metoda pomocnicza (<see cref="FillBoard(string)"/>) odpowiadająca za ilość sąsiadów danej komórki.
     /// </summary>
-    /// <remarks>
-    /// Metoda pomocniczna wykorzystywana w metodzie <see cref="FillBoard(string)"./>
-    /// </remarks>
     /// <param name="roomCounter">Liczba pokoi znajdujących się już w tabeli.</param>
     private void RandomNeighbors(int roomCounter)
     {
@@ -228,13 +242,13 @@ public class Board
     }
 
     /// <summary>
-    /// Metoda pomocnicza zliczająca sąsiadów danej komórki tabeli.
+    /// Metoda pomocnicza (<see cref="MakeRoom(int, int)"/>) zliczająca sąsiadów danej komórki tabeli.
     /// </summary>
     /// <param name="x">Indeks wiersza tabeli.</param>
     /// <param name="y">Indeks kolumny tabeli.</param>
     /// <param name="hasCloseNeighbours">Parametr typu out zwracający nam informację o tym czy dana komórka ma sąsiada w kierunku N/E/S/W.</param>
     /// <param name="checkOnlyCloseNeighbours">Parametr domyślny (false) decydujący o tym czy mają być sprawdzani wszyscy sąsiedzi wokół komórki czy tylko w podstawowych kierunkach N/E/S/W.</param>
-    /// <returns>Metoda zwraca ilość sąsiadów</returns>
+    /// <returns>Ilość sąsiadów</returns>
     private int NumberOfNeighbors(int x, int y, out bool hasCloseNeighbours, bool checkOnlyCloseNeighbours = false)
     {
         hasCloseNeighbours = false;
@@ -291,11 +305,11 @@ public class Board
     }
 
     /// <summary>
-    /// Metoda pomocnicza tworząca pokój na podstawie prawdopodobieństwa i ilości sąsiadów dla danego pola.
+    /// Metoda pomocnicza (<see cref="RandomNeighbors(int)"/>) tworząca pokój na podstawie prawdopodobieństwa i ilości sąsiadów dla danego pola.
     /// </summary>
     /// <param name="x">Indeks wiersza tabeli.</param>
     /// <param name="y">Indeks kolumny tabeli.</param>
-    /// <returns>Metoda zwraca informację czy pokój został stworzony.</returns>
+    /// <returns>Informacja czy pokój został stworzony.</returns>
     private bool MakeRoom(int x, int y)
     {
         bool hasCloseNeighbours;
@@ -349,7 +363,7 @@ public class Board
     }
 
     /// <summary>
-    /// Metoda tworząca unikalne pokoje.
+    /// Metoda pomocnicza (<see cref="FillBoard(string)"/>) tworząca unikalne pokoje.
     /// </summary>
     /// <param name="roomOffset">Indeks w <see cref="Cell"/> pierwszego z unikalnych pokoi.</param>
     /// <param name="roomCoreCount">Ilość unikalnych pokoi.</param>
