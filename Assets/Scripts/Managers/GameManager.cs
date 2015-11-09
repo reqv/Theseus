@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     private int _actualPositionY;
 
     private int _level = 1;
+    private Dictionary<Vector2, GameObject> _roomGameObjectsHolder = new Dictionary<Vector2,GameObject>();
+    private GameObject _actualRoom;
 
     // Use this for initialization
     void Awake ()
@@ -23,6 +26,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         //roomManager = GetComponent<RoomManager>();
+        AddListeners();
         InitGame();
     }
 
@@ -31,7 +35,53 @@ public class GameManager : MonoBehaviour
         _board.FillBoard();
         _actualPositionX = _actualPositionY = _board.HalfOfBoardSize;
 
-        roomManager.SetupRoom(_level, _board[_actualPositionX, _actualPositionY]);
+        GoToRoom(_actualPositionX, _actualPositionY);
+    }
+
+    void AddListeners()
+    {
+        Messenger.AddListener<Direction>(Messages.PlayerGoesThroughTheDoor, OnRoomChange);
+    }
+
+    void OnRoomChange(Direction direction)
+    {
+        switch(direction)
+        {
+            case Direction.Top:
+                _actualPositionY++;
+                break;
+            case Direction.Bottom:
+                _actualPositionY--;
+                break;
+            case Direction.Right:
+                _actualPositionX++;
+                break;
+            case Direction.Left:
+                _actualPositionX--;
+                break;
+        }
+
+        GoToRoom(_actualPositionX, _actualPositionY);
+    }
+
+    void GoToRoom(int x, int y)
+    {
+        GameObject destinationRoom;
+        var vector = new Vector2(x, y);
+
+        if (_roomGameObjectsHolder.ContainsKey(vector))
+            destinationRoom = _roomGameObjectsHolder[vector];
+        else
+        {
+            destinationRoom = roomManager.SetupRoom(_level, _board[_actualPositionX, _actualPositionY]);
+            _roomGameObjectsHolder.Add(vector, destinationRoom);
+        }
+
+        if(_actualRoom != null)
+            _actualRoom.SetActive(false);
+        
+        _actualRoom = destinationRoom;
+        _actualRoom.SetActive(true);
     }
 
 }

@@ -59,6 +59,8 @@ public class MainCharacter : MonoBehaviour
 	{
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 		_animator = GetComponent<Animator>();
+
+        Messenger.AddListener<Direction>(Messages.PlayerGoesThroughTheDoor, OnRoomChange);
 	}
 
     /// <summary>
@@ -163,4 +165,9 @@ public class MainCharacter : MonoBehaviour
 		fireball.transform.position = this.transform.position + offset;
 		fireball.GetComponent<Rigidbody2D>().velocity = velocity;
 	}
+
+    private void OnRoomChange(Direction direction)
+    {
+        transform.position = new Vector3(3, 3, 0);
+    }
 }

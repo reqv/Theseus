@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Random = UnityEngine.Random;
 
 public class RoomManager : MonoBehaviour
@@ -101,24 +102,52 @@ public class RoomManager : MonoBehaviour
         if (_roomCell.TopNeighbour != CellType.Empty)
         {
             var instance = Instantiate(exit, new Vector3(columns / 2, rows, 0f), Quaternion.identity) as GameObject;
+            instance.GetComponent<Door>().Direction = Direction.Top;
+            instance.transform.SetParent(_roomHolder);
+
+            var wallCollider = _roomHolder.GetComponentsInChildren<Transform>().First(t => t.position.x == instance.transform.position.x &&
+                t.position.y == instance.transform.position.y).gameObject.GetComponent<Collider2D>();
+
+            Destroy(wallCollider);
         }
 
         if (_roomCell.RightNeighbour != CellType.Empty)
         {
             var instance = Instantiate(exit, new Vector3(columns, rows / 2, 0f), Quaternion.identity) as GameObject;
             instance.transform.Rotate(0, 0, -90);
+            instance.GetComponent<Door>().Direction = Direction.Right;
+            instance.transform.SetParent(_roomHolder);
+
+            var wallCollider = _roomHolder.GetComponentsInChildren<Transform>().First(t => t.position.x == instance.transform.position.x &&
+                t.position.y == instance.transform.position.y).gameObject.GetComponent<Collider2D>();
+
+            Destroy(wallCollider);
         }
 
         if (_roomCell.BottomNeighbour != CellType.Empty)
         {
             var instance = Instantiate(exit, new Vector3(columns / 2, -1, 0f), Quaternion.identity) as GameObject;
             instance.transform.Rotate(0, 0, 180);
+            instance.GetComponent<Door>().Direction = Direction.Bottom;
+            instance.transform.SetParent(_roomHolder);
+
+            var wallCollider = _roomHolder.GetComponentsInChildren<Transform>().First(t => t.position.x == instance.transform.position.x &&
+                t.position.y == instance.transform.position.y).gameObject.GetComponent<Collider2D>();
+
+            Destroy(wallCollider);
         }
 
         if (_roomCell.LeftNeighbour != CellType.Empty)
         {
             var instance = Instantiate(exit, new Vector3(-1, rows / 2, 0f), Quaternion.identity) as GameObject;
             instance.transform.Rotate(0, 0, 90);
+            instance.GetComponent<Door>().Direction = Direction.Left;
+            instance.transform.SetParent(_roomHolder);
+
+            var wallCollider = _roomHolder.GetComponentsInChildren<Transform>().First(t => t.position.x == instance.transform.position.x &&
+                t.position.y == instance.transform.position.y).gameObject.GetComponent<Collider2D>();
+
+            Destroy(wallCollider);
         }
     }
 
@@ -143,7 +172,7 @@ public class RoomManager : MonoBehaviour
         }
     }
 
-    public void SetupRoom(int level, Cell cell)
+    public GameObject SetupRoom(int level, Cell cell)
     {
         _roomCell = cell;
 
@@ -155,5 +184,7 @@ public class RoomManager : MonoBehaviour
         int enemyCount = (int) Mathf.Log(level, 2f);
         //LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
         //Instantiate(exit, new Vector3(-1, rows / 2, 0f), Quaternion.identity);
+
+        return _roomHolder.gameObject;
     }
 }
