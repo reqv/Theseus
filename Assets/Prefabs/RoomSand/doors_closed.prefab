@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 489368}
   - 212: {fileID: 21293108}
+  - 114: {fileID: 11421666}
   m_Layer: 0
   m_Name: doors_closed
   m_TagString: Wall
@@ -28,6 +29,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11421666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9920ce9f082e448b35ec1b4fc693ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21293108
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -50,8 +62,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -185361467
-  m_SortingOrder: 0
+  m_SortingLayerID: 1440430275
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d8b62cb4188499a4daade254784347a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
@@ -60,7 +72,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: 1440430275
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127608}

@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21255518}
   - 68: {fileID: 6840972}
   - 68: {fileID: 6866522}
+  - 114: {fileID: 11432094}
   m_Layer: 0
   m_Name: doors_opened
   m_TagString: Doors Opened
@@ -42,12 +43,12 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -10.0005426, y: -5.00013971}
-  - {x: -2.69962239, y: -5.00054455}
-  - {x: -2.70025897, y: .000368591398}
-  - {x: 2.70808625, y: -.00391593203}
-  - {x: 2.70000768, y: -4.99986839}
-  - {x: 10.0000019, y: -5.00000334}
+  - {x: -0.5, y: -0.25}
+  - {x: -0.15, y: -0.25}
+  - {x: -0.15, y: .036}
+  - {x: 0.15, y: .036}
+  - {x: 0.15, y: -0.25}
+  - {x: 0.5, y: -0.25}
 --- !u!68 &6866522
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -60,8 +61,19 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -2.99998736, y: -1.99999261}
-  - {x: 2.99999619, y: -1.99999893}
+  - {x: -0.16, y: -0.06}
+  - {x: 0.16, y: -0.06}
+--- !u!114 &11432094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9920ce9f082e448b35ec1b4fc693ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21255518
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -84,8 +96,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1521038639
-  m_SortingOrder: 0
+  m_SortingLayerID: 1440430275
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0afe952590eb98f4088fa0609dc17a27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
@@ -98,6 +110,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Doors Opened
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: 1440430275
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

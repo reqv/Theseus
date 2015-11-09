@@ -41,8 +41,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -10.0005426, y: -5.00013971}
-  - {x: 10.0000019, y: -5.00000334}
+  - {x: -0.5, y: -0.25}
+  - {x: 0.5, y: -0.25}
 --- !u!212 &21227590
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -65,7 +65,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -185361467
+  m_SortingLayerID: 1440430275
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4c42c10e32083ea428fcc2caa6a1f449, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -75,7 +75,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: 1440430275
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 120800}
