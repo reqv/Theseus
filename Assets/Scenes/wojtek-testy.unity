@@ -543,10 +543,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 889190279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54c8f8fd2ead314aaf387e25d7eb832, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e99718010345d34cbd9d5402de325a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveVelocityFactor: 20
+  _moveVelocityFactor: 40
   _throwDelay: 0
   _fireballVelocity: 0
   _fireball: {fileID: 0}
