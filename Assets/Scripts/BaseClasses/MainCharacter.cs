@@ -168,6 +168,6 @@ public class MainCharacter : MonoBehaviour
 
     private void OnRoomChange(Direction direction)
     {
-        transform.position = new Vector3(3, 3, 0);
+        transform.position = new Vector3(2, 1, transform.position.z);
     }
 }
