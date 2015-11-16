@@ -168,7 +168,7 @@ public class MainCharacter : MonoBehaviour
 
     private void OnRoomChange(Direction direction)
     {
-        const float roomEntranceOffset = 0.3f;
+        const float roomEntranceOffset = 0.4f;
         float newX, newY;
         var roomManager = FindObjectOfType<RoomManager>();
 
