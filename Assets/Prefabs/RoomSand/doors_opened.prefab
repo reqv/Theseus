@@ -44,10 +44,10 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
   - {x: -0.5, y: -0.25}
-  - {x: -0.15, y: -0.25}
-  - {x: -0.15, y: .036}
-  - {x: 0.15, y: .036}
-  - {x: 0.15, y: -0.25}
+  - {x: -0.20, y: -0.25}
+  - {x: -0.20, y: .025}
+  - {x: 0.20, y: .025}
+  - {x: 0.20, y: -0.25}
   - {x: 0.5, y: -0.25}
 --- !u!68 &6866522
 EdgeCollider2D:
@@ -61,8 +61,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -0.16, y: -0.06}
-  - {x: 0.16, y: -0.06}
+  - {x: -0.20, y: -0.06}
+  - {x: 0.20, y: -0.06}
 --- !u!114 &11432094
 MonoBehaviour:
   m_ObjectHideFlags: 1
