@@ -23,11 +23,6 @@ public abstract class Item : TheseusGameObject {
 	/// 	Siła z jaką wypada przedmiot.
 	/// </summary>
 	protected byte _impact;
-	
-	/// <summary>
-	/// 	Obiekt fizycznego ciała obiektu(Nvidia Physx).
-	/// </summary>
-	protected Rigidbody2D _Rig2D;
 
 	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia obiektu

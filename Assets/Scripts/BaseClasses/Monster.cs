@@ -16,11 +16,6 @@ public abstract class Monster : TheseusGameObject {
 	protected Transform _targetToAttack;
 
 	/// <summary>
-	/// 	Obiekt fizycznego ciała obiektu(Nvidia Physx).
-	/// </summary>
-	protected Rigidbody2D _Rig2D;
-
-	/// <summary>
 	/// 	Parametr trzymający aktualny kierunek poruszania sie potwora
 	/// </summary>
 	protected Vector2 _axis;
@@ -39,6 +34,20 @@ public abstract class Monster : TheseusGameObject {
 	/// 	Parametr sprawdzający, czy postać jest odwrócona w prawo
 	/// </summary>
 	protected bool _facingRight = true;
+
+	[Tooltip ("Aktualne zdrowie potwora")]
+	[SerializeField]
+	/// <summary>
+	/// 	Parametr trzymajacy aktualne zdrowie potwora
+	/// </summary>
+	protected int _healthPoints;
+	
+	[Tooltip ("Siła ataku potwora")]
+	[SerializeField]
+	/// <summary>
+	/// 	Parametr trzymajacy siłę ataku potwora
+	/// </summary>
+	protected int _attackPower;
 
 	[Tooltip ("Maksymalne przyspieszenie obiektu.")]
 	[SerializeField]
@@ -67,6 +76,7 @@ public abstract class Monster : TheseusGameObject {
 	public virtual void Start () {
 		_Rig2D = GetComponent<Rigidbody2D>();
 		_axis = Vector2.zero;
+		TakingDamage (0);
 	}
 
 	/// <summary>
@@ -154,6 +164,28 @@ public abstract class Monster : TheseusGameObject {
 			return 1;
 		else
 			return 0;
+	}
+
+	/// <summary>
+	/// 	Metoda uruchamiana, gdy potwór odnosi obrażenia
+	/// </summary>
+	/// <param name="damage">Określa ilość obrażeń jakie zostały zadane potworowi</param>
+	/// <remarks>
+	/// 	Podana zmienna oznacza ilość obrażeń odejmowanych od aktualnego zdrowia potwora, jeżeli potwór posiada zerową lub ujemną ilość punktów życia uruchamiana jest metoda Die().
+	/// </remarks>
+	public virtual void TakingDamage(int damage)
+	{
+		_healthPoints -= damage;
+		if (_healthPoints <= 0)
+			Die ();
+	}
+
+	/// <summary>
+	/// 	Metoda uruchamiana, gdy potwór umiera
+	/// </summary>
+	protected void Die()
+	{
+		Destroy (this.gameObject);
 	}
 	
 	/// <summary>

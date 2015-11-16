@@ -11,6 +11,11 @@
 public abstract class TheseusGameObject : MonoBehaviour {
 
 	/// <summary>
+	/// 	Obiekt fizycznego ciała(Nvidia Physx)
+	/// </summary>
+	protected Rigidbody2D _Rig2D;
+
+	/// <summary>
 	/// 	Metoda pozwalająca na losowanie liczb całkowitych
 	/// </summary>
 	/// <param name="min">Minimalna wartość losowana</param>

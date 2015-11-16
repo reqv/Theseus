@@ -10,7 +10,7 @@ using System.Collections;
  * </remarks>
  */
 [RequireComponent(typeof(Rigidbody2D))]
-public class MainCharacter : MonoBehaviour 
+public class MainCharacter : TheseusGameObject
 {
     #region Serialized Fields
     [Tooltip("Współczynnik prędkości ruchu gracza")]
@@ -44,10 +44,6 @@ public class MainCharacter : MonoBehaviour
     /// </summary>
 	private float _actualThrowDelay = 0;
     /// <summary>
-    /// Komponent Rigidbody2D postaci
-    /// </summary>
-    private Rigidbody2D _rigidbody2D;
-    /// <summary>
     /// Komponent Animator postaci
     /// </summary>
 	private Animator _animator;
@@ -57,7 +53,7 @@ public class MainCharacter : MonoBehaviour
     /// </summary>
 	void Start () 
 	{
-		_rigidbody2D = GetComponent<Rigidbody2D>();
+		_Rig2D = GetComponent<Rigidbody2D>();
 		_animator = GetComponent<Animator>();
 
         Messenger.AddListener<Direction>(Messages.PlayerGoesThroughTheDoor, OnRoomChange);
@@ -71,7 +67,7 @@ public class MainCharacter : MonoBehaviour
 		var xAxis = Input.GetAxis ("Horizontal");
 		var yAxis = Input.GetAxis ("Vertical");
 
-		_rigidbody2D.velocity = new Vector2(xAxis * _moveVelocityFactor, yAxis * _moveVelocityFactor);
+		_Rig2D.velocity = new Vector2(xAxis * _moveVelocityFactor, yAxis * _moveVelocityFactor);
 
 		UpdateAnimator(xAxis, yAxis);
 		CheckThrow();
@@ -92,20 +88,20 @@ public class MainCharacter : MonoBehaviour
 		else
 			_animator.SetBool("IsWalking", false);
 
-		if (_rigidbody2D.velocity.x > 0)
+		if (_Rig2D.velocity.x > 0)
 		{
 			_animator.SetInteger("Direction", 1);
 		}
-		else if (_rigidbody2D.velocity.x < 0)
+		else if (_Rig2D.velocity.x < 0)
 		{
 			_animator.SetInteger("Direction", 3);
 		}
 
-		if (_rigidbody2D.velocity.y > 0)
+		if (_Rig2D.velocity.y > 0)
 		{
 			_animator.SetInteger("Direction", 0);
 		}
-		else if (_rigidbody2D.velocity.y < 0)
+		else if (_Rig2D.velocity.y < 0)
 		{
 			_animator.SetInteger("Direction", 2);
 		}
@@ -125,28 +121,28 @@ public class MainCharacter : MonoBehaviour
 			if (Input.GetKey(KeyCode.W))
 			{
 				ThrowFireball(new Vector3(0, 0.5f), new Vector2(0, _fireballVelocity)
-					+ new Vector2(_rigidbody2D.velocity.x, 0));
+					+ new Vector2(_Rig2D.velocity.x, 0));
 				_actualThrowDelay = 0;
 				return;
 			}
 			if (Input.GetKey(KeyCode.S))
 			{
                 ThrowFireball(new Vector3(0, -0.5f), new Vector2(0, -_fireballVelocity)
-					+ new Vector2(_rigidbody2D.velocity.x, 0));
+					+ new Vector2(_Rig2D.velocity.x, 0));
 				_actualThrowDelay = 0;
 				return;
 			}
 			if (Input.GetKey(KeyCode.A))
 			{
                 ThrowFireball(new Vector3(-0.5f, 0), new Vector2(-_fireballVelocity, 0)
-					+ new Vector2(0, _rigidbody2D.velocity.y));
+					+ new Vector2(0, _Rig2D.velocity.y));
 				_actualThrowDelay = 0;
 				return;
 			}
 			if (Input.GetKey(KeyCode.D))
 			{
                 ThrowFireball(new Vector3(0.5f, 0), new Vector2(_fireballVelocity, 0)
-					+ new Vector2(0, _rigidbody2D.velocity.y));
+					+ new Vector2(0, _Rig2D.velocity.y));
 				_actualThrowDelay = 0;
 				return;
 			}

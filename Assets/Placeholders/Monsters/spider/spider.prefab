@@ -71,6 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c87b681d8fadfe4f9d6c0d9cd4741e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthPoints: 1
+  _attackPower: 1
   _maxSpeed: 3
   _range: 20
   _attackDistance: 5
@@ -192,6 +194,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LinearDrag
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _attackPower
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _healthPoints
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -71,10 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3b6c554f887de4cbea3afdde057cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthPoints: 1
+  _attackPower: 1
   _maxSpeed: .400000006
   _range: 0
   _attackDistance: 5
-  _patrolRange: 0
 --- !u!212 &21284338
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -138,6 +139,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _healthPoints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _attackPower
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

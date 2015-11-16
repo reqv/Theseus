@@ -71,6 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0779bb1a3fcb04cb8e97eb7ca69527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthPoints: 1
+  _attackPower: 1
   _maxSpeed: 1
   _range: 15
   _attackDistance: 1
@@ -116,6 +118,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _healthPoints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _attackPower
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

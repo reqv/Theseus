@@ -71,10 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f2a4a1150fc5d46a07859940379b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthPoints: 1
+  _attackPower: 1
   _maxSpeed: 250
   _range: 10
   _attackDistance: 4
-  _patrolRange: 0
   _isAlive: 1
   _lookAtLeft: 0
 --- !u!212 &21251366
@@ -149,6 +150,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _lookAtLeft
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _healthPoints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _attackPower
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
