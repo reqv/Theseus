@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -82,6 +83,12 @@ public class GameManager : MonoBehaviour
         
         _actualRoom = destinationRoom;
         _actualRoom.SetActive(true);
+
+        FindObjectsOfType<Door>().ToList().ForEach(door => door.Open());
     }
 
+    void SpawnEnemies()
+    {
+
+    }
 }

@@ -124,28 +124,28 @@ public class MainCharacter : MonoBehaviour
             //Fireball rzucany jest w kierunku zależnym od wciśniętego klawisza
 			if (Input.GetKey(KeyCode.W))
 			{
-				ThrowFireball(new Vector3(0, 5), new Vector2(0, _fireballVelocity)
+				ThrowFireball(new Vector3(0, 0.5f), new Vector2(0, _fireballVelocity)
 					+ new Vector2(_rigidbody2D.velocity.x, 0));
 				_actualThrowDelay = 0;
 				return;
 			}
 			if (Input.GetKey(KeyCode.S))
 			{
-				ThrowFireball(new Vector3(0, -5), new Vector2(0, -_fireballVelocity)
+                ThrowFireball(new Vector3(0, -0.5f), new Vector2(0, -_fireballVelocity)
 					+ new Vector2(_rigidbody2D.velocity.x, 0));
 				_actualThrowDelay = 0;
 				return;
 			}
 			if (Input.GetKey(KeyCode.A))
 			{
-				ThrowFireball(new Vector3(-5, 0), new Vector2(-_fireballVelocity, 0)
+                ThrowFireball(new Vector3(-0.5f, 0), new Vector2(-_fireballVelocity, 0)
 					+ new Vector2(0, _rigidbody2D.velocity.y));
 				_actualThrowDelay = 0;
 				return;
 			}
 			if (Input.GetKey(KeyCode.D))
 			{
-				ThrowFireball(new Vector3(5, 0), new Vector2(_fireballVelocity, 0)
+                ThrowFireball(new Vector3(0.5f, 0), new Vector2(_fireballVelocity, 0)
 					+ new Vector2(0, _rigidbody2D.velocity.y));
 				_actualThrowDelay = 0;
 				return;

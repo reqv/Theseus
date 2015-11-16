@@ -108,7 +108,7 @@ public class RoomManager : MonoBehaviour
             var wallCollider = _roomHolder.GetComponentsInChildren<Transform>().First(t => t.position.x == instance.transform.position.x &&
                 t.position.y == instance.transform.position.y).gameObject.GetComponent<Collider2D>();
 
-            Destroy(wallCollider);
+            instance.GetComponent<Door>().ClosedDoorCollider = wallCollider;
         }
 
         if (_roomCell.RightNeighbour != CellType.Empty)
@@ -121,7 +121,7 @@ public class RoomManager : MonoBehaviour
             var wallCollider = _roomHolder.GetComponentsInChildren<Transform>().First(t => t.position.x == instance.transform.position.x &&
                 t.position.y == instance.transform.position.y).gameObject.GetComponent<Collider2D>();
 
-            Destroy(wallCollider);
+            instance.GetComponent<Door>().ClosedDoorCollider = wallCollider;
         }
 
         if (_roomCell.BottomNeighbour != CellType.Empty)
@@ -134,7 +134,7 @@ public class RoomManager : MonoBehaviour
             var wallCollider = _roomHolder.GetComponentsInChildren<Transform>().First(t => t.position.x == instance.transform.position.x &&
                 t.position.y == instance.transform.position.y).gameObject.GetComponent<Collider2D>();
 
-            Destroy(wallCollider);
+            instance.GetComponent<Door>().ClosedDoorCollider = wallCollider;
         }
 
         if (_roomCell.LeftNeighbour != CellType.Empty)
@@ -147,7 +147,7 @@ public class RoomManager : MonoBehaviour
             var wallCollider = _roomHolder.GetComponentsInChildren<Transform>().First(t => t.position.x == instance.transform.position.x &&
                 t.position.y == instance.transform.position.y).gameObject.GetComponent<Collider2D>();
 
-            Destroy(wallCollider);
+            instance.GetComponent<Door>().ClosedDoorCollider = wallCollider;
         }
     }
 
