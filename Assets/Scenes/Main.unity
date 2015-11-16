@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e99718010345d34cbd9d5402de325a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveVelocityFactor: 20
+  _moveVelocityFactor: 3
   _throwDelay: 0
   _fireballVelocity: 0
   _fireball: {fileID: 0}

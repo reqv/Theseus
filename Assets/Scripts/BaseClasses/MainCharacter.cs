@@ -168,6 +168,33 @@ public class MainCharacter : MonoBehaviour
 
     private void OnRoomChange(Direction direction)
     {
-        transform.position = new Vector3(2, 1, transform.position.z);
+        const float roomEntranceOffset = 0.3f;
+        float newX, newY;
+        var roomManager = FindObjectOfType<RoomManager>();
+
+        switch(direction)
+        {
+            case Direction.Top:
+                newX = roomManager.columns / 2;
+                newY = -1 + roomEntranceOffset;
+                break;
+            case Direction.Bottom:
+                newX = roomManager.columns / 2;
+                newY = roomManager.rows - roomEntranceOffset;
+                break;
+            case Direction.Right:
+                newX = -1 + roomEntranceOffset;
+                newY = roomManager.rows / 2;
+                break;
+            case Direction.Left:
+                newX = roomManager.columns - roomEntranceOffset;
+                newY = roomManager.rows / 2;
+                break;
+            default:
+                newX = newY = 0;
+                break;
+        }
+
+        transform.position = new Vector3(newX, newY, transform.position.z);
     }
 }
