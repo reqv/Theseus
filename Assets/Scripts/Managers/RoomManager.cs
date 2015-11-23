@@ -29,6 +29,8 @@ public class RoomManager : MonoBehaviour
     public GameObject[] outerWallTiles;
     public GameObject[] outerWallCornerTiles;
 
+    public MonstersManager monstersManager;
+
     private Transform _roomHolder;
     private List<Vector3> _gridPositions = new List<Vector3>();
     private Cell _roomCell;
@@ -179,11 +181,17 @@ public class RoomManager : MonoBehaviour
         RoomSetup();
         InitialiseList();
         PlaceDoors();
-        //LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
-        //LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum);
         int enemyCount = (int) Mathf.Log(level, 2f);
-        //LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
-        //Instantiate(exit, new Vector3(-1, rows / 2, 0f), Quaternion.identity);
+
+        if(cell.Type == CellType.Common)
+        {
+            monstersManager.SpawnEnemies(level, _roomHolder.gameObject);
+            _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Close());
+        }
+        else
+        {
+            _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Open());
+        }
 
         return _roomHolder.gameObject;
     }

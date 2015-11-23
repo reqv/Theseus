@@ -70,6 +70,13 @@ public abstract class Monster : TheseusGameObject {
 	/// </summary>
 	protected float _attackDistance;
 
+    [Tooltip("Jak trudny do pokonania jest przeciwnik.")]
+    [SerializeField]
+    /// <summary>
+    /// 	Parametr serializowany, określa poziom trudności przeciwnika
+    /// </summary>
+    public float Difficulty;
+
 	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia obiektu
 	/// </summary>
@@ -185,6 +192,7 @@ public abstract class Monster : TheseusGameObject {
 	/// </summary>
 	protected void Die()
 	{
+        Messenger.Broadcast(Messages.MonsterDied);
 		Destroy (this.gameObject);
 	}
 	
