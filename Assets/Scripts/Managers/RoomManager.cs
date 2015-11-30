@@ -30,6 +30,7 @@ public class RoomManager : MonoBehaviour
     public GameObject[] outerWallCornerTiles;
 
     public MonstersManager monstersManager;
+    public ShopKeeper shopKeeper;
 
     private Transform _roomHolder;
     private List<Vector3> _gridPositions = new List<Vector3>();
@@ -174,6 +175,23 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    void SetupShop(int level)
+    {
+        Debug.Log("Witamy w sklepie!");
+        Vector3 shopKeeperPosition;
+
+        if(_roomCell.TopNeighbour != CellType.Empty)
+        {
+            shopKeeperPosition = new Vector3(2, 0f, 0);
+        }
+        else
+        {
+            shopKeeperPosition = new Vector3(2, 2.25f, 0);
+        }
+
+        Instantiate(shopKeeper, shopKeeperPosition, Quaternion.identity);
+    }
+
     public GameObject SetupRoom(int level, Cell cell)
     {
         _roomCell = cell;
@@ -181,7 +199,6 @@ public class RoomManager : MonoBehaviour
         RoomSetup();
         InitialiseList();
         PlaceDoors();
-        int enemyCount = (int) Mathf.Log(level, 2f);
 
         if(cell.Type == CellType.Common)
         {
@@ -191,6 +208,11 @@ public class RoomManager : MonoBehaviour
         else
         {
             _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Open());
+        }
+
+        if(cell.Type == CellType.Shop)
+        {
+            SetupShop(level);
         }
 
         return _roomHolder.gameObject;

@@ -211,6 +211,11 @@ Prefab:
       propertyPath: monstersManager
       value: 
       objectReference: {fileID: 1836521880}
+    - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
+      propertyPath: shopKeeper
+      value: 
+      objectReference: {fileID: 11418394, guid: eaef954b1a0d2f44d8ee5910c471ac32,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
   m_IsPrefabParent: 0
