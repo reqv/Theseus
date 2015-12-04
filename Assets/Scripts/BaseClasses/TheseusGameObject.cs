@@ -16,15 +16,18 @@ public abstract class TheseusGameObject : MonoBehaviour {
 	protected Rigidbody2D _Rig2D;
 
 	/// <summary>
+	/// 	Obiekt obrazka przypisanego do danego obiektu
+	/// </summary>
+	protected SpriteRenderer _render2D;
+
+	/// <summary>
 	/// 	Metoda pozwalająca na losowanie liczb całkowitych
 	/// </summary>
 	/// <param name="min">Minimalna wartość losowana</param>
 	/// <param name="min">Maksymalna wartość losowana</param>
 	/// <returns>Liczba całkowita z danego w parametrach funkcji przedziału</returns>
 	protected int RandomNumber(int min,int max){
-		if (min < 0 && max > 0)
-			max++;
-		int myNumber = Random.Range(min, max);
+		int myNumber = Random.Range(min, max+1);
 		return myNumber;
 	}
 }

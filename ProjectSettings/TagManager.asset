@@ -10,6 +10,9 @@ TagManager:
   - Corner
   - Enemy
   - Doors Opened
+  - Player
+  - Projectile
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX
@@ -21,8 +24,8 @@ TagManager:
   - 
   - WalkingMonsters
   - FlyingMonsters
-  - 
-  - 
+  - Projectiles
+  - Items
   - 
   - 
   - 
