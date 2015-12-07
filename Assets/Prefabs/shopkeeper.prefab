@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 488736}
   - 212: {fileID: 21263010}
   - 114: {fileID: 11418394}
+  - 61: {fileID: 6110744}
+  - 50: {fileID: 5049828}
   m_Layer: 0
   m_Name: shopkeeper
   m_TagString: Untagged
@@ -29,6 +31,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5049828
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190600}
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &6110744
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190600}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 3.51999998, y: 3.13000011}
 --- !u!114 &11418394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,6 +126,14 @@ Prefab:
       value: 
       objectReference: {fileID: 11460998, guid: 2c79c3ea9197ea74a82ca758c7d788c9,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190600}
