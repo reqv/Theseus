@@ -49,6 +49,11 @@ public class MainCharacter : TheseusGameObject
 	private Animator _animator;
 
     /// <summary>
+    /// Ilość monet którą posiada gracz
+    /// </summary>
+    public int Coins { get; set; }
+
+    /// <summary>
     /// 	Metoda uruchamiana podczas utworzenia obiektu
     /// </summary>
 	void Start () 
@@ -56,6 +61,7 @@ public class MainCharacter : TheseusGameObject
 		_Rig2D = GetComponent<Rigidbody2D>();
 		_animator = GetComponent<Animator>();
 
+        Coins = 10;
         Messenger.AddListener<Direction>(Messages.PlayerGoesThroughTheDoor, OnRoomChange);
 	}
 

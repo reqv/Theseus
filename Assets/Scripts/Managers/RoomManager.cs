@@ -182,14 +182,15 @@ public class RoomManager : MonoBehaviour
 
         if(_roomCell.TopNeighbour != CellType.Empty)
         {
-            shopKeeperPosition = new Vector3(2, 0f, 0);
+            shopKeeperPosition = new Vector3(2, -0.4f, 0);
         }
         else
         {
             shopKeeperPosition = new Vector3(2, 2.25f, 0);
         }
 
-        Instantiate(shopKeeper, shopKeeperPosition, Quaternion.identity);
+        var sk = Instantiate(shopKeeper, shopKeeperPosition, Quaternion.identity) as ShopKeeper;
+        sk.transform.SetParent(_roomHolder.transform);
     }
 
     public GameObject SetupRoom(int level, Cell cell)
@@ -210,7 +211,7 @@ public class RoomManager : MonoBehaviour
             _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Open());
         }
 
-        if(cell.Type == CellType.Shop)
+        if(cell.Type == CellType.Start)
         {
             SetupShop(level);
         }
