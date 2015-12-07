@@ -25,16 +25,10 @@ public class Snake : Monster {
 	private int _patrolRange;
 
 	/// <summary>
-	/// 	Parametr podmieniający parametr rodzica _maxSpeed ze względu na dodawaną do niego prędkość
-	/// </summary>
-	private float _personalMaxSpeed;
-
-	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia obiektu, pozwala na inicjalizację zmiennych klasy.
 	/// </summary>
 	override public void Start () {
 		base.Start();
-		_personalMaxSpeed = _maxSpeed;
         _freeDestination = new Vector2(_Rig2D.position.x, _Rig2D.position.y);
 	}
 
@@ -93,10 +87,12 @@ public class Snake : Monster {
 	/// </remarks>
 	public override void Chase()
     {
-		if (_maxSpeed == _personalMaxSpeed)
-			_personalMaxSpeed += _chaseAdditionalSpeed;
+		if (_realMaxSpeed == _maxSpeed)
+			_realMaxSpeed += _chaseAdditionalSpeed;
+		if (_realMaxSpeed == _maxSpeed/2)
+			_realMaxSpeed += _chaseAdditionalSpeed/2;
 		WhereIsATarget (_targetToAttack.transform.position);
-        _Rig2D.AddForce(_axis * _personalMaxSpeed);
+        _Rig2D.AddForce(_axis * _realMaxSpeed);
     }
 
 	/// <summary>
@@ -108,12 +104,14 @@ public class Snake : Monster {
 	/// </remarks>
 	public override void Walking()
     {
-		if (_maxSpeed != _personalMaxSpeed)
-			_personalMaxSpeed = _maxSpeed;
+		if (_maxSpeed != _realMaxSpeed && _status == MonsterStatus.OK)
+			_realMaxSpeed = _maxSpeed;
+		if (_maxSpeed/2 != _realMaxSpeed && _status == MonsterStatus.Slowed)
+			_realMaxSpeed = _maxSpeed/2;
         if (WhereIsATarget(_freeDestination,true) >= 1)
         {
 			WhereIsATarget(_freeDestination);
-            _Rig2D.AddForce(_axis * _personalMaxSpeed);
+            _Rig2D.AddForce(_axis * _realMaxSpeed);
         }
             else
         {

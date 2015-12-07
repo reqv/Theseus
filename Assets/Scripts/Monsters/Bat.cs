@@ -34,7 +34,7 @@ public class Bat : Monster {
 	public override void Chase()
 	{
 		WhereIsATarget (_targetToAttack.transform.position);
-		_Rig2D.AddForce (_axis * _maxSpeed,ForceMode2D.Impulse);
+		_Rig2D.AddForce (_axis * _realMaxSpeed,ForceMode2D.Impulse);
 	}
 	
 	/// <summary>

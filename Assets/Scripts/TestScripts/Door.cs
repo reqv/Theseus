@@ -1,22 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Door : MonoBehaviour 
 {
-    private bool _closed;
+    [SerializeField]
+    private Sprite _opened;
+    [SerializeField]
+    private Sprite _closed;
+
+    private SpriteRenderer _sr;
 
     public Direction Direction { get; set; }
     public Collider2D ClosedDoorCollider { get; set; }
 
+    void OnEnable()
+    {
+        Messenger.AddListener(Messages.AllMonstersDied, Open);
+        _sr = GetComponent<SpriteRenderer>();
+    }
+
     public void Open()
     {
-        _closed = false;
+        _sr.sprite = _opened;
         ClosedDoorCollider.enabled = false;
     }
 
     public void Close()
     {
-        _closed = true;
+        _sr.sprite = _closed;
         ClosedDoorCollider.enabled = true;
     }
 

@@ -82,7 +82,7 @@ public class Spider : Monster {
 					_axis.x = _targetToAttack.position.x;
 					_axis.y = _targetToAttack.position.y;
 					_axis -= _Rig2D.position;
-					_Rig2D.AddForce(_axis * _maxSpeed,ForceMode2D.Impulse);
+					_Rig2D.AddForce(_axis * _realMaxSpeed,ForceMode2D.Impulse);
 					_hasTarget = true;
 				}
 
@@ -110,7 +110,6 @@ public class Spider : Monster {
 			_timeToAttack = _spiderAttackDelay;
 			_timeToWait = _spiderDelayAfterAttack;
 			_readyToAttack = true;
-
 		}
 	}
 

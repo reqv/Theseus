@@ -207,6 +207,15 @@ Prefab:
       propertyPath: columns
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
+      propertyPath: monstersManager
+      value: 
+      objectReference: {fileID: 1836521880}
+    - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
+      propertyPath: shopKeeper
+      value: 
+      objectReference: {fileID: 11418394, guid: eaef954b1a0d2f44d8ee5910c471ac32,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
   m_IsPrefabParent: 0
@@ -220,6 +229,51 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 454120, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
   m_PrefabInternal: {fileID: 917278082}
+--- !u!1 &1836521879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1836521881}
+  - 114: {fileID: 1836521880}
+  m_Layer: 0
+  m_Name: MonstersManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1836521880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1836521879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e14306c77df1b49befacc67d1c8522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsters:
+  - {fileID: 11448474, guid: 7007a4a38883d9049bd8f2f961d6b692, type: 2}
+  - {fileID: 11421738, guid: 50eb8a116321ee14b9a26611d8f4dcf5, type: 2}
+  - {fileID: 11478628, guid: 66b9f0c8fa385d84b81dd0a46e157773, type: 2}
+  - {fileID: 11489214, guid: 75cab3563f37b3c4db0455e399fd4217, type: 2}
+  - {fileID: 11414558, guid: 7c778862aa50d2c428176480cfa4601b, type: 2}
+--- !u!4 &1836521881
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1836521879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2009024885}
+  m_RootOrder: 1
 --- !u!1 &2009024880
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +360,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1465222141}
+  - {fileID: 1836521881}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &2009024886

@@ -83,12 +83,5 @@ public class GameManager : MonoBehaviour
         
         _actualRoom = destinationRoom;
         _actualRoom.SetActive(true);
-
-        FindObjectsOfType<Door>().ToList().ForEach(door => door.Open());
-    }
-
-    void SpawnEnemies()
-    {
-
     }
 }

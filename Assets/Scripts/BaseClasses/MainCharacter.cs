@@ -172,7 +172,7 @@ public class MainCharacter : TheseusGameObject
         {
             case Direction.Top:
                 newX = roomManager.columns / 2;
-                newY = -1 + roomEntranceOffset;
+                newY = -1 + roomEntranceOffset + 0.1f;
                 break;
             case Direction.Bottom:
                 newX = roomManager.columns / 2;

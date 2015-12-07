@@ -29,7 +29,6 @@ public abstract class Item : TheseusGameObject {
 	/// </summary>
 	public virtual void Start () {
 		_Rig2D = GetComponent<Rigidbody2D>();
-		Debug.Log (RandomNumber (5, 10));
 		if (_fromMonsterOrChest) {
 			_Rig2D.AddForce(new Vector2(RandomNumber(-1,1),RandomNumber(-1,1)) * _impact,ForceMode2D.Impulse);
 		}
