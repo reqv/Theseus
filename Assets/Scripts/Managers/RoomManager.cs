@@ -182,7 +182,7 @@ public class RoomManager : MonoBehaviour
 
         if(_roomCell.TopNeighbour != CellType.Empty)
         {
-            shopKeeperPosition = new Vector3(2, 0f, 0);
+            shopKeeperPosition = new Vector3(2, -0.4f, 0);
         }
         else
         {
@@ -190,6 +190,7 @@ public class RoomManager : MonoBehaviour
         }
 
         Instantiate(shopKeeper, shopKeeperPosition, Quaternion.identity);
+        shopKeeper.transform.SetParent(_roomHolder.transform);
     }
 
     public GameObject SetupRoom(int level, Cell cell)
