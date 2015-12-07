@@ -13,7 +13,7 @@ GameObject:
   - 68: {fileID: 6866522}
   - 114: {fileID: 11432094}
   m_Layer: 0
-  m_Name: doors_opened
+  m_Name: doors
   m_TagString: Doors Opened
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,6 +131,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 0afe952590eb98f4088fa0609dc17a27,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 106474}

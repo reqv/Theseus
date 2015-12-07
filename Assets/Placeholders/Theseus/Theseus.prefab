@@ -12,7 +12,7 @@ GameObject:
   - 95: {fileID: 9536320}
   - 50: {fileID: 5033730}
   - 114: {fileID: 11438808}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Theseus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!95 &9536320
 Animator:
@@ -75,9 +75,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e99718010345d34cbd9d5402de325a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveVelocityFactor: 3
-  _throwDelay: 1
-  _fireballVelocity: 2
+  _moveVelocityFactor: 4
+  _throwDelay: .200000003
+  _fireballVelocity: 4
   _fireball: {fileID: 145376, guid: cc3c93e61d500844082fbbef51a51a63, type: 2}
 --- !u!212 &21202022
 SpriteRenderer:
@@ -111,7 +111,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _moveVelocityFactor
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _fireballVelocity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _throwDelay
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132044}

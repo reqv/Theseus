@@ -211,7 +211,7 @@ public class RoomManager : MonoBehaviour
             _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Open());
         }
 
-        if(cell.Type == CellType.Start)
+        if(cell.Type == CellType.Shop)
         {
             SetupShop(level);
         }
