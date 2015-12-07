@@ -31,6 +31,13 @@ public class Centaur : Monster {
 	/// </summary>
 	private int _runAwayRange;
 
+	[Tooltip ("Obiekt strzały")]
+	[SerializeField]
+	/// <summary>
+	/// 	Obiekt strzały
+	/// </summary>
+	private GameObject _arrow;
+
 	/// <summary>
 	/// 	Wektor zawierający informacje o początkowym położeniu Centaura.
 	/// </summary>
@@ -42,10 +49,16 @@ public class Centaur : Monster {
 	private Vector2 _patrolToPoint;
 
 	/// <summary>
+	/// 	Czas pomiędzy atakami
+	/// </summary>
+	private double timewhenattack = 0;
+
+	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia obiektu, pozwala na inicjalizację zmiennych klasy.
 	/// </summary>
 	public override void Start () {
 		base.Start ();
+		_flipRate = 0.8f;
 		_startingPoint = (Vector2)transform.position;
 		_freeDestination = _startingPoint;
 		_patrolToPoint = new Vector2 (_startingPoint.x + _patrolX, _startingPoint.y + _patrolY);
@@ -61,14 +74,23 @@ public class Centaur : Monster {
 	{
 		if (WhereIsATarget (_targetToAttack.position, true) < _runAwayRange) {
 			WhereIsATarget(_targetToAttack.position);
-			_Rig2D.AddForce(_axis*-1 * _maxSpeed);
+			_Rig2D.AddForce(_axis*-1 * _realMaxSpeed);
 		} else {
 			if(!_facingRight && _axis.x > 0)
 				Flip();
 			if(_facingRight && _axis.x < 0)
 				Flip();
-			// Hurt player
 		}
+		if (timewhenattack <= 0) {
+			// Hurt player
+			Vector2 vector = transform.position - _targetToAttack.position;
+			if(vector.x > 0)
+				NewProjectile(_arrow,new Vector2(-6,0),new Vector2(-vector.x+6,-vector.y) * 2);
+			else
+				NewProjectile(_arrow,new Vector2(6,0),new Vector2(-vector.x-6,-vector.y) * 2);
+			timewhenattack = 2;
+		} else
+			timewhenattack -= Time.deltaTime;
 	}
 	
 	/// <summary>
@@ -83,7 +105,7 @@ public class Centaur : Monster {
 		target.x = _targetToAttack.position.x;
 		target.y = _targetToAttack.position.y;
 		WhereIsATarget (target);
-		_Rig2D.AddForce (_axis * _maxSpeed);
+		_Rig2D.AddForce (_axis * _realMaxSpeed);
 	}
 	
 	/// <summary>
@@ -94,17 +116,12 @@ public class Centaur : Monster {
 	/// </remarks>
 	public override void Walking()
 	{
-
 		if ((int)_freeDestination.x == (int)transform.position.x && (int)_freeDestination.y == (int)transform.position.y) 
 			if (_freeDestination == _startingPoint)
 				_freeDestination = _patrolToPoint;
 			else
 			_freeDestination = _startingPoint;
 		WhereIsATarget (_freeDestination);
-		if (_startingPoint.x == _patrolToPoint.x) {
-			Debug.Log ("Zgadza siem");
-			_axis.x = 0;
-		}
-		_Rig2D.AddForce (_axis * (_maxSpeed/3));
+		_Rig2D.AddForce (_axis * (_realMaxSpeed/3));
 	}
 }

@@ -1,5 +1,17 @@
 ﻿using UnityEngine;
 
+
+/// <summary>
+/// Enumerator mówiący o statusie potworów względem efektów kontroli tłumu
+/// </summary>
+public enum MonsterStatus
+{
+	OK = 0,
+	Slowed = 1,
+	Blinded = 2,
+	Stunned = 3
+}
+
 /**
  * <summary>
  * 	Abstrakcyjna klasa dla potworów
@@ -35,6 +47,41 @@ public abstract class Monster : TheseusGameObject {
 	/// </summary>
 	protected bool _facingRight = true;
 
+	/// <summary>
+	/// 	Parametr pozwalający określić odpowiednią wielkość błędu w prędkości chodu przy której potwór zostanie odwrócony na drugą stronę.
+	/// </summary>
+	protected float _flipRate = 0.5f;
+
+	/// <summary>
+	/// 	Aktualny status "kontroli tłumu" na potworze
+	/// </summary>
+	protected MonsterStatus _status = MonsterStatus.OK;
+
+	/// <summary>
+	/// 	Zegar odliczający czas efektów "kontroli tłumu"
+	/// </summary>
+	protected double _ccEffectTimer;
+
+	/// <summary>
+	/// 	Zmienna sprawdzająca, czy obiekt otrzymuje obrażenia w czasie
+	/// </summary>
+	protected bool _isDamagedOverTime = false;
+
+	/// <summary>
+	/// 	Zegar odliczający czas po którym obrażenia czasowe znikają
+	/// </summary>
+	protected double _DOTTimer;
+
+	/// <summary>
+	/// 	Zegar odliczający czas do naliczenia obrażeń czasowych
+	/// </summary>
+	protected int _lastDoTTick;
+
+	/// <summary>
+	/// 	Wielkość obrażeń zadawanych w czasię ( co sekundę )
+	/// </summary>
+	protected int _DOTDamage;
+
 	[Tooltip ("Aktualne zdrowie potwora")]
 	[SerializeField]
 	/// <summary>
@@ -56,12 +103,22 @@ public abstract class Monster : TheseusGameObject {
 	/// </summary>
 	protected float _maxSpeed;
 
+	/// <summary>
+	/// 	Prawdziwe przyśpieszenie obiektu dla której podstawą jest _maxSpeed, zależna od wielu czynników
+	/// </summary>
+	protected float _realMaxSpeed;
+
 	[Tooltip ("Zasięg spostrzeżenia gracza przez obiekt.")]
 	[SerializeField]
 	/// <summary>
 	/// 	Parametr serializowany, określa zasięg widzenia innych obiektów przez dany obiekt
 	/// </summary>
 	protected float _range;
+
+	/// <summary>
+	/// 	Prawdziwa wartość spostrzegawczości potwora dla której podstawą jest _range, zależna od innych czynników 
+	/// </summary>
+	protected float _realRange;
 
 	[Tooltip ("Zasięg od którego obiekt rozpoczyna atak.")]
 	[SerializeField]
@@ -78,12 +135,21 @@ public abstract class Monster : TheseusGameObject {
     public float Difficulty;
 
 	/// <summary>
+	/// 	Prawdziwa wartość zasięgu ataku potwora dla której wartością bazową jest _attackDistance, zależna od innych czynników
+	/// </summary>
+	protected float _realAttackDistance;
+
+	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia obiektu
 	/// </summary>
 	public virtual void Start () {
 		_Rig2D = GetComponent<Rigidbody2D>();
+		_render2D = GetComponent<SpriteRenderer> ();
 		_axis = Vector2.zero;
-		TakingDamage (0);
+		_realMaxSpeed = _maxSpeed;
+		_realRange = _range;
+		_realAttackDistance = _attackDistance;
+		TakingDamage (0);	// Sprawdza, czy potwor ma wiecej niz 0 zycia na starcie
 	}
 
 	/// <summary>
@@ -101,14 +167,17 @@ public abstract class Monster : TheseusGameObject {
 	/// 	od odległości między obiektami.
 	/// </remarks>
 	public virtual void FixedUpdate () {
+		CheckPersonalStatus ();
+		if (_status == MonsterStatus.Stunned)
+			return;
 		float distance = float.MaxValue;
 		if (GameObject.FindGameObjectWithTag ("Player") != null) {
 			_targetToAttack = GameObject.FindGameObjectWithTag("Player").transform;
 			distance = WhereIsATarget(_targetToAttack.position,true);
 		}
-		if (distance <= _attackDistance)
+		if (distance <= _realAttackDistance)
 			Attack();
-		else if (distance <= _range)
+		else if (distance <= _realRange)
 			Chase();
 		else
 			Walking();
@@ -165,9 +234,9 @@ public abstract class Monster : TheseusGameObject {
 			velo =  _Rig2D.velocity.x;
 		else
 			velo =  _Rig2D.velocity.y;
-		if (velo < -0.5)
+		if (velo < -_flipRate)
 			return -1;
-		else if (velo > 0.5)
+		else if (velo > _flipRate)
 			return 1;
 		else
 			return 0;
@@ -188,12 +257,99 @@ public abstract class Monster : TheseusGameObject {
 	}
 
 	/// <summary>
+	/// 	Metoda aktualizująca status potwora wzgledem czasu
+	/// </summary>
+	/// <remarks>
+	/// 	Metoda sprawdza aktualny stan potwora. Jeżeli potwór wyszedł (wedle zegara efektów kontroli tłumu) z efektu kontroli tłumu to
+	/// 	metoda ta wyłącza wszystkie negatywne efekty tego statusu. Metoda ta odpowiada również za naliczanie obrażeń czasowych i ich zdejmowanie.
+	/// </remarks>
+	protected void CheckPersonalStatus()
+	{
+		if (_status != MonsterStatus.OK)
+		if (_ccEffectTimer <= 0) {
+			_status = MonsterStatus.OK;
+			_realMaxSpeed = _maxSpeed;
+			_realAttackDistance = _attackDistance;
+			_realRange = _range;
+		}
+		else
+			_ccEffectTimer -= Time.deltaTime;
+
+		if (_isDamagedOverTime)
+		if (_DOTTimer <= 0) {
+			_isDamagedOverTime = false;
+			_render2D.color = Color.white;
+		} else {
+			_DOTTimer -= Time.deltaTime;
+			if((int)_DOTTimer != _lastDoTTick)
+			{
+				TakingDamage(_DOTDamage);
+				_lastDoTTick = (int)_DOTTimer;
+			}
+		}
+	}
+
+	/// <summary>
+	/// 	Metoda publiczna pozwalająca na ustawienie efektu kontroli tłumu dla potwora
+	/// </summary>
+	/// <param name="status">Status jaki zostanie nałożony na potwora(patrz 'public enum MonsterStatus').</param>
+	/// <param name="time">Czas podczas którego efekt będzie aktywny(podany w sekundach).</param>
+	public virtual void SetCrowdControl(MonsterStatus status,int time)
+	{
+		if (_status <= status) {
+			switch(status)
+			{
+			case MonsterStatus.Slowed:
+				if(_status != MonsterStatus.Slowed)
+					_realMaxSpeed = _maxSpeed /2;
+				break;
+			case MonsterStatus.Blinded:
+				_realAttackDistance = 1;
+				_realRange = 3;
+				break;
+			default: break;
+			}
+			_status = status;
+			_ccEffectTimer = time;
+		}
+	}
+
+	/// <summary>
+	/// 	Metoda publiczna pozwalająca na ustawienie obrażeń zadawanych w czasię
+	/// </summary>
+	/// <param name="time">Czas podczas którego efekt będzie aktywny(podany w sekundach).</param>
+	/// <param name="damage">Ilość obrażeń zadawanych co sekundę.</param>
+	public virtual void SetDamageOverTime(int time,int damage)
+	{
+		if (_isDamagedOverTime) {
+			if(damage > _DOTDamage)
+				_DOTDamage = damage;
+		} else {
+			_DOTTimer = time;
+			_lastDoTTick = (int)_DOTTimer;
+			_DOTDamage = damage;
+			_isDamagedOverTime = true;
+		}
+		_render2D.color = Color.green;
+	}
+
+	/// <summary>
 	/// 	Metoda uruchamiana, gdy potwór umiera
 	/// </summary>
 	protected void Die()
 	{
         Messenger.Broadcast(Messages.MonsterDied);
 		Destroy (this.gameObject);
+	}
+
+	/// <summary>
+	/// 	Metoda odpowiadająca za tworzenie obiektu pocisku
+	/// </summary>
+	protected void NewProjectile(GameObject projectile,Vector2 offset, Vector2 velocity)
+	{
+		var bullet = Instantiate(projectile);
+		bullet.transform.position = new Vector2(this.transform.position.x + offset.x, this.transform.position.y + offset.y);
+		bullet.GetComponent<Rigidbody2D>().velocity = velocity;
 	}
 	
 	/// <summary>
@@ -212,8 +368,10 @@ public abstract class Monster : TheseusGameObject {
 		float distance = Vector2.Distance (_Rig2D.position, target);
 		if (justCalculateDistance)
 			return distance;
+
 		_axis.x = target.x - transform.position.x;
 		_axis.y = target.y - transform.position.y;
+
 		if (_axis.x < 0)
 			_axis.x = -1;
 		else

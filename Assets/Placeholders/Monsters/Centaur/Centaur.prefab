@@ -74,12 +74,13 @@ MonoBehaviour:
   _healthPoints: 1
   _attackPower: 1
   _maxSpeed: 80
-  _range: 30
-  _attackDistance: 20
+  _range: 40
+  _attackDistance: 30
   Difficulty: 5
   _patrolX: 0
   _patrolY: 0
   _runAwayRange: 10
+  _arrow: {fileID: 121122, guid: 1872d1466f1f12c4b9e7822359fe033d, type: 2}
 --- !u!212 &21253822
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -98,7 +99,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -115,7 +118,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: _attackDistance
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _patrolRange
@@ -123,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _range
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _runAwayRange
@@ -158,12 +161,12 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: Difficulty
-      value: 5
-      objectReference: {fileID: 0}
+      propertyPath: _arrow
+      value: 
+      objectReference: {fileID: 121122, guid: 1872d1466f1f12c4b9e7822359fe033d, type: 2}
     - target: {fileID: 0}
-      propertyPath: m_LocalScale.x
-      value: .600000024
+      propertyPath: _arrowSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y

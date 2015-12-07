@@ -10,11 +10,6 @@ using UnityEngine;
  */
 public class Gargoyle : Monster {
 
-	/// <summary>
-	/// 	Parametr decydujący o tym, czy gargulec został już uwolniony.
-	/// </summary>
-	private bool _freed = false;
-
 	[Tooltip ("Czy gargulec jest żywy?")]
 	[SerializeField]
 	/// <summary>
@@ -74,7 +69,7 @@ public class Gargoyle : Monster {
 		if (_timeToRelease < 0) {
 			this.gameObject.layer = 9;
 			WhereIsATarget (_targetToAttack.transform.position);
-			_Rig2D.AddForce (_axis * _maxSpeed);
+			_Rig2D.AddForce (_axis * _realMaxSpeed);
 		} else {
 			if(_locateATarget)
 			{
@@ -101,7 +96,6 @@ public class Gargoyle : Monster {
 				_Rig2D.MovePosition(_startingPosition);
 				this.gameObject.layer = 8;
 				_timeToRelease = 2;
-				_freed = false;
 				_locateATarget = false;
 
 				if(!_facingRight && !_lookAtLeft)
