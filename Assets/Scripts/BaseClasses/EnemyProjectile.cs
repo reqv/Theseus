@@ -13,18 +13,9 @@ public class EnemyProjectile : MonoBehaviour {
 	protected int _timeToLive;
 
 	/// <summary>
-	/// 	Zmienna określająca wielkość obrażeń nakładanych po zderzeniu z innym obiektem na ten obiekt
+	/// 	Właściwość pozwalająca określić ilość obrażeń zadawanych przy zderzeniu
 	/// </summary>
-	private int _damage;
-
-	/// <summary>
-	/// 	Właściwość pozwalająca uzyskać dostęp do prywatnej zmiennej _damage
-	/// </summary>
-	public int Damage
-	{
-		get{ return _damage; }
-		set{ _damage = value; }
-	}
+	public int Damage {get; set;}
 
 	/// <summary>
 	/// 	Metoda ustawiająca początkowe zmienne i inicjalizująca pocisk

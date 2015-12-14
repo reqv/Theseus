@@ -1,59 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &174910
+--- !u!1 &123454
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 452054}
-  - 212: {fileID: 21204620}
-  - 50: {fileID: 5027128}
-  - 58: {fileID: 5824132}
-  - 114: {fileID: 11420182}
-  m_Layer: 13
-  m_Name: Arrow
-  m_TagString: Projectile
+  - 4: {fileID: 438018}
+  - 212: {fileID: 21255624}
+  - 50: {fileID: 5002654}
+  - 58: {fileID: 5809672}
+  - 114: {fileID: 11478202}
+  m_Layer: 8
+  m_Name: Bull
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &452054
+--- !u!4 &438018
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174910}
+  m_GameObject: {fileID: 123454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.39, y: -4.04, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5027128
+--- !u!50 &5002654
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174910}
+  m_GameObject: {fileID: 123454}
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_Mass: 15
+  m_LinearDrag: 2
+  m_AngularDrag: 6
   m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &5824132
+  m_Constraints: 4
+--- !u!58 &5809672
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174910}
+  m_GameObject: {fileID: 123454}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -61,25 +61,32 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
---- !u!114 &11420182
+  m_Radius: 0.3
+--- !u!114 &11478202
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174910}
+  m_GameObject: {fileID: 123454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcc9ddff72e3c684cacf50b36c693335, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ef45a0334f2b5c42b8934ccc33cdad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToLive: 1
---- !u!212 &21204620
+  _healthPoints: 1
+  _attackPower: 1
+  _maxSpeed: 13
+  _range: 0
+  _attackDistance: 0.5
+  Difficulty: 0
+  _freeFlipTimer: 5
+  _timeOnStun: 3
+--- !u!212 &21255624
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174910}
+  m_GameObject: {fileID: 123454}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -87,8 +94,8 @@ SpriteRenderer:
   - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
@@ -100,8 +107,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5336fd4adb3dc204daf05a67ea47ab32, type: 3}
-  m_Color: {r: 0.5294118, g: 0.3775952, b: 0.3775952, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1803abed7461e864f8b22d18fbd3fed9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!1001 &100100000
@@ -112,10 +119,22 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: m_Layer
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LinearDrag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _maxSpeed
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 174910}
+  m_RootGameObject: {fileID: 123454}
   m_IsPrefabParent: 1

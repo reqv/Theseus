@@ -2,49 +2,49 @@ using UnityEngine;
 
 /**
  * <summary>
- * 	Klasa potwora:<b> Centaur</b>
+ * 	Klasa potwora:<b> Spartan</b>
  * </summary>
  * <remarks>
  * 	Klasa Centaura dziedzicząca po klasie Monster, służy do ustalenia konkretnych zachowań potwora.
  * </remarks>
  */
-public class Centaur : Monster {
+public class Spartan : Monster {
 
-	[Tooltip ("Wartość na osi X do której porusza się Centaur patrolując teren.")]
+	[Tooltip ("Wartość na osi X do której porusza się Spartan patrolując teren.")]
 	[SerializeField]
 	/// <summary>
-	/// 	Wartość na osi X do której porusza się Centaur patrolując teren.
+	/// 	Wartość na osi X do której porusza się Spartan patrolując teren.
 	/// </summary>
 	private int _patrolX;
 
-	[Tooltip ("Wartość na osi Y do której porusza się Centaur patrolując teren.")]
+	[Tooltip ("Wartość na osi Y do której porusza się Spartan patrolując teren.")]
 	[SerializeField]
 	/// <summary>
-	/// 	Wartość na osi Y do której porusza się Centaur patrolując teren.
+	/// 	Wartość na osi Y do której porusza się Spartan patrolując teren.
 	/// </summary>
 	private int _patrolY;
 
-	[Tooltip ("Odległość od obiektu gracza po osiągnięciu której centaur zacznie ucieczkę.")]
+	[Tooltip ("Odległość od obiektu gracza po osiągnięciu której Spartan zacznie ucieczkę.")]
 	[SerializeField]
 	/// <summary>
-	/// 	Odległość od obiektu gracza po osiągnięciu której centaur zacznie ucieczkę.
+	/// 	Odległość od obiektu gracza po osiągnięciu której Spartan zacznie ucieczkę.
 	/// </summary>
 	private int _runAwayRange;
 
-	[Tooltip ("Obiekt strzały")]
+	[Tooltip ("Obiekt włóczni")]
 	[SerializeField]
 	/// <summary>
-	/// 	Obiekt strzały
+	/// 	Obiekt włóczni
 	/// </summary>
 	private GameObject _arrow;
 
 	/// <summary>
-	/// 	Wektor zawierający informacje o początkowym położeniu Centaura.
+	/// 	Wektor zawierający informacje o początkowym położeniu Spartan.
 	/// </summary>
 	private Vector2 _startingPoint;
 
 	/// <summary>
-	/// 	Wektor trzymający miejsce do którego Centaur patroluje teren.
+	/// 	Wektor trzymający miejsce do którego Spartan patroluje teren.
 	/// </summary>
 	private Vector2 _patrolToPoint;
 
@@ -68,7 +68,7 @@ public class Centaur : Monster {
 	/// 	Zaimplementowana metoda atakujaca szukany obiekt
 	/// </summary>
 	/// <remarks>
-	/// 	W przypadku Centaura oprócz ataku z dystansu za pomocą strzał, gdy gracz zbliży się zbyt blisko, zacznie on uciekać.
+	/// 	W przypadku Spartan oprócz ataku z dystansu za pomocą strzał, gdy gracz zbliży się zbyt blisko, zacznie on uciekać.
 	/// </remarks>
 	public override void Attack()
 	{
@@ -85,9 +85,9 @@ public class Centaur : Monster {
 			// Hurt player
 			Vector2 vector = transform.position - _targetToAttack.position;
 			if(vector.x > 0)
-				NewProjectile(_arrow,new Vector2(0,0),new Vector2(-vector.x,-vector.y) * 2);
+				NewProjectile(_arrow,new Vector2(-6,0),new Vector2(-vector.x+6,-vector.y) * 2);
 			else
-				NewProjectile(_arrow,new Vector2(0,0),new Vector2(-vector.x,-vector.y) * 2);
+				NewProjectile(_arrow,new Vector2(6,0),new Vector2(-vector.x-6,-vector.y) * 2);
 			timewhenattack = 2;
 		} else
 			timewhenattack -= Time.deltaTime;
@@ -97,7 +97,7 @@ public class Centaur : Monster {
 	/// 	Zaimplementowana metoda pozwalająca na ściganie obiektu
 	/// </summary>
 	/// <remarks>
-	/// 	Centaur zbliża się do gracza w celu oddania celnego strzału z łuku.
+	/// 	Spartan zbliża się do gracza w celu oddania celnego rzutu.
 	/// </remarks>
 	public override void Chase()
 	{
@@ -112,7 +112,7 @@ public class Centaur : Monster {
 	/// 	Zaimplementowana metoda pozwalająca na swobodne poruszanie się gdy w pobliżu nie ma szukanego obiektu.
 	/// </summary>
 	/// <remarks>
-	/// 	Centaur patroluje wskazany wcześniej teren.
+	/// 	Spartan patroluje wskazany wcześniej teren.
 	/// </remarks>
 	public override void Walking()
 	{

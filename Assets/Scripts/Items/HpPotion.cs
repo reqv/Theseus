@@ -16,7 +16,7 @@ public class HpPotion : Item {
 	/// <remarks>
 	/// 	W tym przypadku, odnawiamy życie gracza o określoną ilość.
 	/// </remarks>
-	public override void EffectOfItem()
+	public override void EffectOfItem(Collision2D other)
 	{
 		Debug.Log ("Działam !");
 	}

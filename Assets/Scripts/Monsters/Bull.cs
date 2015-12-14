@@ -54,7 +54,7 @@ public class Bull : Monster {
 			Monster script = other.gameObject.GetComponent<Monster>();
 			script.TakingDamage(_attackPower);
 			script.SetCrowdControl(MonsterStatus.Stunned,_timeOnStun);
-		}else if(other.gameObject.tag != "Item")
+		}else if(other.gameObject.tag != "Item" && other.gameObject.tag != "Projectile" && other.gameObject.tag != "PlayerProjectile")
 			{
 				SetCrowdControl(MonsterStatus.Stunned,_timeOnStun);
 				_Rig2D.velocity = Vector2.zero;
@@ -110,7 +110,7 @@ public class Bull : Monster {
 	/// </remarks>
 	public override void TakingDamage (int damage)
 	{
-		if(_status != MonsterStatus.Stunned)
+		if(_status == MonsterStatus.Stunned)
 			base.TakingDamage (damage);
 	}
 }

@@ -10,17 +10,17 @@
  */
 public abstract class Item : TheseusGameObject {
 
-	[Tooltip ("Mówi tym, czy przedmiot wypadł z potwora lub skrzyni.")]
+	[Tooltip ("Mówi o tym, czy przedmiot wypadł z potwora lub skrzyni.")]
 	[SerializeField]
 	/// <summary>
-	/// 	Mówi tym, czy przedmiot wypadł z potwora.
+	/// 	Mówi o tym, czy przedmiot wypadł z potwora lub skrzyni.
 	/// </summary>
 	protected bool _fromMonsterOrChest;
 
-	[Tooltip ("Siła z jaką wypada przedmiot z potwora.")]
+	[Tooltip ("Siła z jaką wypada przedmiot po pojawieniu sie.")]
 	[SerializeField]
 	/// <summary>
-	/// 	Siła z jaką wypada przedmiot.
+	/// 	Siła z jaką wypada przedmiot po pojawieniu sie.
 	/// </summary>
 	protected byte _impact;
 
@@ -43,7 +43,7 @@ public abstract class Item : TheseusGameObject {
 	public virtual void OnCollisionEnter2D(Collision2D other)
 	{
 		if (other.gameObject.tag == "Player") {
-			EffectOfItem();
+			EffectOfItem(other);
 			Destroy(gameObject);
 		}
 	}
@@ -51,5 +51,5 @@ public abstract class Item : TheseusGameObject {
 	/// <summary>
 	/// 	Metoda abstrakcyjna, implementowana w potomkach. Określa specyficzne działanie przedmiotu.
 	/// </summary>
-	public abstract void EffectOfItem();
+	public abstract void EffectOfItem(Collision2D other);
 }

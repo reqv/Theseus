@@ -60,28 +60,39 @@ public class Shadow : Monster {
 		base.Start();
 		_actualFreeFlipTimer = _freeFlipTimer;
 		_moveTimer = _timeToMove;
-		_realAttackDistance = -10;
-		_attackDistance = -10;
 	}
 
 	/// <summary>
 	/// 	Zaimplementowana metoda atakujaca szukany obiekt
 	/// </summary>
 	/// <remarks>
-	/// 	Cień spowalnia gracza do czasu, gdy naładuje moc w celu wywołania eksplozji.
+	/// 	Cień nie wykorzystuje tej metody, sterowanie przekierowane jest na funkcje Chase()
 	/// </remarks>
 	public override void Attack()
 	{
-		NewProjectile(_magic,new Vector2(0,3),new Vector2(0,_magicSpeed));
-		NewProjectile(_magic,new Vector2(0,-3),new Vector2(0,-_magicSpeed));
-		NewProjectile(_magic,new Vector2(3,0),new Vector2(_magicSpeed,0));
-		NewProjectile(_magic,new Vector2(-3,0),new Vector2(-_magicSpeed,0));
+		if (_attackDistance > 0)
+			_attackDistance = 0;
+		Chase ();
+	}
 
-		NewProjectile(_magic,new Vector2(1,1),new Vector2(_magicSpeed,_magicSpeed));
-		NewProjectile(_magic,new Vector2(-1,-1),new Vector2(-_magicSpeed,-_magicSpeed));
-		NewProjectile(_magic,new Vector2(-1,1),new Vector2(-_magicSpeed,_magicSpeed));
-		NewProjectile(_magic,new Vector2(1,-1),new Vector2(_magicSpeed,-_magicSpeed));
-	
+	/// <summary>
+	/// 	Zaimplementowana metoda w której cień eksploduje
+	/// </summary>
+	/// <remarks>
+	/// 	Cień spowalnia gracza i wysysa z niego energię do czasu, gdy naładuje moc w celu wywołania eksplozji(tej funkcji).
+	/// </remarks>
+	public void Explode()
+	{
+		NewProjectile(_magic,new Vector2(0,0.4f),new Vector2(0,_magicSpeed));
+		NewProjectile(_magic,new Vector2(0,-0.4f),new Vector2(0,-_magicSpeed));
+		NewProjectile(_magic,new Vector2(0.4f,0),new Vector2(_magicSpeed,0));
+		NewProjectile(_magic,new Vector2(-0.4f,0),new Vector2(-_magicSpeed,0));
+
+		NewProjectile(_magic,new Vector2(0.2f,0.2f),new Vector2(_magicSpeed,_magicSpeed));
+		NewProjectile(_magic,new Vector2(-0.2f,-0.2f),new Vector2(-_magicSpeed,-_magicSpeed));
+		NewProjectile(_magic,new Vector2(-0.2f,0.2f),new Vector2(-_magicSpeed,_magicSpeed));
+		NewProjectile(_magic,new Vector2(0.2f,-0.2f),new Vector2(_magicSpeed,-_magicSpeed));
+
 		_moveTimer = _timeToMove;
 		_teleported = false;
 	}
@@ -97,7 +108,8 @@ public class Shadow : Monster {
 		//TUTAJ BEDZIE SLOW NA GRACZA
 		//if(_targetToAttack!= null && WhereIsATarget(_targetToAttack.position,true) <= _range)Debug.Log ("Slow the target !");
 		if (_moveTimer <= 0) {
-			Attack ();
+			Explode();
+			Walking ();
 		} else
 			_moveTimer -= Time.deltaTime;
 	}
