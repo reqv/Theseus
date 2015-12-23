@@ -82,6 +82,11 @@ public abstract class Monster : TheseusGameObject {
 	/// </summary>
 	protected int _DOTDamage;
 
+	/// <summary>
+	/// 	Flaga mówiąca o tym, czy obiekt nadal żyję.
+	/// </summary>
+	private bool _isAlive = true;
+
 	[Tooltip ("Aktualne zdrowie potwora")]
 	[SerializeField]
 	/// <summary>
@@ -96,6 +101,13 @@ public abstract class Monster : TheseusGameObject {
 	/// </summary>
 	protected int _attackPower;
 
+	[Tooltip ("Prędkość lotu pocisków")]
+	[SerializeField]
+	/// <summary>
+	/// 	Parametr mówiący o prędkości wystrzeliwanych pocisków, ważny tylko dla jednostek strzelających.
+	/// </summary>
+	protected int _bulletVelocityFactor;
+
 	[Tooltip ("Maksymalne przyspieszenie obiektu.")]
 	[SerializeField]
 	/// <summary>
@@ -104,7 +116,7 @@ public abstract class Monster : TheseusGameObject {
 	protected float _maxSpeed;
 
 	/// <summary>
-	/// 	Prawdziwe przyśpieszenie obiektu dla której podstawą jest _maxSpeed, zależna od wielu czynników
+	/// 	Prawdziwe przyśpieszenie obiektu dla której podstawą jest _maxSpeed, zależna również od innych czynników 
 	/// </summary>
 	protected float _realMaxSpeed;
 
@@ -116,7 +128,7 @@ public abstract class Monster : TheseusGameObject {
 	protected float _range;
 
 	/// <summary>
-	/// 	Prawdziwa wartość spostrzegawczości potwora dla której podstawą jest _range, zależna od innych czynników 
+	/// 	Prawdziwa wartość spostrzegawczości potwora dla której podstawą jest _range, zależna również od innych czynników 
 	/// </summary>
 	protected float _realRange;
 
@@ -127,7 +139,12 @@ public abstract class Monster : TheseusGameObject {
 	/// </summary>
 	protected float _attackDistance;
 
-    [Tooltip("Jak trudny do pokonania jest przeciwnik.")]
+	/// <summary>
+	/// 	Prawdziwa wartość zasięgu ataku potwora dla której wartością bazową jest _attackDistance, zależna również od innych czynników 
+	/// </summary>
+	protected float _realAttackDistance;
+
+    [Tooltip("Jak trudny do pokonania jest przeciwnik?")]
     [SerializeField]
     /// <summary>
     /// 	Parametr serializowany, określa poziom trudności przeciwnika
@@ -135,16 +152,12 @@ public abstract class Monster : TheseusGameObject {
     public float Difficulty;
 
 	/// <summary>
-	/// 	Prawdziwa wartość zasięgu ataku potwora dla której wartością bazową jest _attackDistance, zależna od innych czynników
-	/// </summary>
-	protected float _realAttackDistance;
-
-	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia obiektu
 	/// </summary>
 	public virtual void Start () {
 		_Rig2D = GetComponent<Rigidbody2D>();
-		_render2D = GetComponent<SpriteRenderer> ();
+		_Render2D = GetComponent<SpriteRenderer> ();
+		_Anim = GetComponent<Animator> ();
 		_axis = Vector2.zero;
 		_realMaxSpeed = _maxSpeed;
 		_realRange = _range;
@@ -176,9 +189,9 @@ public abstract class Monster : TheseusGameObject {
 			distance = WhereIsATarget(_targetToAttack.position,true);
 		}
 		if (distance <= _realAttackDistance)
-			Attack();
+			Attack ();
 		else if (distance <= _realRange)
-			Chase();
+			Chase ();
 		else
 			Walking();
 
@@ -278,7 +291,7 @@ public abstract class Monster : TheseusGameObject {
 		if (_isDamagedOverTime)
 		if (_DOTTimer <= 0) {
 			_isDamagedOverTime = false;
-			_render2D.color = Color.white;
+			_Render2D.color = Color.white;
 		} else {
 			_DOTTimer -= Time.deltaTime;
 			if((int)_DOTTimer != _lastDoTTick)
@@ -330,7 +343,7 @@ public abstract class Monster : TheseusGameObject {
 			_DOTDamage = damage;
 			_isDamagedOverTime = true;
 		}
-		_render2D.color = Color.green;
+		_Render2D.color = Color.green;
 	}
 
 	/// <summary>
@@ -338,18 +351,23 @@ public abstract class Monster : TheseusGameObject {
 	/// </summary>
 	protected void Die()
 	{
-        Messenger.Broadcast(Messages.MonsterDied);
-		Destroy (this.gameObject);
+		if (_isAlive) {
+			_isAlive = false;
+			Messenger.Broadcast (Messages.MonsterDied);
+			_Anim.SetTrigger ("Die");
+			SetCrowdControl (MonsterStatus.Stunned, 3);
+			Destroy (this.gameObject, 2.0f);
+		}
 	}
 
 	/// <summary>
 	/// 	Metoda odpowiadająca za tworzenie obiektu pocisku
 	/// </summary>
-	protected void NewProjectile(GameObject projectile,Vector2 offset, Vector2 velocity)
+	protected void NewProjectile(GameObject projectile, Vector2 offset, Vector2 velocity, float rotate = 0)
 	{
-		var bullet = Instantiate(projectile);
-		bullet.transform.position = new Vector2(this.transform.position.x + offset.x, this.transform.position.y + offset.y);
-		bullet.GetComponent<Rigidbody2D>().velocity = velocity;
+		var bullet = Instantiate (projectile,new Vector2(this.transform.position.x + offset.x, this.transform.position.y + offset.y),Quaternion.Euler(new Vector3(0,0,rotate))) as GameObject;
+		//bullet.GetComponent<Rigidbody2D>().velocity = velocity;
+		bullet.GetComponent<Rigidbody2D>().AddForce(getRightAxis(bullet.GetComponent<Rigidbody2D>().position,_targetToAttack.position) * _bulletVelocityFactor,ForceMode2D.Impulse);
 	}
 	
 	/// <summary>

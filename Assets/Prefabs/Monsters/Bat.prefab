@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5029618}
   - 58: {fileID: 5838032}
   - 114: {fileID: 11461432}
+  - 95: {fileID: 9552894}
   m_Layer: 9
   m_Name: Bat
   m_TagString: Enemy
@@ -62,6 +63,23 @@ CircleCollider2D:
   m_Offset: {x: 0.025, y: 0.02}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!95 &9552894
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101180}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11461432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthPoints: 1
   _attackPower: 1
+  _bulletVelocityFactor: 0
   _maxSpeed: 0.1
   _range: 0
   _attackDistance: 0.3

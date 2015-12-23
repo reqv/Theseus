@@ -3,7 +3,7 @@
 /// <summary>
 /// 	Klasa pocisków dla przeciwników
 /// </summary>
-public class EnemyProjectile : MonoBehaviour {
+public class EnemyProjectile : TheseusGameObject {
 
 	[Tooltip ("Czas po którym element zostanie zniszczony")]
 	[SerializeField]
@@ -33,7 +33,7 @@ public class EnemyProjectile : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Player") {
 			Destroy (other.gameObject);		// ######################## chwilowe rozwiazanie ( usuwanie gracza ) ########################
-		}else if(other.gameObject.tag != "Item")
+		}else if(other.gameObject.tag != "Item" && other.gameObject.tag != "Projectile")
 		{
 			Destroy(this.gameObject);
 		}

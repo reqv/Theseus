@@ -22,7 +22,7 @@ public class Bat : Monster {
 	/// </summary>
 	public override void Attack()
 	{
-		//   Debug.Log("Attack!! !! ");
+		// no code here
 	}
 	
 	/// <summary>

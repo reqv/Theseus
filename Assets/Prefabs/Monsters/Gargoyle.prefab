@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5099252}
   - 58: {fileID: 5808798}
   - 114: {fileID: 11462782}
+  - 95: {fileID: 9569022}
   m_Layer: 8
   m_Name: Gargoyle
   m_TagString: Enemy
@@ -62,6 +63,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!95 &9569022
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11462782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthPoints: 1
   _attackPower: 1
+  _bulletVelocityFactor: 0
   _maxSpeed: 120
   _range: 2
   _attackDistance: 0.5

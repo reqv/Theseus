@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5089434}
   - 58: {fileID: 5835590}
   - 114: {fileID: 11454830}
+  - 95: {fileID: 9522150}
   m_Layer: 8
   m_Name: Spider
   m_TagString: Enemy
@@ -62,6 +63,23 @@ CircleCollider2D:
   m_Offset: {x: 0.02, y: 0}
   serializedVersion: 2
   m_Radius: 0.18
+--- !u!95 &9522150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186508}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11454830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthPoints: 1
   _attackPower: 1
+  _bulletVelocityFactor: 0
   _maxSpeed: 4
   _range: 3
   _attackDistance: 0.5

@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5030390}
   - 61: {fileID: 6186528}
   - 114: {fileID: 11456940}
+  - 95: {fileID: 9509218}
   m_Layer: 8
   m_Name: Snake
   m_TagString: Enemy
@@ -62,6 +63,23 @@ BoxCollider2D:
   m_Offset: {x: 0.03363347, y: 0.053415537}
   serializedVersion: 2
   m_Size: {x: 0.28677386, y: 0.5073919}
+--- !u!95 &9509218
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11456940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthPoints: 1
   _attackPower: 1
+  _bulletVelocityFactor: 0
   _maxSpeed: 1
   _range: 4
   _attackDistance: 0.5

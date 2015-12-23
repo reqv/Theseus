@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5003592}
   - 61: {fileID: 6169890}
   - 114: {fileID: 11408194}
+  - 95: {fileID: 9543512}
   m_Layer: 8
   m_Name: Warrior
   m_TagString: Enemy
@@ -62,6 +63,23 @@ BoxCollider2D:
   m_Offset: {x: -0.037899032, y: -0.019422054}
   serializedVersion: 2
   m_Size: {x: 0.26105624, y: 0.5779228}
+--- !u!95 &9543512
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104386}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11408194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthPoints: 1
   _attackPower: 1
+  _bulletVelocityFactor: 0
   _maxSpeed: 65
   _range: 0
   _attackDistance: 0.4

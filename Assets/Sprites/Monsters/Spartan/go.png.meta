@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: 927981c62814ca441b21e19d137924de
+timeCreated: 1450717466
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: go_0
+    21300002: go_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: go_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2180
+        height: 1043
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 135, y: 97}
+        - {x: 127, y: 97}
+        - {x: 110, y: 98}
+        - {x: 97, y: 97}
+        - {x: 88, y: 94}
+        - {x: 95, y: 98}
+        - {x: 120, y: 99}
+        - {x: 147, y: 96}
+        - {x: 174, y: 113}
+        - {x: 186, y: 123}
+        - {x: 186, y: 130}
+        - {x: 116, y: 164}
+        - {x: -32, y: 164}
+        - {x: -207, y: 66}
+        - {x: -208, y: 34}
+        - {x: -192, y: 27}
+        - {x: -166, y: 31}
+        - {x: -209, y: 22}
+        - {x: -251, y: 11}
+        - {x: -251, y: -15}
+        - {x: -212, y: -27}
+        - {x: -77, y: -6}
+        - {x: -74, y: -5}
+        - {x: -164, y: -104}
+        - {x: -80, y: -208}
+        - {x: 42, y: -208}
+        - {x: 73, y: -203}
+        - {x: 133, y: -127}
+        - {x: 159, y: -42}
+        - {x: 147, y: 87}
+      - - {x: -49, y: 31}
+        - {x: -42, y: 20}
+        - {x: -38, y: 20}
+        - {x: -37, y: 21}
+        - {x: -37, y: 40}
+        - {x: -38, y: 41}
+        - {x: -43, y: 41}
+        - {x: -49, y: 39}
+      - - {x: -58, y: 56}
+        - {x: -55, y: 53}
+        - {x: -54, y: 53}
+        - {x: -51, y: 56}
+        - {x: -52, y: 59}
+        - {x: -57, y: 59}
+    - name: go_1
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 0
+        width: 2180
+        height: 1043
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 205, y: 60}
+        - {x: 109, y: 95}
+        - {x: 68, y: 165}
+        - {x: 15, y: 165}
+        - {x: -9, y: 157}
+        - {x: -57, y: 119}
+        - {x: -198, y: 134}
+        - {x: -204, y: 104}
+        - {x: -108, y: 71}
+        - {x: -238, y: 101}
+        - {x: -238, y: 54}
+        - {x: -177, y: 29}
+        - {x: -93, y: 38}
+        - {x: -91, y: 38}
+        - {x: -93, y: 38}
+        - {x: -95, y: 36}
+        - {x: -95, y: 31}
+        - {x: -89, y: -64}
+        - {x: -89, y: -67}
+        - {x: -89, y: -63}
+        - {x: -90, y: -60}
+        - {x: -96, y: -62}
+        - {x: -134, y: -104}
+        - {x: -136, y: -133}
+        - {x: -84, y: -208}
+        - {x: 84, y: -208}
+        - {x: 140, y: -132}
+        - {x: 178, y: 10}
+        - {x: 205, y: 37}
+      - - {x: -184, y: -6}
+        - {x: -183, y: -9}
+        - {x: -179, y: -9}
+        - {x: -177, y: -7}
+        - {x: -178, y: -4}
+        - {x: -182, y: -4}
+      - - {x: -168, y: 33}
+        - {x: -171, y: 32}
+        - {x: -173, y: 16}
+        - {x: -171, y: 14}
+        - {x: -169, y: 14}
+        - {x: -166, y: 15}
+        - {x: -166, y: 32}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
