@@ -1,25 +1,29 @@
 ﻿using System;
 
 /// <summary>
-/// Enumerator odpowiadający za rodzaje pokoi (komórek na planszy).
+/// Model reprezentujący typ pokoju oraz jego sąsiadów
 /// </summary>
-public enum CellType
-{
-    Empty = 0,
-    Common = 1,
-    Start = 2,
-    Boss = 3,
-    Premium = 4,
-    Shop = 5
-
-}
-
 public class Cell
 {
+    /// <summary>
+    /// Typ danej komórki
+    /// </summary>
     public CellType Type { get; set; }
+    /// <summary>
+    /// Typ komórki górnego sąsiada
+    /// </summary>
     public CellType TopNeighbour { get; set; }
+    /// <summary>
+    /// Typ komórki prawgo sąsiada
+    /// </summary>
     public CellType RightNeighbour { get; set; }
+    /// <summary>
+    /// Typ komórki dolnego sąsiada
+    /// </summary>
     public CellType BottomNeighbour { get; set; }
+    /// <summary>
+    /// Typ komórki lewego sąsiada
+    /// </summary>
     public CellType LeftNeighbour { get; set; }
 
     public Cell()
