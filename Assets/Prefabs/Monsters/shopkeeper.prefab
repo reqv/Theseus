@@ -14,7 +14,7 @@ GameObject:
   - 50: {fileID: 5049828}
   m_Layer: 0
   m_Name: shopkeeper
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190600}
-  m_Mass: 100
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -46,7 +46,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6110744
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -71,6 +71,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599418c4a017b246929ad3499ee8261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthPoints: 9999999
+  _attackPower: 9999999
+  _bulletVelocityFactor: 0
+  _maxSpeed: 10
+  _range: 100
+  _attackDistance: 1
+  Difficulty: 99999
   _availableItems:
   - Item: {fileID: 11453812, guid: 0edc6c73660b10448b50c1fc7345376c, type: 2}
     Cost: 1
@@ -128,11 +135,43 @@ Prefab:
         type: 2}
     - target: {fileID: 0}
       propertyPath: m_Mass
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _healthPoints
+      value: 9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _attackPower
+      value: 9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _range
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _attackDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Difficulty
+      value: 99999
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

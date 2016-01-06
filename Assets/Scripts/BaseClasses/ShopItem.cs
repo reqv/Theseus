@@ -28,8 +28,7 @@ public class ShopItem : MonoBehaviour
         if (p != null && p.Coins >= _cost)
         {
             p.Coins -= _cost;
-            var boughtItem = Instantiate(_item, transform.position, Quaternion.identity) as Item;
-            //boughtItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 3.0f));
+            _item.EffectOfItem(other);
 
             Destroy(gameObject);
         }
@@ -40,6 +39,6 @@ public class ShopItem : MonoBehaviour
         _item = item;
         _cost = cost;
         GetComponent<SpriteRenderer>().sprite = _item.GetComponent<SpriteRenderer>().sprite;
-        GetComponentInChildren<Text>().text = cost.ToString();
+        GetComponentInChildren<Text>().text = cost.ToString() + "G";
     }
 }
