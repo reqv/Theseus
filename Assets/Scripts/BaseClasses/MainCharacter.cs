@@ -177,20 +177,20 @@ public class MainCharacter : TheseusGameObject
         switch(direction)
         {
             case Direction.Top:
-                newX = roomManager.columns / 2;
+                newX = roomManager.Columns / 2;
                 newY = -1 + roomEntranceOffset + 0.1f;
                 break;
             case Direction.Bottom:
-                newX = roomManager.columns / 2;
-                newY = roomManager.rows - roomEntranceOffset;
+                newX = roomManager.Columns / 2;
+                newY = roomManager.Rows - roomEntranceOffset;
                 break;
             case Direction.Right:
                 newX = -1 + roomEntranceOffset;
-                newY = roomManager.rows / 2;
+                newY = roomManager.Rows / 2;
                 break;
             case Direction.Left:
-                newX = roomManager.columns - roomEntranceOffset;
-                newY = roomManager.rows / 2;
+                newX = roomManager.Columns - roomEntranceOffset;
+                newY = roomManager.Rows / 2;
                 break;
             default:
                 newX = newY = 0;
