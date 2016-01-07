@@ -104,9 +104,9 @@ public class Snake : Monster {
 	/// </remarks>
 	public override void Walking()
     {
-		if (_maxSpeed != _realMaxSpeed && _status == MonsterStatus.OK)
+		if (_maxSpeed != _realMaxSpeed && _status == Status.OK)
 			_realMaxSpeed = _maxSpeed;
-		if (_maxSpeed/2 != _realMaxSpeed && _status == MonsterStatus.Slowed)
+		if (_maxSpeed/2 != _realMaxSpeed && _status == Status.Slowed)
 			_realMaxSpeed = _maxSpeed/2;
         if (WhereIsATarget(_freeDestination,true) >= 1)
         {

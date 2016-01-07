@@ -46,17 +46,17 @@ public class Bull : Monster {
 	/// <param name="other">Obiekt z którym odbyło się zderzenie</param>
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (_status == MonsterStatus.Stunned)
+		if (_status == Status.Stunned)
 			return;
 		if (other.gameObject.tag == "Player") {
 			Destroy (other.gameObject);		// ######################## chwilowe rozwiazanie ( usuwanie gracza ) ########################
 		} else if (other.gameObject.tag == "Enemy") {
 			Monster script = other.gameObject.GetComponent<Monster>();
 			script.TakingDamage(_attackPower);
-			script.SetCrowdControl(MonsterStatus.Stunned,_timeOnStun);
+			script.SetCrowdControl(Status.Stunned,_timeOnStun);
 		}else if(other.gameObject.tag != "Item" && other.gameObject.tag != "Projectile" && other.gameObject.tag != "PlayerProjectile")
 			{
-				SetCrowdControl(MonsterStatus.Stunned,_timeOnStun);
+				SetCrowdControl(Status.Stunned,_timeOnStun);
 				_Rig2D.velocity = Vector2.zero;
 			}
 	}
@@ -110,7 +110,7 @@ public class Bull : Monster {
 	/// </remarks>
 	public override void TakingDamage (int damage)
 	{
-		if(_status == MonsterStatus.Stunned)
+		if(_status == Status.Stunned)
 			base.TakingDamage (damage);
 	}
 }
