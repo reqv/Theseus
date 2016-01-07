@@ -10,7 +10,7 @@ using System.Collections;
  * </remarks>
  */
 [RequireComponent(typeof(Rigidbody2D))]
-public class MainCharacter : TheseusGameObject
+public class MainCharacter : Character
 {
     #region Serialized Fields
     [Tooltip("Współczynnik prędkości ruchu gracza")]
@@ -198,5 +198,10 @@ public class MainCharacter : TheseusGameObject
         }
 
         transform.position = new Vector3(newX, newY, transform.position.z);
+    }
+
+    protected override void Die()
+    {
+        Application.LoadLevel(Application.loadedLevel);
     }
 }
