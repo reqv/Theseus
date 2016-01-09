@@ -168,7 +168,7 @@ public abstract class Character : TheseusGameObject
     /// </summary>
     /// <param name="status">Status jaki zostanie nałożony na postać(patrz 'public enum Status').</param>
     /// <param name="time">Czas podczas którego efekt będzie aktywny(podany w sekundach).</param>
-    public virtual void SetCrowdControl(Status status, int time)
+    public virtual void SetCrowdControl(Status status, float time)
     {
         if (_status <= status)
         {
@@ -194,7 +194,7 @@ public abstract class Character : TheseusGameObject
     /// </summary>
     /// <param name="time">Czas podczas którego efekt będzie aktywny(podany w sekundach).</param>
     /// <param name="damage">Ilość obrażeń zadawanych co sekundę.</param>
-    public virtual void SetDamageOverTime(int time, int damage)
+    public virtual void SetDamageOverTime(int damage, float time)
     {
         if (_isDamagedOverTime)
         {

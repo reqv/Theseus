@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -20,6 +22,20 @@ public class Projectile : TheseusGameObject {
     /// 	Obiekty o podanych tagach otrzymają obrażenia od pocisku
     /// </summary>
     protected string[] _damageTags;
+
+    [Tooltip("Dodatkowy efekt kontroli tłumu")]
+    [SerializeField]
+    /// <summary>
+    /// 	Dodatkowy efekt kontroli tłumu
+    /// </summary>
+    protected Status _additionalCCEffect;
+
+    [Tooltip("Czas dodatkowego efektu kontroli tłumu")]
+    [SerializeField]
+    /// <summary>
+    /// 	Czas dodatkowego efektu kontroli tłumu
+    /// </summary>
+    protected float _additionalCCEffectTime;
 
 	/// <summary>
 	/// 	Właściwość pozwalająca określić ilość obrażeń zadawanych przy zderzeniu
@@ -44,8 +60,10 @@ public class Projectile : TheseusGameObject {
         {
             var character = other.gameObject.GetComponent<Character>();
             if (character != null)
+            {
                 character.TakingDamage(this.Damage);
-
+                character.SetCrowdControl(_additionalCCEffect, _additionalCCEffectTime);
+            }
 
             Destroy(this.gameObject);
 		}
