@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &111684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 492134}
+  - 114: {fileID: 11457930}
+  m_Layer: 0
+  m_Name: StoneRoomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492134
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: -1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11457930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8521077723526641bffaabc28ac17a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _columns: 5
+  _rows: 3
+  _foodCount:
+    minimum: 1
+    maximum: 5
+  _exit: {fileID: 150884, guid: 0e7f9bac4dd2d6b4882022cbff013f01, type: 2}
+  _exitShop: {fileID: 124576, guid: 09b79f0b240a5cd46807bff094cda9a7, type: 2}
+  _exitPremium: {fileID: 151394, guid: 79e65f80dad7e7f4f83c4832954259bf, type: 2}
+  _exitBoss: {fileID: 188928, guid: c15b5a0a9d4d10b419aedba461366635, type: 2}
+  _floorTiles:
+  - {fileID: 107898, guid: fa6dd4549e8f728498fc854dc80b6b3b, type: 2}
+  _outerWallTiles:
+  - {fileID: 178978, guid: 2c06df3db21d4c741aa3fa99e3014a6b, type: 2}
+  - {fileID: 147622, guid: 32447114eaed8644fbc078ebb350c47f, type: 2}
+  - {fileID: 171128, guid: 245872a6deefad249b0adbbf4cdcb01d, type: 2}
+  - {fileID: 111700, guid: 7c5c00df5f00edf42935e10ca7b7bab9, type: 2}
+  _outerWallCornerTiles:
+  - {fileID: 110682, guid: 61d1d69bbad1ac846b9ca7de79a8f8c3, type: 2}
+  - {fileID: 130444, guid: 75c1dc22eccddfc41ba661206be0ed37, type: 2}
+  _monstersManager: {fileID: 0}
+  _shopKeeper: {fileID: 11418394, guid: eaef954b1a0d2f44d8ee5910c471ac32, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _outerWallCornerTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 110682, guid: 61d1d69bbad1ac846b9ca7de79a8f8c3, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _outerWallCornerTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 130444, guid: 75c1dc22eccddfc41ba661206be0ed37, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _outerWallTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 147622, guid: 32447114eaed8644fbc078ebb350c47f, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _outerWallTiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 171128, guid: 245872a6deefad249b0adbbf4cdcb01d, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _outerWallTiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 111700, guid: 7c5c00df5f00edf42935e10ca7b7bab9, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _floorTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 107898, guid: fa6dd4549e8f728498fc854dc80b6b3b, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _exit
+      value: 
+      objectReference: {fileID: 150884, guid: 0e7f9bac4dd2d6b4882022cbff013f01, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 111684}
+  m_IsPrefabParent: 1

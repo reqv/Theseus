@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &170132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 484820}
+  - 114: {fileID: 11450318}
+  m_Layer: 0
+  m_Name: FinalRoomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &484820
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: -1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11450318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8521077723526641bffaabc28ac17a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _columns: 5
+  _rows: 3
+  _foodCount:
+    minimum: 1
+    maximum: 5
+  _exit: {fileID: 199574, guid: 9f976da54547620429d14607eadb2c14, type: 2}
+  _exitShop: {fileID: 124576, guid: 09b79f0b240a5cd46807bff094cda9a7, type: 2}
+  _exitPremium: {fileID: 151394, guid: 79e65f80dad7e7f4f83c4832954259bf, type: 2}
+  _exitBoss: {fileID: 191626, guid: ba18f8366c6caf645af802bf162577b1, type: 2}
+  _floorTiles:
+  - {fileID: 150460, guid: e73da1ada0d21b646b5f047c33a68e45, type: 2}
+  _outerWallTiles:
+  - {fileID: 157926, guid: 6c397203d3511a043a7ccaa86ebe807a, type: 2}
+  - {fileID: 192594, guid: b4440bdc5f833cc42b17191ca7b9ea80, type: 2}
+  - {fileID: 128666, guid: ffb7929bf1cdbe041b7c96dfb3b1647d, type: 2}
+  - {fileID: 127802, guid: 54c8d69853c308047a95092b146f75bb, type: 2}
+  _outerWallCornerTiles:
+  - {fileID: 158154, guid: 92092021a174bf74cbb4d8926b81bef5, type: 2}
+  - {fileID: 140896, guid: ed331368b497ae441b9aac865336c4ab, type: 2}
+  _monstersManager: {fileID: 0}
+  _shopKeeper: {fileID: 11418394, guid: eaef954b1a0d2f44d8ee5910c471ac32, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _outerWallCornerTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 158154, guid: 92092021a174bf74cbb4d8926b81bef5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _outerWallCornerTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 140896, guid: ed331368b497ae441b9aac865336c4ab, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _exit
+      value: 
+      objectReference: {fileID: 199574, guid: 9f976da54547620429d14607eadb2c14, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _outerWallTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 157926, guid: 6c397203d3511a043a7ccaa86ebe807a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _outerWallTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 192594, guid: b4440bdc5f833cc42b17191ca7b9ea80, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _outerWallTiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 128666, guid: ffb7929bf1cdbe041b7c96dfb3b1647d, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _outerWallTiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 127802, guid: 54c8d69853c308047a95092b146f75bb, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _floorTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 150460, guid: e73da1ada0d21b646b5f047c33a68e45, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _exitBoss
+      value: 
+      objectReference: {fileID: 191626, guid: ba18f8366c6caf645af802bf162577b1, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _columns
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _rows
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 170132}
+  m_IsPrefabParent: 1
