@@ -166,6 +166,7 @@ public class MainCharacter : Character
 		var fireball = Instantiate(_fireball);
 		fireball.transform.position = this.transform.position + offset;
 		fireball.GetComponent<Rigidbody2D>().velocity = velocity;
+        fireball.GetComponent<Projectile>().Damage = _attackPower;
 	}
 
     private void OnRoomChange(Direction direction)

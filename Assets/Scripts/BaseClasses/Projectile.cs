@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 /// <summary>
-/// 	Klasa pocisków dla przeciwników
+/// 	Klasa pocisków
 /// </summary>
-public class EnemyProjectile : TheseusGameObject {
+[RequireComponent(typeof(Rigidbody2D))]
+public class Projectile : TheseusGameObject {
 
 	[Tooltip ("Czas po którym element zostanie zniszczony")]
 	[SerializeField]
@@ -11,6 +13,13 @@ public class EnemyProjectile : TheseusGameObject {
 	/// 	Czas w którym cień wykonuje skok(teleport)
 	/// </summary>
 	protected int _timeToLive;
+
+    [Tooltip("Obiekty o podanych tagach otrzymają obrażenia od pocisku")]
+    [SerializeField]
+    /// <summary>
+    /// 	Obiekty o podanych tagach otrzymają obrażenia od pocisku
+    /// </summary>
+    protected string[] _damageTags;
 
 	/// <summary>
 	/// 	Właściwość pozwalająca określić ilość obrażeń zadawanych przy zderzeniu
@@ -31,9 +40,16 @@ public class EnemyProjectile : TheseusGameObject {
 	/// <param name="other">Element obcy z którym wystąpiła kolizja</param>
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "Player") {
-			Destroy (other.gameObject);		// ######################## chwilowe rozwiazanie ( usuwanie gracza ) ########################
-		}else if(other.gameObject.tag != "Item" && other.gameObject.tag != "Projectile")
+		if (_damageTags.Contains(other.gameObject.tag)) 
+        {
+            var character = other.gameObject.GetComponent<Character>();
+            if (character != null)
+                character.TakingDamage(this.Damage);
+
+
+            Destroy(this.gameObject);
+		}
+        else if(other.gameObject.tag != "Item" && other.gameObject.tag != "Projectile")
 		{
 			Destroy(this.gameObject);
 		}

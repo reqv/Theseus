@@ -59,7 +59,7 @@ public class Spartan : Monster {
 	public override void Start () {
 		base.Start ();
 		_flipRate = 0.8f;
-		_spear.GetComponent<EnemyProjectile>().Damage = _attackPower;
+		_spear.GetComponent<Projectile>().Damage = _attackPower;
 		_startingPoint = (Vector2)transform.position;
 		_freeDestination = _startingPoint;
 		_patrolToPoint = new Vector2 (_startingPoint.x + _patrolX, _startingPoint.y + _patrolY);
