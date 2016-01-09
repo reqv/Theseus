@@ -50,15 +50,15 @@ public class ShopKeeper : Monster
     void PlaceItems()
     {
 
-        for (int positionX = -8; positionX <= 8; positionX += 8)
+        for (float positionX = -1.5f; positionX <= 1.5f; positionX += 1.5f)
         {
             var si = Instantiate(_shopItem) as ShopItem;
             si.transform.SetParent(transform);
 
             if (IsTop())
-                si.transform.localPosition = new Vector3(positionX, -4, 0);
+                si.transform.localPosition = new Vector3(positionX, -1, 0);
             else
-                si.transform.localPosition = new Vector3(positionX, 4, 0);
+                si.transform.localPosition = new Vector3(positionX, 1, 0);
 
             si.transform.SetParent(transform.parent);
 

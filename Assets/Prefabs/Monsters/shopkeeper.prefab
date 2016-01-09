@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11418394}
   - 61: {fileID: 6110744}
   - 50: {fileID: 5049828}
+  - 95: {fileID: 9591820}
   m_Layer: 0
   m_Name: shopkeeper
   m_TagString: Enemy
@@ -26,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.48321199, y: .545367122, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: 1}
+  m_LocalPosition: {x: 2, y: -.400000006, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,9 +58,26 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: .0111451149, y: -.0111453235}
   serializedVersion: 2
-  m_Size: {x: 3.51999998, y: 3.13000011}
+  m_Size: {x: .687932253, y: .710222721}
+--- !u!95 &9591820
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190600}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4e353a873566664ea5544d9f4f27c05, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11418394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,7 +124,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -282359015
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 72e56438d9c671548a44192c630c932e, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 382131a85f8a58742954fd8a4a163f1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -173,6 +191,11 @@ Prefab:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 382131a85f8a58742954fd8a4a163f1d,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190600}
