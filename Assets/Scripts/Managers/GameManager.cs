@@ -17,6 +17,24 @@ public class GameManager : MonoBehaviour
     /// Instacja Singletonu
     /// </summary>
     public static GameManager instance = null;
+
+    [SerializeField]
+    /// <summary>
+    /// Manager pomieszczeń dla poziomów 1-5
+    /// </summary>
+    private RoomManager _sandRoomManager;
+    [SerializeField]
+    /// <summary>
+    /// Manager pomieszczeń dla poziomów 6-10
+    /// </summary>
+    private RoomManager _stoneRoomManager;
+    [SerializeField]
+    /// <summary>
+    /// Manager pomieszczeń dla poziomów 11-15
+    /// </summary>
+    private RoomManager _finalRoomManager;
+
+    [HideInInspector]
     public RoomManager roomManager;
 
     /// <summary>
@@ -58,9 +76,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-        //roomManager = GetComponent<RoomManager>();
+        roomManager = _sandRoomManager;
         AddListeners();
         InitGame();
+    }
+
+    void OnLevelWasLoaded(int level)
+    {
+        if (_level > 1)
+            InitGame();
     }
 
     /// <summary>
@@ -68,6 +92,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void InitGame()
     {
+        _roomGameObjectsHolder.Clear();
         _board.FillBoard();
         _actualPositionX = _actualPositionY = _board.HalfOfBoardSize;
 
@@ -130,5 +155,32 @@ public class GameManager : MonoBehaviour
         
         _actualRoom = destinationRoom;
         _actualRoom.SetActive(true);
+    }
+
+    /// <summary>
+    /// Metoda wywoływana przy pokonaniu boss'a i zejściu na kolejny poziom labiryntu
+    /// </summary>
+    public void NextLevel()
+    {
+        _level++;
+        if (_level == 6)
+            roomManager = _stoneRoomManager;
+        if (_level == 11)
+            roomManager = _finalRoomManager;
+        if (_level == 16)
+        {
+            EndGame();
+            return;
+        }
+
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
+    /// <summary>
+    /// Metoda wywoływana po skończeniu gry
+    /// </summary>
+    public void EndGame()
+    {
+
     }
 }
