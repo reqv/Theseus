@@ -35,6 +35,24 @@ public class RoomManager : MonoBehaviour
     /// Prefab drzwi
     /// </summary>
     private GameObject _exit;
+    [Tooltip("Prefab drzwi do sklepu")]
+    [SerializeField]
+    /// <summary>
+    /// Prefab drzwi do sklepu
+    /// </summary>
+    private GameObject _exitShop;
+    [Tooltip("Prefab drzwi skarbca")]
+    [SerializeField]
+    /// <summary>
+    /// Prefab drzwi skarbca
+    /// </summary>
+    private GameObject _exitPremium;
+    [Tooltip("Prefab drzwi boss'a")]
+    [SerializeField]
+    /// <summary>
+    /// Prefab drzwi boss'a
+    /// </summary>
+    private GameObject _exitBoss;
     [Tooltip("Prefaby podłogi")]
     [SerializeField]
     /// <summary>
@@ -166,7 +184,7 @@ public class RoomManager : MonoBehaviour
     {
         if (_roomCell.TopNeighbour != CellType.Empty)
         {
-            var instance = Instantiate(_exit, new Vector3(_columns / 2, _rows, 0f), Quaternion.identity) as GameObject;
+            var instance = Instantiate(GetDoors(_roomCell.Type, _roomCell.TopNeighbour), new Vector3(_columns / 2, _rows, 0f), Quaternion.identity) as GameObject;
             instance.GetComponent<Door>().Direction = Direction.Top;
             instance.transform.SetParent(_roomHolder);
 
@@ -178,7 +196,7 @@ public class RoomManager : MonoBehaviour
 
         if (_roomCell.RightNeighbour != CellType.Empty)
         {
-            var instance = Instantiate(_exit, new Vector3(_columns, _rows / 2, 0f), Quaternion.identity) as GameObject;
+            var instance = Instantiate(GetDoors(_roomCell.Type, _roomCell.RightNeighbour), new Vector3(_columns, _rows / 2, 0f), Quaternion.identity) as GameObject;
             instance.transform.Rotate(0, 0, -90);
             instance.GetComponent<Door>().Direction = Direction.Right;
             instance.transform.SetParent(_roomHolder);
@@ -191,7 +209,7 @@ public class RoomManager : MonoBehaviour
 
         if (_roomCell.BottomNeighbour != CellType.Empty)
         {
-            var instance = Instantiate(_exit, new Vector3(_columns / 2, -1, 0f), Quaternion.identity) as GameObject;
+            var instance = Instantiate(GetDoors(_roomCell.Type, _roomCell.BottomNeighbour), new Vector3(_columns / 2, -1, 0f), Quaternion.identity) as GameObject;
             instance.transform.Rotate(0, 0, 180);
             instance.GetComponent<Door>().Direction = Direction.Bottom;
             instance.transform.SetParent(_roomHolder);
@@ -204,7 +222,7 @@ public class RoomManager : MonoBehaviour
 
         if (_roomCell.LeftNeighbour != CellType.Empty)
         {
-            var instance = Instantiate(_exit, new Vector3(-1, _rows / 2, 0f), Quaternion.identity) as GameObject;
+            var instance = Instantiate(GetDoors(_roomCell.Type, _roomCell.LeftNeighbour), new Vector3(-1, _rows / 2, 0f), Quaternion.identity) as GameObject;
             instance.transform.Rotate(0, 0, 90);
             instance.GetComponent<Door>().Direction = Direction.Left;
             instance.transform.SetParent(_roomHolder);
@@ -213,6 +231,34 @@ public class RoomManager : MonoBehaviour
                 t.position.y == instance.transform.position.y).gameObject.GetComponent<Collider2D>();
 
             instance.GetComponent<Door>().ClosedDoorCollider = wallCollider;
+        }
+    }
+
+    GameObject GetDoors(CellType actualRoom, CellType neighbour)
+    {
+        switch(actualRoom)
+        {
+            case CellType.Boss:
+                return _exitBoss;
+            case CellType.Shop:
+                return _exitShop;
+            case CellType.Premium:
+                return _exitPremium;
+            case CellType.Start:
+            case CellType.Common:
+                switch(neighbour)
+                {
+                    case CellType.Boss:
+                        return _exitBoss;
+                    case CellType.Shop:
+                        return _exitShop;
+                    case CellType.Premium:
+                        return _exitPremium;
+                    default:
+                        return _exit;
+                }
+            default:
+                return _exit;
         }
     }
 
