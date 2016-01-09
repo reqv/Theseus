@@ -85,6 +85,7 @@ public class ShopKeeper : Monster
     /// </remarks>
     public override void Attack()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Character>().TakingDamage(9999);
     }
 
     /// <summary>

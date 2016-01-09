@@ -76,7 +76,7 @@ MonoBehaviour:
   _bulletVelocityFactor: 0
   _maxSpeed: 10
   _range: 100
-  _attackDistance: 1
+  _attackDistance: .5
   Difficulty: 99999
   _availableItems:
   - Item: {fileID: 11453812, guid: 0edc6c73660b10448b50c1fc7345376c, type: 2}
@@ -159,7 +159,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _attackDistance
-      value: 1
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Difficulty
