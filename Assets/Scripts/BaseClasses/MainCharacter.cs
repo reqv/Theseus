@@ -37,8 +37,23 @@ public class MainCharacter : Character
     /// WPrefab fireball'a
     /// </summary>
 	private GameObject _fireball;
+
+    [Tooltip("Czas przez jaki gracz będzie nietykalny po otrzymaniu obrażeń")]
+    [SerializeField]
+    /// <summary>
+    /// Czas przez jaki gracz będzie nietykalny po otrzymaniu obrażeń
+    /// </summary>
+    private float _afterAttackInviolabilityTime;
 	#endregion
 
+    /// <summary>
+    /// Licznik czasu nietykalności;
+    /// </summary>
+    private float _InviolabilityTimer = 0;
+    /// <summary>
+    /// Własność sprawdzająca czy postać gracza jest nietykalna
+    /// </summary>
+    private bool _isInviolable { get { return _InviolabilityTimer >= 0; } }
     /// <summary>
     /// Aktualny czas który minął od ostatniego ataku
     /// </summary>
@@ -47,7 +62,6 @@ public class MainCharacter : Character
     /// Komponent Animator postaci
     /// </summary>
 	private Animator _animator;
-
     /// <summary>
     /// Ilość monet którą posiada gracz
     /// </summary>
@@ -77,6 +91,7 @@ public class MainCharacter : Character
 
 		UpdateAnimator(xAxis, yAxis);
 		CheckThrow();
+        UpdateInviolabilityTimer();
 	}
 
     /// <summary>
@@ -169,6 +184,34 @@ public class MainCharacter : Character
         fireball.GetComponent<Projectile>().Damage = _attackPower;
 	}
 
+    /// <summary>
+    /// Metoda wywoływana co klatkę, aktualizuje timer nietykalności postaci
+    /// </summary>
+    private void UpdateInviolabilityTimer()
+    {
+        if (_isInviolable)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            _InviolabilityTimer -= Time.deltaTime;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
+
+    /// <summary>
+    /// Sprawia, że postać przez czas <see cref="_afterAttackInviolabilityTime"/> jest nietykalna
+    /// </summary>
+    private void SetInviolable()
+    {
+        _InviolabilityTimer = _afterAttackInviolabilityTime;
+    }
+
+    /// <summary>
+    /// Metoda reagująca na zdarzenie przejścia do innego pokoju. Ustawia gracza w odpowiednim miejscu w nowym pokoju
+    /// </summary>
+    /// <param name="direction">Kierunek w którym zostałą dokonana zmiana pokoju</param>
     private void OnRoomChange(Direction direction)
     {
         const float roomEntranceOffset = 0.4f;
@@ -198,11 +241,41 @@ public class MainCharacter : Character
                 break;
         }
 
+        SetInviolable();
         transform.position = new Vector3(newX, newY, transform.position.z);
     }
 
+    /// <summary>
+    /// Przeciążona metoda śmierci gracza
+    /// </summary>
     protected override void Die()
     {
         Application.LoadLevel(Application.loadedLevel);
+    }
+
+    /// <summary>
+    /// Przeciążona metoda otrzymywania obrażeń, reaguje na nietykalność gracza
+    /// </summary>
+    /// <param name="damage"></param>
+    public override void TakingDamage(int damage)
+    {
+        if (!_isInviolable)
+        {
+            base.TakingDamage(damage);
+            if(damage > 0)
+                SetInviolable();
+        }
+    }
+
+    /// <summary>
+    /// Metoda reagująca na zdarzenie kolizji z innymi obiektami, jeśli gracz zderzy się z przeciwnikiem otrzymuje obrażenia
+    /// </summary>
+    /// <param name="other"></param>
+    void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            TakingDamage(1);
+        }
     }
 }

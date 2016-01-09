@@ -99,6 +99,7 @@ MonoBehaviour:
   _throwDelay: .200000003
   _fireballVelocity: 6
   _fireball: {fileID: 173552, guid: 3cb6e0681367ec44ebbb74d91d686f5f, type: 2}
+  _afterAttackInviolabilityTime: 2
 --- !u!212 &21253214
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -139,6 +140,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _fireballVelocity
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _afterAttackInviolabilityTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
