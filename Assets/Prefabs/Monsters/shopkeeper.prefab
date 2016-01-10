@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6110744}
   - 50: {fileID: 5049828}
   - 95: {fileID: 9591820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shopkeeper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -91,15 +91,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthPoints: 9999999
   _attackPower: 9999999
-  _bulletVelocityFactor: 0
+  _bulletVelocityFactor: 2
   _maxSpeed: 10
   _range: 100
-  _attackDistance: .5
+  _attackDistance: 100
   Difficulty: 99999
   _availableItems:
   - Item: {fileID: 11453812, guid: 0edc6c73660b10448b50c1fc7345376c, type: 2}
     Cost: 1
   _shopItem: {fileID: 11460998, guid: 2c79c3ea9197ea74a82ca758c7d788c9, type: 2}
+  _projectile: {fileID: 11400206, guid: b3b9b3315d84e5d4887fe059879eabd5, type: 2}
 --- !u!212 &21263010
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -177,7 +178,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _attackDistance
-      value: .5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Difficulty
@@ -196,6 +197,19 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 382131a85f8a58742954fd8a4a163f1d,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: _bulletVelocityFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _projectile
+      value: 
+      objectReference: {fileID: 11400206, guid: b3b9b3315d84e5d4887fe059879eabd5,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190600}

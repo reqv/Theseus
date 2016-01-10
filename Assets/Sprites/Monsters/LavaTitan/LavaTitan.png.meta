@@ -1,0 +1,360 @@
+fileFormatVersion: 2
+guid: 2a4d8dc9173ef5745835fef27408ffc5
+timeCreated: 1452435342
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: LavaTitan_0
+    21300002: LavaTitan_1
+    21300004: LavaTitan_2
+    21300006: LavaTitan_3
+    21300008: LavaTitan_4
+    21300010: LavaTitan_5
+    21300012: LavaTitan_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 450
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: LavaTitan_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 431
+        width: 400
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 184, y: -129.5}
+        - {x: 186, y: -124.5}
+        - {x: 186, y: -110.5}
+        - {x: 125, y: -35.5}
+        - {x: 89, y: 4.5}
+        - {x: 31, y: 85.5}
+        - {x: 6, y: 90.5}
+        - {x: -52, y: 90.5}
+        - {x: -69, y: 84.5}
+        - {x: -95, y: 18.5}
+        - {x: -87, y: -20.5}
+        - {x: -145, y: -23.5}
+        - {x: -159, y: -41.5}
+        - {x: -162, y: -50.5}
+        - {x: -162, y: -96.5}
+        - {x: -110, y: -98.5}
+        - {x: -111, y: -149.5}
+        - {x: -78, y: -163.5}
+        - {x: 28, y: -163.5}
+        - {x: 69, y: -155.5}
+        - {x: 73, y: -154.5}
+        - {x: 133, y: -146.5}
+        - {x: 170, y: -135.5}
+    - name: LavaTitan_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 431
+        width: 400
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 200, y: -98.5}
+        - {x: 125, y: -34.5}
+        - {x: 91, y: 6.5}
+        - {x: 29, y: 82.5}
+        - {x: 6, y: 90.5}
+        - {x: -49, y: 90.5}
+        - {x: -96, y: 47.5}
+        - {x: -83, y: -15.5}
+        - {x: -122, y: -55.5}
+        - {x: -128, y: -64.5}
+        - {x: -128, y: -90.5}
+        - {x: -118, y: -118.5}
+        - {x: -46, y: -163.5}
+        - {x: 81, y: -163.5}
+        - {x: 126, y: -155.5}
+        - {x: 176, y: -136.5}
+        - {x: 200, y: -117.5}
+      - - {x: -49, y: -159.5}
+        - {x: -46, y: -157.5}
+        - {x: -49, y: -152.5}
+        - {x: -52, y: -153.5}
+        - {x: -52, y: -156.5}
+      - - {x: 68, y: -154.5}
+        - {x: 71, y: -153.5}
+        - {x: 71, y: -150.5}
+        - {x: 68, y: -149.5}
+        - {x: 66, y: -151.5}
+      - - {x: -63, y: -149.5}
+        - {x: -60, y: -152.5}
+        - {x: -57, y: -151.5}
+        - {x: -57, y: -149.5}
+        - {x: -60, y: -146.5}
+        - {x: -62, y: -146.5}
+      - - {x: -83, y: -135.5}
+        - {x: -74, y: -145.5}
+        - {x: -70, y: -145.5}
+        - {x: -70, y: -141.5}
+        - {x: -76, y: -129.5}
+        - {x: -81, y: -129.5}
+        - {x: -83, y: -130.5}
+      - - {x: -88, y: -137.5}
+        - {x: -85, y: -141.5}
+        - {x: -82, y: -140.5}
+        - {x: -82, y: -137.5}
+        - {x: -85, y: -134.5}
+        - {x: -87, y: -134.5}
+      - - {x: -97, y: -127.5}
+        - {x: -99, y: -129.5}
+        - {x: -99, y: -131.5}
+        - {x: -97, y: -133.5}
+        - {x: -95, y: -133.5}
+        - {x: -93, y: -131.5}
+        - {x: -93, y: -129.5}
+        - {x: -95, y: -127.5}
+    - name: LavaTitan_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 431
+        width: 400
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 184, y: -129.5}
+        - {x: 186, y: -124.5}
+        - {x: 186, y: -110.5}
+        - {x: 125, y: -35.5}
+        - {x: 89, y: 4.5}
+        - {x: 31, y: 85.5}
+        - {x: 6, y: 90.5}
+        - {x: -52, y: 90.5}
+        - {x: -69, y: 84.5}
+        - {x: -95, y: 18.5}
+        - {x: -87, y: -20.5}
+        - {x: -145, y: -23.5}
+        - {x: -159, y: -41.5}
+        - {x: -162, y: -50.5}
+        - {x: -162, y: -96.5}
+        - {x: -110, y: -98.5}
+        - {x: -111, y: -149.5}
+        - {x: -78, y: -163.5}
+        - {x: 28, y: -163.5}
+        - {x: 69, y: -155.5}
+        - {x: 73, y: -154.5}
+        - {x: 133, y: -146.5}
+        - {x: 170, y: -135.5}
+    - name: LavaTitan_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 431
+        width: 400
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 200, y: -98.5}
+        - {x: 125, y: -34.5}
+        - {x: 91, y: 6.5}
+        - {x: 29, y: 82.5}
+        - {x: 6, y: 90.5}
+        - {x: -49, y: 90.5}
+        - {x: -96, y: 47.5}
+        - {x: -83, y: -15.5}
+        - {x: -122, y: -55.5}
+        - {x: -128, y: -64.5}
+        - {x: -128, y: -90.5}
+        - {x: -118, y: -118.5}
+        - {x: -46, y: -163.5}
+        - {x: 81, y: -163.5}
+        - {x: 126, y: -155.5}
+        - {x: 176, y: -136.5}
+        - {x: 200, y: -117.5}
+      - - {x: -49, y: -159.5}
+        - {x: -46, y: -157.5}
+        - {x: -49, y: -152.5}
+        - {x: -52, y: -153.5}
+        - {x: -52, y: -156.5}
+      - - {x: 68, y: -154.5}
+        - {x: 71, y: -153.5}
+        - {x: 71, y: -150.5}
+        - {x: 68, y: -149.5}
+        - {x: 66, y: -151.5}
+      - - {x: -63, y: -149.5}
+        - {x: -60, y: -152.5}
+        - {x: -57, y: -151.5}
+        - {x: -57, y: -149.5}
+        - {x: -60, y: -146.5}
+        - {x: -62, y: -146.5}
+      - - {x: -83, y: -135.5}
+        - {x: -74, y: -145.5}
+        - {x: -70, y: -145.5}
+        - {x: -70, y: -141.5}
+        - {x: -76, y: -129.5}
+        - {x: -81, y: -129.5}
+        - {x: -83, y: -130.5}
+      - - {x: -88, y: -137.5}
+        - {x: -85, y: -141.5}
+        - {x: -82, y: -140.5}
+        - {x: -82, y: -137.5}
+        - {x: -85, y: -134.5}
+        - {x: -87, y: -134.5}
+      - - {x: -97, y: -127.5}
+        - {x: -99, y: -129.5}
+        - {x: -99, y: -131.5}
+        - {x: -97, y: -133.5}
+        - {x: -95, y: -133.5}
+        - {x: -93, y: -131.5}
+        - {x: -93, y: -129.5}
+        - {x: -95, y: -127.5}
+    - name: LavaTitan_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 184, y: -129.5}
+        - {x: 186, y: -124.5}
+        - {x: 186, y: -110.5}
+        - {x: 125, y: -35.5}
+        - {x: 29, y: 83.5}
+        - {x: 13, y: 90.5}
+        - {x: -54, y: 90.5}
+        - {x: -87, y: 45.5}
+        - {x: -138, y: 53.5}
+        - {x: -176, y: 29.5}
+        - {x: -176, y: 10.5}
+        - {x: -147, y: -38.5}
+        - {x: -81, y: -70.5}
+        - {x: -115, y: -128.5}
+        - {x: -98, y: -161.5}
+        - {x: -85, y: -163.5}
+        - {x: 9, y: -163.5}
+        - {x: 69, y: -155.5}
+        - {x: 73, y: -154.5}
+        - {x: 133, y: -146.5}
+        - {x: 170, y: -135.5}
+    - name: LavaTitan_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 186, y: -110.5}
+        - {x: 157, y: -77.5}
+        - {x: 125, y: -35.5}
+        - {x: 108, y: -31.5}
+        - {x: 61, y: 51.5}
+        - {x: 30, y: 85.5}
+        - {x: 10, y: 90.5}
+        - {x: -45, y: 90.5}
+        - {x: -79, y: 63.5}
+        - {x: -102, y: 74.5}
+        - {x: -148, y: 60.5}
+        - {x: -148, y: 36.5}
+        - {x: -133, y: -13.5}
+        - {x: -70, y: -62.5}
+        - {x: -94, y: -97.5}
+        - {x: -113, y: -150.5}
+        - {x: -74, y: -163.5}
+        - {x: 21, y: -163.5}
+        - {x: 133, y: -146.5}
+        - {x: 170, y: -135.5}
+        - {x: 184, y: -129.5}
+        - {x: 186, y: -124.5}
+    - name: LavaTitan_6
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 186, y: -110.5}
+        - {x: 157, y: -77.5}
+        - {x: 125, y: -35.5}
+        - {x: 108, y: -31.5}
+        - {x: 61, y: 51.5}
+        - {x: 30, y: 85.5}
+        - {x: 10, y: 90.5}
+        - {x: -45, y: 90.5}
+        - {x: -79, y: 63.5}
+        - {x: -102, y: 74.5}
+        - {x: -148, y: 60.5}
+        - {x: -148, y: 36.5}
+        - {x: -133, y: -13.5}
+        - {x: -70, y: -62.5}
+        - {x: -94, y: -97.5}
+        - {x: -113, y: -150.5}
+        - {x: -74, y: -163.5}
+        - {x: 21, y: -163.5}
+        - {x: 133, y: -146.5}
+        - {x: 170, y: -135.5}
+        - {x: 184, y: -129.5}
+        - {x: 186, y: -124.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

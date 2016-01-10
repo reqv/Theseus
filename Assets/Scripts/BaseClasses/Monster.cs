@@ -179,6 +179,7 @@ public abstract class Monster : Character {
 		var bullet = Instantiate (projectile,new Vector2(this.transform.position.x + offset.x, this.transform.position.y + offset.y),Quaternion.Euler(new Vector3(0,0,rotate))) as GameObject;
 		//bullet.GetComponent<Rigidbody2D>().velocity = velocity;
 		bullet.GetComponent<Rigidbody2D>().AddForce(getRightAxis(bullet.GetComponent<Rigidbody2D>().position,_targetToAttack.position) * _bulletVelocityFactor,ForceMode2D.Impulse);
+        bullet.GetComponent<Projectile>().Damage = _attackPower;
 	}
 	
 	/// <summary>

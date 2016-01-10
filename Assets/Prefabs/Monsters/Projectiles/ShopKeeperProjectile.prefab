@@ -1,109 +1,87 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &122510
+--- !u!1 &183856
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 404838}
-  - 212: {fileID: 21255194}
-  - 50: {fileID: 5092230}
-  - 58: {fileID: 5865804}
-  - 114: {fileID: 11485554}
-  - 95: {fileID: 9549372}
-  m_Layer: 8
-  m_Name: SmallBloob
-  m_TagString: Enemy
+  - 4: {fileID: 420688}
+  - 114: {fileID: 11400206}
+  - 50: {fileID: 5086882}
+  - 212: {fileID: 21215784}
+  - 58: {fileID: 5851886}
+  m_Layer: 13
+  m_Name: ShopKeeperProjectile
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &404838
+--- !u!4 &420688
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122510}
+  m_GameObject: {fileID: 183856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 2, y: 1, z: -1}
+  m_LocalScale: {x: .0299999993, y: .0299999993, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5092230
+--- !u!50 &5086882
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122510}
-  m_UseAutoMass: 0
+  m_GameObject: {fileID: 183856}
   m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 0
-  m_GravityScale: 0
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &5865804
+  m_Constraints: 0
+--- !u!58 &5851886
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122510}
+  m_GameObject: {fileID: 183856}
   m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.3
---- !u!95 &9549372
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122510}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11485554
+  m_Radius: 1.89999998
+--- !u!114 &11400206
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122510}
+  m_GameObject: {fileID: 183856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef890027c618ec546a398b47f1c51e90, type: 3}
+  m_Script: {fileID: 11500000, guid: dcc9ddff72e3c684cacf50b36c693335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 1
-  _attackPower: 1
-  _bulletVelocityFactor: 0
-  _maxSpeed: 6
-  _range: 3
-  _attackDistance: 0.01
-  Difficulty: 1
---- !u!212 &21255194
+  _timeToLive: 3
+  _damageTags:
+  - Player
+  _additionalCCEffect: 3
+  _additionalCCEffectTime: 1000
+--- !u!212 &21215784
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122510}
+  m_GameObject: {fileID: 183856}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -116,18 +94,14 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -282359015
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e275e4b5d24dd9042ad5f40215d8f7f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5336fd4adb3dc204daf05a67ea47ab32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -136,34 +110,26 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: m_Mass
-      value: 1
+      propertyPath: _damageTags.Array.data[0]
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_LinearDrag
-      value: 1
+      propertyPath: _additionalCCEffect
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: _maxSpeed
-      value: 6
+      propertyPath: _additionalCCEffectTime
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_LocalScale.x
-      value: 0.5
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: _attackDistance
-      value: 0.01
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 122510}
+  m_RootGameObject: {fileID: 183856}
   m_IsPrefabParent: 1

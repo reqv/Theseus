@@ -44,6 +44,13 @@ public class MainCharacter : Character
     /// Czas przez jaki gracz będzie nietykalny po otrzymaniu obrażeń
     /// </summary>
     private float _afterAttackInviolabilityTime;
+
+    [Tooltip("Maksymalne zdrowie postaci - musi być")]
+    [SerializeField]
+    /// <summary>
+    /// Maksymalne zdrowie postaci
+    /// </summary>
+    private int _maxHealthPoints;
 	#endregion
 
     /// <summary>
@@ -62,10 +69,24 @@ public class MainCharacter : Character
     /// Komponent Animator postaci
     /// </summary>
 	private Animator _animator;
+
+    private int _coins;
+
     /// <summary>
     /// Ilość monet którą posiada gracz
     /// </summary>
-    public int Coins { get; set; }
+    public int Coins
+    {
+        get
+        {
+            return _coins;
+        }
+        set
+        {
+            _coins = value;
+            Messenger.Broadcast<int>(Messages.PlayerCoinsChanged, _coins);
+        }
+    }
 
     /// <summary>
     /// 	Metoda uruchamiana podczas utworzenia obiektu
@@ -77,6 +98,8 @@ public class MainCharacter : Character
 
         Coins = 10;
         Messenger.AddListener<Direction>(Messages.PlayerGoesThroughTheDoor, OnRoomChange);
+        Messenger.Broadcast<int, int>(Messages.PlayerHealthChanged, _healthPoints, _maxHealthPoints);
+        Messenger.Broadcast<int>(Messages.PlayerCoinsChanged, Coins);
 	}
 
     /// <summary>
@@ -262,8 +285,11 @@ public class MainCharacter : Character
         if (!_isInviolable)
         {
             base.TakingDamage(damage);
-            if(damage > 0)
+            if (damage > 0)
+            {
                 SetInviolable();
+                Messenger.Broadcast<int, int>(Messages.PlayerHealthChanged, _healthPoints, _maxHealthPoints);
+            }
         }
     }
 

@@ -38,6 +38,9 @@ public class ShopKeeper : Monster
     /// </summary>
     private bool _attacked = false;
 
+    [SerializeField]
+    private Projectile _projectile;
+
 	void Start () 
     {
         base.Start();
@@ -84,8 +87,15 @@ public class ShopKeeper : Monster
     /// 	W przypadku węża - podąża on za ofiarą z odpowiednio większą prędkością
     /// </remarks>
     public override void Attack()
-    {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Character>().TakingDamage(9999);
+    {;
+        if(_attacked)
+        {
+            Vector2 vector = transform.position - _targetToAttack.position;
+
+            NewProjectile(_projectile.gameObject, new Vector2(0, 0), new Vector2(-vector.x, -vector.y) * 0.9f);
+            NewProjectile(_projectile.gameObject, new Vector2(0, 0), new Vector2(-vector.x, -vector.y));
+            NewProjectile(_projectile.gameObject, new Vector2(0, 0), new Vector2(-vector.x, -vector.y) * 1.1f);
+        }
     }
 
     /// <summary>
@@ -93,11 +103,6 @@ public class ShopKeeper : Monster
     /// </summary>
     public override void Chase()
     {
-        if(_attacked)
-        {
-            WhereIsATarget(_targetToAttack.position);
-            _Rig2D.AddForce(_axis * _realMaxSpeed);
-        }
     }
 
 
@@ -123,7 +128,6 @@ public class ShopKeeper : Monster
         if (damage > 0)
         {
             _attacked = true;
-            GetComponent<Rigidbody2D>().isKinematic = false;
         }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5042616}
   - 212: {fileID: 21202968}
   - 58: {fileID: 5831474}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TheseusProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,6 +74,8 @@ MonoBehaviour:
   _timeToLive: 3
   _damageTags:
   - Enemy
+  _additionalCCEffect: 0
+  _additionalCCEffectTime: 0
 --- !u!212 &21202968
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -118,6 +120,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _damageTags.Array.data[0]
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _additionalCCEffect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
