@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Sceny/testowa.unity
   - enabled: 1
     path: Assets/Scenes/Menu.unity
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
