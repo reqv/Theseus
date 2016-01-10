@@ -239,7 +239,7 @@ public class MainCharacter : Character
     {
         const float roomEntranceOffset = 0.4f;
         float newX, newY;
-        var roomManager = FindObjectOfType<RoomManager>();
+        var roomManager = FindObjectOfType<GameManager>().roomManager;
 
         switch(direction)
         {
@@ -297,7 +297,7 @@ public class MainCharacter : Character
     /// Metoda reagująca na zdarzenie kolizji z innymi obiektami, jeśli gracz zderzy się z przeciwnikiem otrzymuje obrażenia
     /// </summary>
     /// <param name="other"></param>
-    void OnCollisionStay2D(Collision2D other)
+    private void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
