@@ -15,7 +15,7 @@ public class Gargoyle : Monster {
 	/// <summary>
 	/// 	Parametr decydujący o tym, czy gargulec jest istotą żywą.
 	/// </summary>
-	private bool _isAlive;
+	private bool _notAStone;
 
 	[Tooltip ("Czy gargulec w postaci kamiennej powinien patrzeć w lewo?")]
 	[SerializeField]
@@ -88,7 +88,7 @@ public class Gargoyle : Monster {
 	/// </remarks>
 	public override void Walking()
 	{
-		if (_targetToAttack != null && _locateATarget && _isAlive)
+		if (_targetToAttack != null && _locateATarget && _notAStone)
 			Chase ();
 		else {
 			if(_timeToRelease < 0)
