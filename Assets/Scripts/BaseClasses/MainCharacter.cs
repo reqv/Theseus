@@ -44,6 +44,13 @@ public class MainCharacter : Character
     /// Czas przez jaki gracz będzie nietykalny po otrzymaniu obrażeń
     /// </summary>
     private float _afterAttackInviolabilityTime;
+
+    [Tooltip("Maksymalne zdrowie postaci - musi być")]
+    [SerializeField]
+    /// <summary>
+    /// Maksymalne zdrowie postaci
+    /// </summary>
+    private int _maxHealthPoints;
 	#endregion
 
     /// <summary>
@@ -77,6 +84,7 @@ public class MainCharacter : Character
 
         Coins = 10;
         Messenger.AddListener<Direction>(Messages.PlayerGoesThroughTheDoor, OnRoomChange);
+        Messenger.Broadcast<int, int>(Messages.PlayerHealthChanged, _healthPoints, _maxHealthPoints);
 	}
 
     /// <summary>
@@ -262,8 +270,11 @@ public class MainCharacter : Character
         if (!_isInviolable)
         {
             base.TakingDamage(damage);
-            if(damage > 0)
+            if (damage > 0)
+            {
                 SetInviolable();
+                Messenger.Broadcast<int, int>(Messages.PlayerHealthChanged, _healthPoints, _maxHealthPoints);
+            }
         }
     }
 
