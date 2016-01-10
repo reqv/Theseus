@@ -9,14 +9,6 @@
  * </remarks>
  */
 public abstract class Item : TheseusGameObject {
-
-	[Tooltip ("Mówi o tym, czy przedmiot wypadł z potwora lub skrzyni.")]
-	[SerializeField]
-	/// <summary>
-	/// 	Mówi o tym, czy przedmiot wypadł z potwora lub skrzyni.
-	/// </summary>
-	protected bool _fromMonsterOrChest;
-
 	[Tooltip ("Siła z jaką wypada przedmiot po pojawieniu sie.")]
 	[SerializeField]
 	/// <summary>
@@ -24,14 +16,35 @@ public abstract class Item : TheseusGameObject {
 	/// </summary>
 	protected byte _impact;
 
+	[Tooltip ("Destruction delay")]
+	[SerializeField]
+	/// <summary>
+	/// 	Siła z jaką wypada przedmiot po pojawieniu sie.
+	/// </summary>
+	protected byte _cleanDelay;
+
+	[Tooltip ("Czy wypada ze skrzyni ?")]
+	[SerializeField]
+	/// <summary>
+	/// 	Czy wypada ze skrzyni ?
+	/// </summary>
+	protected bool _fromChest;
+
+	/// <summary>
+	/// 	Opóźnienie przed możliwością podniesienia
+	/// </summary>
+	private float _pickUpDelay = 0.5f;
+
 	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia obiektu
 	/// </summary>
 	public virtual void Start () {
 		_Rig2D = GetComponent<Rigidbody2D>();
-		if (_fromMonsterOrChest) {
-			_Rig2D.AddForce(new Vector2(RandomNumber(-1,1),RandomNumber(-1,1)) * _impact,ForceMode2D.Impulse);
-		}
+		if (_fromChest)
+			_Rig2D.AddForce (new Vector2 (RandomNumber (-1, 1), RandomNumber (-1, 1)) * _impact, ForceMode2D.Impulse);
+		
+		else
+			_pickUpDelay = 0;
 	}
 
 	/// <summary>
@@ -42,11 +55,17 @@ public abstract class Item : TheseusGameObject {
 	/// </remarks>
 	public virtual void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "Player") {
+		if (other.gameObject.tag == "Player" && _pickUpDelay <= 0) {
 			EffectOfItem(other);
-			Destroy(gameObject);
+			Destroy(gameObject,(float)_cleanDelay);
 		}
 	}
+
+	public virtual void FixedUpdate () {
+		if (_pickUpDelay > 0)
+			_pickUpDelay -= Time.deltaTime;
+	}
+
 
 	/// <summary>
 	/// 	Metoda abstrakcyjna, implementowana w potomkach. Określa specyficzne działanie przedmiotu.
