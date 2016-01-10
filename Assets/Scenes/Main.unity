@@ -262,7 +262,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d8905a26a830bc047bbb73259c3a5b48, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -270,8 +270,8 @@ MonoBehaviour:
     m_MaxSize: 40
     m_Alignment: 3
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 0
 --- !u!222 &204359181
@@ -562,6 +562,38 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
+--- !u!1 &703740131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 703740132}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &703740132
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 703740131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.18655229, y: 2.6072278, z: 99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1266604833}
+  - {fileID: 521588372}
+  - {fileID: 1487670993}
+  - {fileID: 1023052438}
+  - {fileID: 1836521881}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1001 &728899577
 Prefab:
   m_ObjectHideFlags: 0
@@ -830,14 +862,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1266604832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 1, z: -1}
+  m_LocalPosition: {x: 5.18655205, y: -1.6072278, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 521588372}
-  - {fileID: 1487670993}
-  - {fileID: 1023052438}
-  - {fileID: 1836521881}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 703740132}
   m_RootOrder: 0
 --- !u!114 &1266604834
 MonoBehaviour:
@@ -859,19 +887,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1266604833}
+    m_TransformParent: {fileID: 703740132}
     m_Modifications:
     - target: {fileID: 454120, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: 3.18655229
       objectReference: {fileID: 0}
     - target: {fileID: 454120, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -2.6072278
       objectReference: {fileID: 0}
     - target: {fileID: 454120, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: -99
       objectReference: {fileID: 0}
     - target: {fileID: 454120, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -891,7 +919,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454120, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
       propertyPath: _monstersManager
@@ -1109,19 +1137,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1266604833}
+    m_TransformParent: {fileID: 703740132}
     m_Modifications:
     - target: {fileID: 484820, guid: e8fe7503325a9b54fb35204d32636ce5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: 1.18655229
       objectReference: {fileID: 0}
     - target: {fileID: 484820, guid: e8fe7503325a9b54fb35204d32636ce5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -3.6072278
       objectReference: {fileID: 0}
     - target: {fileID: 484820, guid: e8fe7503325a9b54fb35204d32636ce5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: -98
       objectReference: {fileID: 0}
     - target: {fileID: 484820, guid: e8fe7503325a9b54fb35204d32636ce5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1141,7 +1169,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484820, guid: e8fe7503325a9b54fb35204d32636ce5, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11450318, guid: e8fe7503325a9b54fb35204d32636ce5, type: 2}
       propertyPath: _monstersManager
@@ -1248,11 +1276,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1836521879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.18655205, y: -1.6072278, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1266604833}
-  m_RootOrder: 3
+  m_Father: {fileID: 703740132}
+  m_RootOrder: 4
 --- !u!1001 &1885833873
 Prefab:
   m_ObjectHideFlags: 0
@@ -1426,19 +1454,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1266604833}
+    m_TransformParent: {fileID: 703740132}
     m_Modifications:
     - target: {fileID: 492134, guid: b3577bbdb5c09e84289e377aa4023ddb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: 1.18655229
       objectReference: {fileID: 0}
     - target: {fileID: 492134, guid: b3577bbdb5c09e84289e377aa4023ddb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -3.6072278
       objectReference: {fileID: 0}
     - target: {fileID: 492134, guid: b3577bbdb5c09e84289e377aa4023ddb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: -98
       objectReference: {fileID: 0}
     - target: {fileID: 492134, guid: b3577bbdb5c09e84289e377aa4023ddb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1458,7 +1486,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 492134, guid: b3577bbdb5c09e84289e377aa4023ddb, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11457930, guid: b3577bbdb5c09e84289e377aa4023ddb, type: 2}
       propertyPath: _monstersManager
