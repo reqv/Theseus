@@ -73,18 +73,28 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
         else if (instance != this)
+        {
             Destroy(gameObject);
+            return;
+        }
 
         DontDestroyOnLoad(gameObject);
         roomManager = _sandRoomManager;
-        AddListeners();
-        InitGame();
     }
 
     void OnLevelWasLoaded(int level)
     {
-        if (_level > 1)
+        if(level == 1 && instance == this)
+        {
+            if (_level >= 5)
+                roomManager = _finalRoomManager;
+            else if (_level >= 3)
+                roomManager = _stoneRoomManager;
+            else
+                roomManager = _sandRoomManager;
             InitGame();
+            AddListeners();
+        }
     }
 
     /// <summary>
@@ -93,6 +103,7 @@ public class GameManager : MonoBehaviour
     void InitGame()
     {
         _roomGameObjectsHolder.Clear();
+        _board.ResetBoard();
         _board.FillBoard();
         _actualPositionX = _actualPositionY = _board.HalfOfBoardSize;
 
@@ -163,11 +174,11 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         _level++;
-        if (_level == 6)
+        if (_level == 3)
             roomManager = _stoneRoomManager;
-        if (_level == 11)
+        if (_level == 5)
             roomManager = _finalRoomManager;
-        if (_level == 16)
+        if (_level == 6)
         {
             EndGame();
             return;

@@ -58,7 +58,7 @@ MonoBehaviour:
   _outerWallCornerTiles:
   - {fileID: 110682, guid: 61d1d69bbad1ac846b9ca7de79a8f8c3, type: 2}
   - {fileID: 130444, guid: 75c1dc22eccddfc41ba661206be0ed37, type: 2}
-  _monstersManager: {fileID: 0}
+  _monstersManager: {fileID: 11439390, guid: 1ef22d8d652a1184aa40b4b73052b61a, type: 2}
   _shopKeeper: {fileID: 11418394, guid: eaef954b1a0d2f44d8ee5910c471ac32, type: 2}
 --- !u!1001 &100100000
 Prefab:
@@ -95,6 +95,11 @@ Prefab:
       propertyPath: _exit
       value: 
       objectReference: {fileID: 150884, guid: 0e7f9bac4dd2d6b4882022cbff013f01, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _monstersManager
+      value: 
+      objectReference: {fileID: 11439390, guid: 1ef22d8d652a1184aa40b4b73052b61a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 111684}

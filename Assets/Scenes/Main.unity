@@ -455,7 +455,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &682479866
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,12 +807,59 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22447376, guid: ef1b6210b6f315349863228662ff0739,
     type: 2}
   m_PrefabInternal: {fileID: 1104286601}
+--- !u!1 &1266604832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1266604833}
+  - 114: {fileID: 1266604834}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1266604833
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1266604832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 1, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 521588372}
+  - {fileID: 1487670993}
+  - {fileID: 1023052438}
+  - {fileID: 1836521881}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &1266604834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1266604832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8f85b676c08d940a8f37d6002c943d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sandRoomManager: {fileID: 521588373}
+  _stoneRoomManager: {fileID: 1487670992}
+  _finalRoomManager: {fileID: 1023052437}
+  roomManager: {fileID: 0}
 --- !u!1001 &1302121829
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2009024885}
+    m_TransformParent: {fileID: 1266604833}
     m_Modifications:
     - target: {fileID: 454120, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
       propertyPath: m_LocalPosition.x
@@ -886,7 +933,7 @@ RectTransform:
   - {fileID: 1679071748}
   - {fileID: 682479867}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1062,7 +1109,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2009024885}
+    m_TransformParent: {fileID: 1266604833}
     m_Modifications:
     - target: {fileID: 484820, guid: e8fe7503325a9b54fb35204d32636ce5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1204,7 +1251,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2009024885}
+  m_Father: {fileID: 1266604833}
   m_RootOrder: 3
 --- !u!1001 &1885833873
 Prefab:
@@ -1300,7 +1347,6 @@ GameObject:
   - 92: {fileID: 2009024883}
   - 124: {fileID: 2009024882}
   - 81: {fileID: 2009024881}
-  - 114: {fileID: 2009024886}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1372,34 +1418,15 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 521588372}
-  - {fileID: 1487670993}
-  - {fileID: 1023052438}
-  - {fileID: 1836521881}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!114 &2009024886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2009024880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8f85b676c08d940a8f37d6002c943d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sandRoomManager: {fileID: 521588373}
-  _stoneRoomManager: {fileID: 1487670992}
-  _finalRoomManager: {fileID: 1023052437}
-  roomManager: {fileID: 0}
+  m_RootOrder: 1
 --- !u!1001 &2029103068
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2009024885}
+    m_TransformParent: {fileID: 1266604833}
     m_Modifications:
     - target: {fileID: 492134, guid: b3577bbdb5c09e84289e377aa4023ddb, type: 2}
       propertyPath: m_LocalPosition.x
