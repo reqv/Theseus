@@ -73,8 +73,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b53963b1a0ff14d9af820c488198ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fromMonsterOrChest: 1
   _impact: 2
+  _fromChest: 1
   _coinValue: 1
 --- !u!212 &21288258
 SpriteRenderer:
@@ -124,6 +124,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _impact
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _fromChest
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
