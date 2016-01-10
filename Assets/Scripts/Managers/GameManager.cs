@@ -92,8 +92,8 @@ public class GameManager : MonoBehaviour
                 roomManager = _stoneRoomManager;
             else
                 roomManager = _sandRoomManager;
-            InitGame();
             AddListeners();
+            InitGame();
         }
     }
 
