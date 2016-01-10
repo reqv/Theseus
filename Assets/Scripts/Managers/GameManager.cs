@@ -13,11 +13,6 @@ using System.Linq;
  */
 public class GameManager : MonoBehaviour
 {
-    /// <summary>
-    /// Instacja Singletonu
-    /// </summary>
-    public static GameManager instance = null;
-
     [SerializeField]
     /// <summary>
     /// Manager pomieszczeń dla poziomów 1-5
@@ -57,7 +52,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Numer poziomu
     /// </summary>
-    private int _level = 1;
+    private static int _level = 1;
     /// <summary>
     /// Kolekcja przetrzymująca wszystkie pokoje wraz z ich współrzędnymi w grze
     /// </summary>
@@ -68,33 +63,27 @@ public class GameManager : MonoBehaviour
     private GameObject _actualRoom;
 
     // Use this for initialization
-    void Awake ()
+    void Start ()
     {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        //if (instance == null)
+        //    instance = this;
+        //else if (instance != this)
+        //{
+        //    Destroy(gameObject);
+        //    return;
+        //}
 
-        DontDestroyOnLoad(gameObject);
-        roomManager = _sandRoomManager;
-    }
+        //DontDestroyOnLoad(gameObject);
 
-    void OnLevelWasLoaded(int level)
-    {
-        if(level == 1 && instance == this)
-        {
-            if (_level >= 5)
-                roomManager = _finalRoomManager;
-            else if (_level >= 3)
-                roomManager = _stoneRoomManager;
-            else
-                roomManager = _sandRoomManager;
-            AddListeners();
-            InitGame();
-        }
+        if (_level >= 5)
+            roomManager = _finalRoomManager;
+        else if (_level >= 3)
+            roomManager = _stoneRoomManager;
+        else
+            roomManager = _sandRoomManager;
+
+        AddListeners();
+        InitGame();
     }
 
     /// <summary>
@@ -102,8 +91,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void InitGame()
     {
-        _roomGameObjectsHolder.Clear();
-        _board.ResetBoard();
         _board.FillBoard();
         _actualPositionX = _actualPositionY = _board.HalfOfBoardSize;
 
@@ -124,6 +111,7 @@ public class GameManager : MonoBehaviour
     /// <param name="direction"></param>
     void OnRoomChange(Direction direction)
     {
+        Debug.Log("Hejka");
         switch(direction)
         {
             case Direction.Top:

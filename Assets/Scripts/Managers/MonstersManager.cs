@@ -24,7 +24,7 @@ public class MonstersManager : MonoBehaviour
     /// </summary>
     private int _actualRoomMonsters;
 
-    void OnLevelWasLoaded(int level)
+    void Start()
     {
         Messenger.AddListener(Messages.MonsterDied, OnMonsterDied);
     }
