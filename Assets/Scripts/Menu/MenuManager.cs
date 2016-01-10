@@ -3,12 +3,8 @@ using System.Collections;
 
 public class MenuManager : MonoBehaviour
 {
-
-    // Use this for initialization
-    void Start ()
-    {
-        
-    }
+    [SerializeField] private GameObject _menuCanvas;
+    [SerializeField] private GameObject _authors;
 
     public void NewGame()
     {
@@ -17,7 +13,8 @@ public class MenuManager : MonoBehaviour
 
     public void Authors()
     {
-        Application.LoadLevel("Authors");
+        _menuCanvas.SetActive(false);
+        _authors.SetActive(true);
     }
 
     public void Quit()
