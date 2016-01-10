@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 /**
@@ -14,6 +16,8 @@ public class GUIManager : MonoBehaviour
 {
     [SerializeField]
     private HorizontalLayoutGroup _heartsContainer;
+    [SerializeField]
+    private HorizontalLayoutGroup _itemsContainer;
 
     [SerializeField]
     private Image _heart1Full;
@@ -25,6 +29,8 @@ public class GUIManager : MonoBehaviour
     private Image _heart2Empty;
     [SerializeField]
     private Text _coins;
+    [SerializeField]
+    private Image _itemPrefab;
 
 	void Start () 
     {
@@ -66,5 +72,13 @@ public class GUIManager : MonoBehaviour
     void UpdateCoins(int coins)
     {
         _coins.text = coins.ToString();
+    }
+
+    void UpdateItems(Sprite itemSprite)
+    {
+        var newItem = Instantiate(_itemPrefab);
+        newItem.sprite = itemSprite;
+        newItem.transform.SetParent(_itemsContainer.transform);
+        newItem.transform.localScale = Vector3.one;
     }
 }
