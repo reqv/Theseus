@@ -32,8 +32,8 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: 0
   m_MinHeight: 0
-  m_PreferredWidth: 50
-  m_PreferredHeight: 100
+  m_PreferredWidth: 11
+  m_PreferredHeight: 22
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
 --- !u!114 &11475490
@@ -92,7 +92,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_PreferredHeight
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PreferredWidth
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100706}

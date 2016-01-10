@@ -23,10 +23,13 @@ public class GUIManager : MonoBehaviour
     private Image _heart2Full;
     [SerializeField]
     private Image _heart2Empty;
+    [SerializeField]
+    private Text _coins;
 
 	void Start () 
     {
         Messenger.AddListener<int,int>(Messages.PlayerHealthChanged, UpdateHealth);
+        Messenger.AddListener<int>(Messages.PlayerCoinsChanged, UpdateCoins);
 	}
 
     void UpdateHealth(int health, int maxHealth)
@@ -58,5 +61,10 @@ public class GUIManager : MonoBehaviour
             newObject.transform.SetParent(_heartsContainer.transform);
             newObject.transform.localScale = Vector3.one;
         }
+    }
+
+    void UpdateCoins(int coins)
+    {
+        _coins.text = coins.ToString();
     }
 }
