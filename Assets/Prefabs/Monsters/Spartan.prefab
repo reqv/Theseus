@@ -8,11 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 456134}
+  - 114: {fileID: 11441574}
   - 212: {fileID: 21267020}
   - 50: {fileID: 5039178}
   - 58: {fileID: 5845302}
   - 95: {fileID: 9530384}
-  - 114: {fileID: 11441574}
   m_Layer: 8
   m_Name: Spartan
   m_TagString: Enemy
