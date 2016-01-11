@@ -85,6 +85,15 @@ public class Minotaur : Monster
         return;
     }
 
+    protected override void Die()
+    {
+        Messenger.Broadcast(Messages.MonsterDied);
+        _Anim.SetTrigger("Die");
+        _status = Status.Stunned;
+        _ccEffectTimer = 3f;
+        Destroy(this.gameObject, 2.0f);
+    }
+
     #region Action Melee
     public override void Attack()
     {

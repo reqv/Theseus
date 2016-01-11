@@ -19,6 +19,13 @@ public class MonstersManager : MonoBehaviour
     /// </summary>
     private Monster[] _monsters;
 
+    [Tooltip("Prefaby bossów")]
+    [SerializeField]
+    /// <summary>
+    /// Prefaby bossów
+    /// </summary>
+    private Monster[] _bosses;
+
     /// <summary>
     /// Liczba potworów aktualnie znajdującyh się w pokoju (do otwierania drzwi)
     /// </summary>
@@ -39,7 +46,7 @@ public class MonstersManager : MonoBehaviour
         _actualRoomMonsters = 0;
 
         //z dupy
-        float difficulty = level * 1;
+        float difficulty = level * 5;
         float actualdifficulty = 0;
         do
         {
@@ -50,6 +57,15 @@ public class MonstersManager : MonoBehaviour
             monster.transform.parent = actualRoom.transform;
             monster.transform.position = new Vector3(Random.Range(-0.5f, 4.5f), Random.Range(-0.5f, 2.5f));
         } while (actualdifficulty < difficulty);
+    }
+
+    public void SpawnBoss(int level, GameObject actualRoom)
+    {
+        _actualRoomMonsters = 1;
+        var boss = Instantiate(_bosses[level - 1]);
+        boss.transform.parent = actualRoom.transform;
+        boss.transform.position = new Vector3(2, 1);
+        Messenger.Broadcast<Monster>(Messages.BossModeEnter, boss);
     }
 
     /// <summary>

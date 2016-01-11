@@ -83,6 +83,12 @@ public class RoomManager : MonoBehaviour
     /// Prefab sklepikarza
     /// </summary>
     private ShopKeeper _shopKeeper;
+
+    [SerializeField]
+    /// <summary>
+    /// Prefab skrzynki
+    /// </summary>
+    private GameObject _chest;
     #endregion
 
     /// <summary>
@@ -316,6 +322,16 @@ public class RoomManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Metoda tworząca skrzynki w pokoju specjalnym
+    /// </summary>
+    /// <param name="level">Nr poziomu</param>
+    void SetupPremium(int level)
+    {
+        var c = Instantiate(_chest, new Vector2(2, 1), Quaternion.identity) as GameObject;
+        c.transform.SetParent(_roomHolder.transform);
+    }
+
+    /// <summary>
     /// Metoda tworząca cały pokój
     /// </summary>
     /// <param name="level">Nr poziomu</param>
@@ -334,6 +350,11 @@ public class RoomManager : MonoBehaviour
             _monstersManager.SpawnEnemies(level, _roomHolder.gameObject);
             _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Close());
         }
+        else if(cell.Type == CellType.Boss)
+        {
+            _monstersManager.SpawnBoss(level, _roomHolder.gameObject);
+            _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Close());
+        }
         else
         {
             _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Open());
@@ -342,6 +363,10 @@ public class RoomManager : MonoBehaviour
         if(cell.Type == CellType.Shop)
         {
             SetupShop(level);
+        }
+        if(cell.Type == CellType.Premium)
+        {
+            SetupPremium(level);
         }
 
         return _roomHolder.gameObject;
