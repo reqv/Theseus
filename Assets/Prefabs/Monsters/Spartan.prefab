@@ -98,6 +98,7 @@ MonoBehaviour:
   _range: 5
   _attackDistance: 2
   Difficulty: 5
+  MinimumLevel: 2
   _patrolX: 0
   _patrolY: 0
   _runAwayRange: 1
@@ -158,6 +159,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _range
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MinimumLevel
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

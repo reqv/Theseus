@@ -1571,13 +1571,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monsters:
   - {fileID: 11463872, guid: d7aa6907c6485da42870e60d08118ea2, type: 2}
+  - {fileID: 11471984, guid: 75cab3563f37b3c4db0455e399fd4217, type: 2}
+  - {fileID: 11494690, guid: 3a172621c8e9b27419be6705a1bccdc0, type: 2}
+  - {fileID: 11450728, guid: a192e71166087084eac323ba051e04c1, type: 2}
+  - {fileID: 11418484, guid: a2d0d512014138240b3ef20728239d50, type: 2}
+  - {fileID: 11441784, guid: dd41caf7a4795dc448819a1cc5af5e5c, type: 2}
   - {fileID: 11441574, guid: e09bc0e471563944e9c5f3e3a58cf1c4, type: 2}
   _bosses:
   - {fileID: 11479756, guid: c0d5c097700c52644961a96d0bca15b1, type: 2}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11484482, guid: 0cb39faf7bfb21447917bc76f9052ff6, type: 2}
+  - {fileID: 11448964, guid: efd639479b58b2948a30f2d56c3e233c, type: 2}
 --- !u!4 &1836521881
 Transform:
   m_ObjectHideFlags: 0

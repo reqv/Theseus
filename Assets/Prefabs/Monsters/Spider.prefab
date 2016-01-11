@@ -95,9 +95,10 @@ MonoBehaviour:
   _attackPower: 1
   _bulletVelocityFactor: 0
   _maxSpeed: 4
-  _range: 3
+  _range: 2
   _attackDistance: 0.5
-  Difficulty: 3
+  Difficulty: 2
+  MinimumLevel: 1
   _spiderAttackDelay: 1
   _spiderDelayAfterAttack: 1
 --- !u!212 &21233928
@@ -136,7 +137,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: MinimumLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Difficulty
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _range
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 171712}
