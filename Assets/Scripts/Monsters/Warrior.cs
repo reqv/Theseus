@@ -22,6 +22,12 @@ public class Warrior : Monster {
 	/// </summary>
 	private double _actualFreeFlipTimer;
 
+
+	/// <summary>
+	/// 	Timer pozwalający na poprawę animacji ataku.
+	/// </summary>
+	private float _attackAnimationTimer = 0f;
+
 	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia obiektu, pozwala na inicjalizację zmiennych klasy.
 	/// </summary>
@@ -31,26 +37,15 @@ public class Warrior : Monster {
 	}
 
 	/// <summary>
-	/// 	Metoda uruchamiana podczas wykrycia zderzenia obiektu z innym obiektem
-	/// </summary>
-	/// <remarks>
-	/// 	Podczas zderzenia wykonujemy odpowiednią akcję zależna od obiektu, gdy jest nim gracz to rozpoczynamy atak
-	/// </remarks>
-	/// <param name="other">Obiekt z którym odbyło się zderzenie</param>
-	void OnCollisionEnter2D(Collision2D other)
-	{
-		if (other.gameObject.tag == "Player") {
-			Destroy(other.gameObject);		// ######################## chwilowe rozwiazanie ( usuwanie gracza ) ########################
-		}
-		_collisionAxis = _axis;
-	}
-
-	/// <summary>
 	/// 	Zaimplementowana metoda atakujaca szukany obiekt
 	/// </summary>
     public override void Attack()
     {
-     //   Debug.Log("Attakck!! !! ");
+		if (_attackAnimationTimer <= 0) {
+			_Anim.SetTrigger ("Attack");
+			_attackAnimationTimer = 0.3f;
+		} else
+			_attackAnimationTimer -= Time.deltaTime;
     }
 
 	/// <summary>
@@ -61,6 +56,7 @@ public class Warrior : Monster {
 	/// </remarks>
 	public override void Chase()
     {
+		_Anim.SetBool ("Walking", true);
 		WhereIsATarget (_targetToAttack.transform.position);
 		_Rig2D.AddForce (_axis * _realMaxSpeed);
     }
@@ -76,6 +72,7 @@ public class Warrior : Monster {
 		if (_targetToAttack != null)
 			Chase ();
 		else {
+			_Anim.SetBool ("Walking", false);
 			if(_actualFreeFlipTimer <= 0)
 			{
 				Flip();
