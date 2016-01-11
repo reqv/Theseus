@@ -32,11 +32,26 @@ public class GUIManager : MonoBehaviour
     [SerializeField]
     private Image _itemPrefab;
 
+    [SerializeField]
+    private Image _bossHealthBar;
+    [SerializeField]
+    private GameObject _bossPanel;
+    private int _bossMaxHealth;
+    private bool _bossMode;
+    private Monster _boss;
+
 	void Start () 
     {
         Messenger.AddListener<int,int>(Messages.PlayerHealthChanged, UpdateHealth);
         Messenger.AddListener<int>(Messages.PlayerCoinsChanged, UpdateCoins);
+        Messenger.AddListener<Monster>(Messages.BossModeEnter, BossMode);
 	}
+
+    void Update()
+    {
+        if (_bossMode)
+            UpdateBoss();
+    }
 
     void UpdateHealth(int health, int maxHealth)
     {
@@ -80,5 +95,27 @@ public class GUIManager : MonoBehaviour
         newItem.sprite = itemSprite;
         newItem.transform.SetParent(_itemsContainer.transform);
         newItem.transform.localScale = Vector3.one;
+    }
+
+    void UpdateBoss()
+    {
+        if(_boss.HealthPoints <= 0)
+        {
+            _bossPanel.SetActive(false);
+            _bossMode = false;
+            _boss = null;
+            return;
+        }
+
+        _bossHealthBar.fillAmount = (float)_boss.HealthPoints / (float)_bossMaxHealth;
+    }
+
+    void BossMode(Monster boss)
+    {
+        _boss = boss;
+        _bossMaxHealth = boss.HealthPoints;
+        _bossMode = true;
+        _bossPanel.SetActive(true);
+        _bossHealthBar.fillAmount = 1;
     }
 }

@@ -112,6 +112,8 @@ public abstract class Character : TheseusGameObject
     /// </summary>
     protected float _realAttackDistance;
 
+    public int HealthPoints { get { return _healthPoints; } }
+
     /// <summary>
     /// 	Metoda uruchamiana, gdy postać odnosi obrażenia
     /// </summary>

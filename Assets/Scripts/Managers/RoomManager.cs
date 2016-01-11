@@ -334,6 +334,11 @@ public class RoomManager : MonoBehaviour
             _monstersManager.SpawnEnemies(level, _roomHolder.gameObject);
             _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Close());
         }
+        else if(cell.Type == CellType.Boss)
+        {
+            _monstersManager.SpawnBoss(level, _roomHolder.gameObject);
+            _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Close());
+        }
         else
         {
             _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Open());

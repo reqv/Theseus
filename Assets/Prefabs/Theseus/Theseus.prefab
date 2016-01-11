@@ -89,17 +89,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e99718010345d34cbd9d5402de325a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 0
-  _attackPower: 0
+  _healthPoints: 10
+  _attackPower: 1
   _bulletVelocityFactor: 0
   _maxSpeed: 0
   _range: 0
   _attackDistance: 0
-  _moveVelocityFactor: 4
-  _throwDelay: .200000003
-  _fireballVelocity: 6
+  _moveVelocityFactor: 2
+  _throwDelay: .5
+  _fireballVelocity: 4
   _fireball: {fileID: 173552, guid: 3cb6e0681367ec44ebbb74d91d686f5f, type: 2}
-  _afterAttackInviolabilityTime: 2
+  _afterAttackInviolabilityTime: .5
+  _maxHealthPoints: 10
 --- !u!212 &21253214
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -143,6 +144,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _afterAttackInviolabilityTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _moveVelocityFactor
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
