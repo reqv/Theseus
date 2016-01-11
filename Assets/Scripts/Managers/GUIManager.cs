@@ -46,6 +46,9 @@ public class GUIManager : MonoBehaviour
     private AudioClip _bossClip;
     private AudioClip _previousClip;
 
+    [SerializeField]
+    private GameObject _ladder;
+
 	void Start () 
     {
         Messenger.AddListener<int,int>(Messages.PlayerHealthChanged, UpdateHealth);
@@ -117,6 +120,11 @@ public class GUIManager : MonoBehaviour
             _boss = null;
             var sound = GameObject.FindGameObjectWithTag("SoundTheme");
             sound.GetComponent<AudioSource>().clip = _previousClip;
+            if (FindObjectOfType<MainCharacter>().transform.position.x > 2)
+                Instantiate(_ladder, new Vector2(0.5f, 1), Quaternion.identity);
+            else
+                Instantiate(_ladder, new Vector2(3.5f, 1), Quaternion.identity);
+
             return;
         }
 
