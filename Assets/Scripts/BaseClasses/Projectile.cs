@@ -37,6 +37,20 @@ public class Projectile : TheseusGameObject {
     /// </summary>
     protected float _additionalCCEffectTime;
 
+    [Tooltip("Dodatkowe obrażenia w czasie")]
+    [SerializeField]
+    /// <summary>
+    /// 	Dodatkowe obrażenia w czasie
+    /// </summary>
+    protected int _additionalDOT;
+
+    [Tooltip("Czas dodatkowych obrażeń w czasie")]
+    [SerializeField]
+    /// <summary>
+    /// 	Czas dodatkowych obrażeń w czasie
+    /// </summary>
+    protected float _additionalDOTTime;
+
 	/// <summary>
 	/// 	Właściwość pozwalająca określić ilość obrażeń zadawanych przy zderzeniu
 	/// </summary>
@@ -62,7 +76,10 @@ public class Projectile : TheseusGameObject {
             if (character != null)
             {
                 character.TakingDamage(this.Damage);
-                character.SetCrowdControl(_additionalCCEffect, _additionalCCEffectTime);
+                if(_additionalCCEffect != Status.OK)
+                    character.SetCrowdControl(_additionalCCEffect, _additionalCCEffectTime);
+                if (_additionalDOT > 0)
+                    character.SetDamageOverTime(_additionalDOT, _additionalDOTTime);
             }
 
             Destroy(this.gameObject);
