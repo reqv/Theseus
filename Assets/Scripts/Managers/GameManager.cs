@@ -13,6 +13,9 @@ using System.Linq;
  */
 public class GameManager : MonoBehaviour
 {
+    public static GameObject Theseus;
+    public static Canvas GUI;
+
     [SerializeField]
     /// <summary>
     /// Manager pomieszczeń dla poziomów 1-5
@@ -52,7 +55,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Numer poziomu
     /// </summary>
-    private static int _level = 1;
+    public static int _level = 1;
     /// <summary>
     /// Kolekcja przetrzymująca wszystkie pokoje wraz z ich współrzędnymi w grze
     /// </summary>
@@ -76,6 +79,17 @@ public class GameManager : MonoBehaviour
         //}
 
         //DontDestroyOnLoad(gameObject);
+
+        if (_level == 1)
+        {
+            var toDelete = FindObjectOfType<MainCharacter>();
+            if (toDelete != null)
+                Destroy(toDelete.gameObject);
+            var toDelete2 = FindObjectOfType<GUIManager>();
+            if (toDelete2 != null)
+                Destroy(toDelete2);
+            Application.LoadLevelAdditive("test");
+        }
 
         if (_level >= 5)
             roomManager = _finalRoomManager;

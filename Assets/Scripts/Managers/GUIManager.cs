@@ -49,11 +49,17 @@ public class GUIManager : MonoBehaviour
     [SerializeField]
     private GameObject _ladder;
 
-	void Start () 
+    void OnLevelWasLoaded(int level)
     {
-        Messenger.AddListener<int,int>(Messages.PlayerHealthChanged, UpdateHealth);
+        Messenger.AddListener<int, int>(Messages.PlayerHealthChanged, UpdateHealth);
         Messenger.AddListener<int>(Messages.PlayerCoinsChanged, UpdateCoins);
         Messenger.AddListener<Monster>(Messages.BossModeEnter, BossMode);
+    }
+
+	void Start () 
+    {
+        OnLevelWasLoaded(0);
+        DontDestroyOnLoad(gameObject);
 	}
 
     void Update()

@@ -205,10 +205,17 @@ public class MainCharacter : Character
         _Render2D = GetComponent<SpriteRenderer>();
 
         Coins = 10;
+        OnLevelWasLoaded(0);
+
+        DontDestroyOnLoad(gameObject);
+	}
+
+    void OnLevelWasLoaded(int level)
+    {
         Messenger.AddListener<Direction>(Messages.PlayerGoesThroughTheDoor, OnRoomChange);
         Messenger.Broadcast<int, int>(Messages.PlayerHealthChanged, _healthPoints, _maxHealthPoints);
         Messenger.Broadcast<int>(Messages.PlayerCoinsChanged, Coins);
-	}
+    }
 
     /// <summary>
     /// 	Metoda uruchamiana podczas każdej jednostki czasu.
@@ -373,6 +380,7 @@ public class MainCharacter : Character
     /// </summary>
     protected override void Die()
     {
+        GameManager._level = 1;
         Application.LoadLevel(Application.loadedLevel);
     }
 
