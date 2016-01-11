@@ -1,47 +1,47 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &101176
+--- !u!1 &189836
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 475620}
-  - 212: {fileID: 21251576}
-  - 50: {fileID: 5051790}
-  - 61: {fileID: 6129130}
-  - 114: {fileID: 11450728}
-  - 95: {fileID: 9516296}
+  - 4: {fileID: 499844}
+  - 212: {fileID: 21293526}
+  - 114: {fileID: 11448964}
+  - 50: {fileID: 5038194}
+  - 61: {fileID: 6185914}
+  - 95: {fileID: 9521764}
   m_Layer: 8
-  m_Name: Warrior
+  m_Name: Hydra
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &475620
+--- !u!4 &499844
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101176}
+  m_GameObject: {fileID: 189836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5051790
+--- !u!50 &5038194
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101176}
+  m_GameObject: {fileID: 189836}
   m_UseAutoMass: 0
-  m_Mass: 2
-  m_LinearDrag: 8
+  m_Mass: 500
+  m_LinearDrag: 4
   m_AngularDrag: 0
   m_GravityScale: 0
   m_IsKinematic: 0
@@ -49,30 +49,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6129130
+--- !u!61 &6185914
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101176}
+  m_GameObject: {fileID: 189836}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.08398461, y: -0.03892374}
+  m_Offset: {x: -0.12325859, y: -0.30761385}
   serializedVersion: 2
-  m_Size: {x: 0.42681777, y: 0.49991718}
---- !u!95 &9516296
+  m_Size: {x: 1.2512228, y: 0.66165257}
+--- !u!95 &9521764
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101176}
+  m_GameObject: {fileID: 189836}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2b69be607f429394d9d5c190739c719c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5d64e9ac7bddefe4ba24419beeb83bff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -80,31 +80,32 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11450728
+--- !u!114 &11448964
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101176}
+  m_GameObject: {fileID: 189836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f1233c8a3a9fa14b84a3e6111b66177, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a683a70595637d4d8df112c1b7a40bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 1
+  _healthPoints: 3
   _attackPower: 1
   _bulletVelocityFactor: 0
-  _maxSpeed: 65
+  _maxSpeed: 2000
   _range: 0
-  _attackDistance: 0.3
+  _attackDistance: 0
   Difficulty: 0
-  _freeFlipTimer: 5
---- !u!212 &21251576
+  _timeToHeal: 2
+  _healOverTime: 2
+--- !u!212 &21293526
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101176}
+  m_GameObject: {fileID: 189836}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -125,7 +126,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 47cae24000169ad46a4baf17abaf3132, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 392ca79659e61cc4dbd183a311fb2c42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -146,5 +147,5 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 101176}
+  m_RootGameObject: {fileID: 189836}
   m_IsPrefabParent: 1

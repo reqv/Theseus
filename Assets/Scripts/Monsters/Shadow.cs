@@ -139,9 +139,15 @@ public class Shadow : Monster {
 		}
 	}
 
+	/// <summary>
+	/// 	Metoda uruchamiana poodczas dotkniecia gracza.
+	/// </summary>
+	/// <remarks>
+	/// 	W przypadku zetknięcia się z pociskiem gracza, umiera.
+	/// </remarks>
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "PlayerProjectile") {
-			Destroy(gameObject);
+			TakingDamage (100);
 		}
 	}
 }

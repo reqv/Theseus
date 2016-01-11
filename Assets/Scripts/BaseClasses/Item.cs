@@ -31,12 +31,12 @@ public abstract class Item : TheseusGameObject {
 	protected bool _fromChest;
 
 	/// <summary>
-	/// 	Opóźnienie przed możliwością podniesienia
+	/// 	Opóźnienie przed możliwością podniesienia. Tylko dla przedmiotów ze skrzyni!
 	/// </summary>
 	private float _pickUpDelay = 0.5f;
 
 	/// <summary>
-	/// 	Metoda uruchamiana podczas utworzenia obiektu
+	/// 	Metoda uruchamiana podczas utworzenia obiektu, pozwala określić początkowe parametry.
 	/// </summary>
 	public virtual void Start () {
 		_Rig2D = GetComponent<Rigidbody2D>();
@@ -53,6 +53,7 @@ public abstract class Item : TheseusGameObject {
 	/// <remarks>
 	/// 	W przypadku, gdy przedmiot podniesie gracz wykonywana jest metoda EffectOfItem zawierająca opis wpływu tego przedmiotu na grę. Sam przedmiot znika po podniesieniu.
 	/// </remarks>
+	/// <param name="other">Obiekt z którym nastąpiło zderzenie.</param>
 	public virtual void OnCollisionEnter2D(Collision2D other)
 	{
 		if (other.gameObject.tag == "Player" && _pickUpDelay <= 0) {
