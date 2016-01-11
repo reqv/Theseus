@@ -52,18 +52,23 @@ public class Chest : Item {
 		_opened = true;
 		int rarity = 0;
 		Vector3 pozycja = Vector2.zero;
-		object item;
+		GameObject item;
 		int howMany = RandomNumber (1, _maxItems);
+        var gameManager = FindObjectOfType<GameManager>();
 
 		for (int i = 0; i < howMany; i++) {
 			rarity = RandomNumber (0, 100);
 			if (rarity < 81) {
 				var initLoot = _loot [RandomNumber(0, _loot.Length-1)];
 
-				item = Instantiate(initLoot,transform.position - pozycja,Quaternion.Euler(Vector3.zero));
+                item = Instantiate(initLoot, transform.position - pozycja, Quaternion.Euler(Vector3.zero)) as GameObject;
+                try { item.transform.SetParent(gameManager.ActualRoom.transform);}
+                catch { };
 			} else {
 				var initLoot = _rareLoot [RandomNumber(0, _rareLoot.Length-1)];
-				item = Instantiate(initLoot,transform.position - pozycja,Quaternion.Euler(Vector3.zero));
+                item = Instantiate(initLoot, transform.position - pozycja, Quaternion.Euler(Vector3.zero)) as GameObject;
+                try { item.transform.SetParent(gameManager.ActualRoom.transform); }
+                catch { };
 			}
 		}
 	}

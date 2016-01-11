@@ -1,78 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &189836
+--- !u!1 &130950
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 499844}
-  - 212: {fileID: 21293526}
-  - 114: {fileID: 11448964}
-  - 50: {fileID: 5038194}
-  - 61: {fileID: 6185914}
-  - 95: {fileID: 9521764}
-  m_Layer: 8
-  m_Name: Hydra
-  m_TagString: Enemy
+  - 4: {fileID: 440476}
+  - 212: {fileID: 21283604}
+  - 50: {fileID: 5011036}
+  - 58: {fileID: 5816242}
+  - 95: {fileID: 9544064}
+  - 114: {fileID: 11452392}
+  m_Layer: 11
+  m_Name: Chest
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &499844
+--- !u!4 &440476
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189836}
+  m_GameObject: {fileID: 130950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .0599999987, y: -5.19000006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5038194
+--- !u!50 &5011036
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189836}
-  m_UseAutoMass: 0
-  m_Mass: 500
-  m_LinearDrag: 4
-  m_AngularDrag: 0
+  m_GameObject: {fileID: 130950}
+  m_Mass: 300
+  m_LinearDrag: 5
+  m_AngularDrag: 5
   m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6185914
-BoxCollider2D:
+--- !u!58 &5816242
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189836}
+  m_GameObject: {fileID: 130950}
   m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.12325859, y: -0.30761385}
+  m_Offset: {x: -.0189999994, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.2512228, y: 0.66165257}
---- !u!95 &9521764
+  m_Radius: .200000003
+--- !u!95 &9544064
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189836}
+  m_GameObject: {fileID: 130950}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5d64e9ac7bddefe4ba24419beeb83bff, type: 2}
+  m_Controller: {fileID: 9100000, guid: c0abbe59d47445b44bc765d252cf0c16, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -80,32 +78,31 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11448964
+--- !u!114 &11452392
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189836}
+  m_GameObject: {fileID: 130950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a683a70595637d4d8df112c1b7a40bf, type: 3}
+  m_Script: {fileID: 11500000, guid: f32450424400f6542b9cdfd799909539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 3
-  _attackPower: 1
-  _bulletVelocityFactor: 0
-  _maxSpeed: 2000
-  _range: 0
-  _attackDistance: 0
-  Difficulty: 0
-  _timeToHeal: 2
-  _healOverTime: 2
---- !u!212 &21293526
+  _impact: 0
+  _cleanDelay: 3
+  _fromChest: 0
+  _maxItems: 2
+  _rareLoot:
+  - {fileID: 11446332, guid: 979e40e28ee39474eb06d7832bd38ee9, type: 2}
+  _loot:
+  - {fileID: 11427694, guid: d050ef1abf8e19f4389640f515a597db, type: 2}
+--- !u!212 &21283604
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189836}
+  m_GameObject: {fileID: 130950}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -113,23 +110,19 @@ SpriteRenderer:
   - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -282359015
+  m_SortingLayerID: 1005726265
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 392ca79659e61cc4dbd183a311fb2c42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14cc492c6b70df94185310951650df9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -138,18 +131,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
       propertyPath: m_SortingLayerID
-      value: -282359015
+      value: 1005726265
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 189836}
+  m_RootGameObject: {fileID: 130950}
   m_IsPrefabParent: 1

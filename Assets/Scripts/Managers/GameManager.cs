@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private GameObject _actualRoom;
 
+    public GameObject ActualRoom { get { return _actualRoom; } }
+
     // Use this for initialization
     void Start ()
     {

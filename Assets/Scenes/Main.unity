@@ -1139,6 +1139,10 @@ Prefab:
       propertyPath: _monstersManager
       value: 
       objectReference: {fileID: 1836521880}
+    - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
+      propertyPath: _chest
+      value: 
+      objectReference: {fileID: 130950, guid: c4c7c403e20ab8240af20d0e7581fe28, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
   m_IsPrefabParent: 0
@@ -1393,6 +1397,10 @@ Prefab:
       propertyPath: _monstersManager
       value: 
       objectReference: {fileID: 1836521880}
+    - target: {fileID: 11450318, guid: e8fe7503325a9b54fb35204d32636ce5, type: 2}
+      propertyPath: _chest
+      value: 
+      objectReference: {fileID: 130950, guid: c4c7c403e20ab8240af20d0e7581fe28, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8fe7503325a9b54fb35204d32636ce5, type: 2}
   m_IsPrefabParent: 0
@@ -1716,6 +1724,10 @@ Prefab:
       propertyPath: _monstersManager
       value: 
       objectReference: {fileID: 1836521880}
+    - target: {fileID: 11457930, guid: b3577bbdb5c09e84289e377aa4023ddb, type: 2}
+      propertyPath: _chest
+      value: 
+      objectReference: {fileID: 130950, guid: c4c7c403e20ab8240af20d0e7581fe28, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3577bbdb5c09e84289e377aa4023ddb, type: 2}
   m_IsPrefabParent: 0
