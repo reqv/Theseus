@@ -97,7 +97,8 @@ MonoBehaviour:
   _maxSpeed: 40
   _range: 0
   _attackDistance: 0
-  Difficulty: 0
+  Difficulty: 3
+  MinimumLevel: 1
   _freeFlipTimer: 5
 --- !u!212 &21232868
 SpriteRenderer:
@@ -147,6 +148,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: -282359015
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Difficulty
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MinimumLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
