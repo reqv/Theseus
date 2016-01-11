@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: cdc0fb638943eb447beb3dd231bbabf3
+timeCreated: 1452518941
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bat_fly_0
+    21300002: bat_fly_1
+    21300004: bat_fly_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 400
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: bat_fly_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -139, y: 92}
+        - {x: -139, y: 29}
+        - {x: -138, y: 26}
+        - {x: -49, y: -45}
+        - {x: 67, y: -45}
+        - {x: 111, y: -35}
+        - {x: 152, y: -5}
+        - {x: 152, y: 26}
+        - {x: -36, y: 92}
+      - - {x: -139, y: 62}
+        - {x: -138, y: 59}
+        - {x: -134, y: 59}
+        - {x: -132, y: 60}
+        - {x: -132, y: 64}
+        - {x: -134, y: 67}
+        - {x: -136, y: 67}
+        - {x: -139, y: 64}
+    - name: bat_fly_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34, y: 48}
+        - {x: -155, y: 48}
+        - {x: -155, y: 37}
+        - {x: -128, y: -5}
+        - {x: -89, y: -58}
+        - {x: 148, y: -58}
+        - {x: 148, y: -30}
+        - {x: 138, y: -23}
+      - - {x: -143, y: 24}
+        - {x: -146, y: 23}
+        - {x: -146, y: 17}
+        - {x: -140, y: 17}
+        - {x: -139, y: 19}
+        - {x: -139, y: 21}
+        - {x: -140, y: 24}
+    - name: bat_fly_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -151, y: -4}
+        - {x: -151, y: -12}
+        - {x: -105, y: -52}
+        - {x: 4, y: -80}
+        - {x: 111, y: -80}
+        - {x: 111, y: -62}
+        - {x: 29, y: 54}
+        - {x: -36, y: 54}
+        - {x: -146, y: 3}
+      - - {x: -130, y: -21}
+        - {x: -132, y: -23}
+        - {x: -132, y: -26}
+        - {x: -130, y: -28}
+        - {x: -127, y: -28}
+        - {x: -125, y: -26}
+        - {x: -125, y: -23}
+        - {x: -127, y: -21}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

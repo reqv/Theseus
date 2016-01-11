@@ -48,10 +48,13 @@ public class MonstersManager : MonoBehaviour
         //z dupy
         float difficulty = level * 5;
         float actualdifficulty = 0;
+		Monster toInstantiate;
         do
         {
             _actualRoomMonsters++;
-            var toInstantiate = _monsters[Random.Range(0, _monsters.Length)];
+			do{
+            	toInstantiate = _monsters[Random.Range(0, _monsters.Length)];
+			}while(toInstantiate.MinimumLevel > level);
             actualdifficulty += toInstantiate.Difficulty;
             var monster = Instantiate(toInstantiate);
             monster.transform.parent = actualRoom.transform;
