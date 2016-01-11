@@ -53,6 +53,12 @@ public class RoomManager : MonoBehaviour
     /// Prefab drzwi boss'a
     /// </summary>
     private GameObject _exitBoss;
+    [Tooltip("Prefaby przeszkód")]
+    [SerializeField]
+    /// <summary>
+    /// Prefaby podłogi
+    /// </summary>
+    private GameObject[] _obstacles;
     [Tooltip("Prefaby podłogi")]
     [SerializeField]
     /// <summary>
@@ -78,6 +84,11 @@ public class RoomManager : MonoBehaviour
     /// Używany menedżer potworów
     /// </summary>
     private MonstersManager _monstersManager;
+    [SerializeField]
+    /// <summary>
+    /// Używany menedżer przeszkód
+    /// </summary>
+    private ObstaclesManager _obstaclesManager;
     [SerializeField]
     /// <summary>
     /// Prefab sklepikarza
@@ -348,6 +359,7 @@ public class RoomManager : MonoBehaviour
         if(cell.Type == CellType.Common)
         {
             _monstersManager.SpawnEnemies(level, _roomHolder.gameObject);
+            _obstaclesManager.SpawnObstacles(_roomHolder.gameObject);
             _roomHolder.gameObject.GetComponentsInChildren<Door>().ToList().ForEach(door => door.Close());
         }
         else if(cell.Type == CellType.Boss)
