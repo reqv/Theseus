@@ -42,6 +42,10 @@ public class GUIManager : MonoBehaviour
     private bool _bossMode;
     private Monster _boss;
 
+    [SerializeField]
+    private AudioClip _bossClip;
+    private AudioClip _previousClip;
+
 	void Start () 
     {
         Messenger.AddListener<int,int>(Messages.PlayerHealthChanged, UpdateHealth);
@@ -111,6 +115,8 @@ public class GUIManager : MonoBehaviour
             _bossPanel.SetActive(false);
             _bossMode = false;
             _boss = null;
+            var sound = GameObject.FindGameObjectWithTag("SoundTheme");
+            sound.GetComponent<AudioSource>().clip = _previousClip;
             return;
         }
 
@@ -124,5 +130,8 @@ public class GUIManager : MonoBehaviour
         _bossMode = true;
         _bossPanel.SetActive(true);
         _bossHealthBar.fillAmount = 1;
+        var sound = GameObject.FindGameObjectWithTag("SoundTheme");
+        _previousClip = sound.GetComponent<AudioSource>().clip;
+        sound.GetComponent<AudioSource>().clip = _bossClip;
     }
 }

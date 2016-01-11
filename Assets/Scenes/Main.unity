@@ -711,6 +711,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11470916, guid: 48fe3d395cc7e3e43bb08b4a72c09813, type: 2}
+      propertyPath: _maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 21253214, guid: 48fe3d395cc7e3e43bb08b4a72c09813, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300008, guid: 73eebbac9a6c58e459660f6aab9d56f2,
+        type: 3}
+    - target: {fileID: 9520556, guid: 48fe3d395cc7e3e43bb08b4a72c09813, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c17e9f1465adc9844a2828571ba6e86d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48fe3d395cc7e3e43bb08b4a72c09813, type: 2}
   m_IsPrefabParent: 0
@@ -779,7 +792,7 @@ GameObject:
   - 82: {fileID: 1045101832}
   m_Layer: 0
   m_Name: MenuSoundTheme
-  m_TagString: Untagged
+  m_TagString: SoundTheme
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -795,7 +808,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 77d3ece14a461c044bde88bf8fb8a87e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: .200000003
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1321,6 +1334,7 @@ MonoBehaviour:
   _torch: {fileID: 1903695928}
   _bossHealthBar: {fileID: 145039836}
   _bossPanel: {fileID: 1082629415}
+  _bossClip: {fileID: 8300000, guid: 491daa502f919a74d93c2459fcd161d2, type: 3}
 --- !u!114 &1487670992 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11457930, guid: b3577bbdb5c09e84289e377aa4023ddb,
@@ -1556,7 +1570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsters:
-  - {fileID: 11461432, guid: 806e4c2c1b59bfd4da14dfc7d7a7b3f8, type: 2}
+  - {fileID: 11463872, guid: d7aa6907c6485da42870e60d08118ea2, type: 2}
   - {fileID: 11441574, guid: e09bc0e471563944e9c5f3e3a58cf1c4, type: 2}
   _bosses:
   - {fileID: 11479756, guid: c0d5c097700c52644961a96d0bca15b1, type: 2}

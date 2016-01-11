@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-guid: 71aa9ddc801dc0a4f9f050193ba3df28
-timeCreated: 1452515427
+guid: 192c1cef60f6748498bc1828d6e3cd39
+timeCreated: 1452518846
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: moce_0
-    21300002: moce_1
-    21300004: moce_2
-    21300006: moce_3
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,47 +49,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: moce_0
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 36
-        width: 143
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: moce_1
-      rect:
-        serializedVersion: 2
-        x: 239
-        y: 36
-        width: 140
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: moce_2
-      rect:
-        serializedVersion: 2
-        x: 441
-        y: 36
-        width: 140
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: moce_3
-      rect:
-        serializedVersion: 2
-        x: 631
-        y: 34
-        width: 140
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

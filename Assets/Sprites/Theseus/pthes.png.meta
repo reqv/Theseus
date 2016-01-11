@@ -1,13 +1,17 @@
 fileFormatVersion: 2
-guid: 71aa9ddc801dc0a4f9f050193ba3df28
-timeCreated: 1452515427
+guid: 73eebbac9a6c58e459660f6aab9d56f2
+timeCreated: 1452518998
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: moce_0
-    21300002: moce_1
-    21300004: moce_2
-    21300006: moce_3
+    21300000: pthes_0
+    21300002: pthes_1
+    21300004: pthes_2
+    21300006: pthes_3
+    21300008: pthes_4
+    21300010: pthes_5
+    21300012: pthes_6
+    21300014: pthes_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,49 +52,89 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 2000
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: moce_0
+    - name: pthes_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 36
-        width: 143
-        height: 141
+        x: 0
+        y: 1596.5
+        width: 1674
+        height: 1596.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: moce_1
+    - name: pthes_1
       rect:
         serializedVersion: 2
-        x: 239
-        y: 36
-        width: 140
-        height: 141
+        x: 1674
+        y: 1596.5
+        width: 1674
+        height: 1596.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: moce_2
+    - name: pthes_2
       rect:
         serializedVersion: 2
-        x: 441
-        y: 36
-        width: 140
-        height: 141
+        x: 3348
+        y: 1596.5
+        width: 1674
+        height: 1596.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: moce_3
+    - name: pthes_3
       rect:
         serializedVersion: 2
-        x: 631
-        y: 34
-        width: 140
-        height: 141
+        x: 5022
+        y: 1596.5
+        width: 1674
+        height: 1596.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pthes_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: .5
+        width: 1674
+        height: 1596.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pthes_5
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: .5
+        width: 1674
+        height: 1596.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pthes_6
+      rect:
+        serializedVersion: 2
+        x: 3348
+        y: .5
+        width: 1674
+        height: 1596.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pthes_7
+      rect:
+        serializedVersion: 2
+        x: 5022
+        y: .5
+        width: 1674
+        height: 1596.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
