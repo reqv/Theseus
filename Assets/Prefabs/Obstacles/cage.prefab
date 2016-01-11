@@ -43,13 +43,13 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: 0.21679068, y: -0.031205952}
-  - {x: -0.14083672, y: -0.023592204}
-  - {x: -0.33352685, y: -0.19442824}
+  - {x: 0.21498418, y: 0.20511377}
+  - {x: -0.14083672, y: 0.21375386}
+  - {x: -0.3305297, y: 0.04739304}
   - {x: -0.33333778, y: -0.22079274}
   - {x: 0.055985928, y: -0.23471457}
   - {x: 0.21485639, y: -0.056305617}
-  - {x: 0.21592331, y: -0.030340195}
+  - {x: 0.21161222, y: 0.20819655}
 --- !u!114 &11468922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -282359015
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 606270508cf9ca446b73ae9c75c85e7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
