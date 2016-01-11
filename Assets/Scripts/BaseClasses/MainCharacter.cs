@@ -251,6 +251,18 @@ public class MainCharacter : Character
 		else
             _animator.SetBool("Walking", false);
 
+        if (_Rig2D.velocity.x < 0)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x = -1;
+            transform.localScale = theScale;
+        }
+        else
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x = 1;
+            transform.localScale = theScale;
+        }
 	}
 
     /// <summary>
