@@ -82,12 +82,14 @@ public class Spider : Monster {
 					_axis.x = _targetToAttack.position.x;
 					_axis.y = _targetToAttack.position.y;
 					_axis -= _Rig2D.position;
+					_Anim.SetTrigger ("Jump");
 					_Rig2D.AddForce(_axis * _realMaxSpeed,ForceMode2D.Impulse);
 					_hasTarget = true;
 				}
 
 				if(_timeToWait < 0)
 				{
+					_Anim.SetTrigger ("Stay");
 					_hasTarget = false;
 					_readyToAttack = false;
 					_Rig2D.velocity = Vector2.zero;
@@ -121,6 +123,7 @@ public class Spider : Monster {
 	/// </remarks>
 	public override void Walking()
 	{
+		_Anim.SetTrigger ("Stay");
 		_readyToAttack = false;
 		_hasTarget = false;
 		_Rig2D.velocity = Vector2.zero;
