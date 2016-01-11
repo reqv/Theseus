@@ -45,6 +45,7 @@ public abstract class Monster : Character {
     /// </summary>
     private bool _isAlive = true;
 
+
     [Tooltip("Jak trudny do pokonania jest przeciwnik?")]
     [SerializeField]
     /// <summary>
@@ -222,5 +223,13 @@ public abstract class Monster : Character {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	/// <summary>
+	/// 	Pozwala sprawdzić czy potwór żyje.
+	/// </summary>
+	public bool isMonsterAlive()
+	{
+		return _isAlive;
 	}
 }
