@@ -302,7 +302,9 @@ public class MainCharacter : Character
     {
         if (other.gameObject.tag == "Enemy")
         {
-            TakingDamage(1);
+			var enemy = other.gameObject.GetComponent<Monster> ();
+			if(enemy.isMonsterAlive())
+            	TakingDamage(1);
         }
     }
 }

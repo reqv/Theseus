@@ -41,9 +41,6 @@ public class Snake : Monster {
 	/// <param name="other">Obiekt z którym odbyło się zderzenie</param>
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "Player") {
-			Destroy(other.gameObject);		// ######################## chwilowe rozwiazanie ( usuwanie gracza ) ########################
-		}
 		_collisionAxis = _axis;
 	}
 
