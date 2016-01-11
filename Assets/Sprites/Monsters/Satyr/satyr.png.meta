@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: 1cff9fd47d166514b901f6fe48d49c22
+timeCreated: 1452510354
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: satyr_0
+    21300002: satyr_1
+    21300004: satyr_2
+    21300006: satyr_3
+    21300008: satyr_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 400
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: satyr_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118, y: -90}
+        - {x: 93, y: -70}
+        - {x: 118, y: 17}
+        - {x: 118, y: 65}
+        - {x: 35, y: 111}
+        - {x: -96, y: 111}
+        - {x: -96, y: -124}
+        - {x: -91, y: -151}
+        - {x: -3, y: -151}
+        - {x: 27, y: -126}
+        - {x: 78, y: -135}
+        - {x: 118, y: -118}
+    - name: satyr_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 95, y: 12}
+        - {x: 95, y: 74}
+        - {x: -6, y: 111}
+        - {x: -96, y: 111}
+        - {x: -96, y: -89}
+        - {x: -35, y: -141}
+        - {x: -5, y: -144}
+        - {x: 52, y: -144}
+        - {x: 55, y: -143}
+        - {x: 69, y: -115}
+        - {x: 84, y: -34}
+    - name: satyr_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: -140}
+        - {x: 28, y: -142}
+        - {x: 42, y: -142}
+        - {x: 54, y: -138}
+        - {x: 95, y: 28}
+        - {x: 95, y: 74}
+        - {x: -11, y: 111}
+        - {x: -68, y: 111}
+        - {x: -93, y: 107}
+        - {x: -99, y: 101}
+        - {x: -99, y: -59}
+        - {x: -60, y: -156}
+        - {x: -4, y: -156}
+        - {x: 7, y: -138}
+        - {x: -10, y: -118}
+        - {x: 4, y: -132}
+    - name: satyr_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: -140}
+        - {x: 28, y: -142}
+        - {x: 42, y: -142}
+        - {x: 54, y: -138}
+        - {x: 110, y: -30}
+        - {x: 110, y: 78}
+        - {x: 64, y: 129}
+        - {x: -86, y: 129}
+        - {x: -86, y: -142}
+        - {x: -52, y: -156}
+        - {x: -4, y: -156}
+        - {x: 7, y: -138}
+        - {x: -10, y: -118}
+        - {x: 4, y: -132}
+    - name: satyr_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 73, y: -78}
+        - {x: 62, y: -84}
+        - {x: 95, y: -60}
+        - {x: 95, y: -44}
+        - {x: 90, y: -37}
+        - {x: 59, y: -22}
+        - {x: -5, y: 35}
+        - {x: -48, y: 45}
+        - {x: -78, y: 45}
+        - {x: -88, y: 39}
+        - {x: -124, y: 31}
+        - {x: -124, y: -86}
+        - {x: -118, y: -125}
+        - {x: -50, y: -163}
+        - {x: 43, y: -163}
+        - {x: 95, y: -125}
+        - {x: 95, y: -82}
+        - {x: 92, y: -80}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

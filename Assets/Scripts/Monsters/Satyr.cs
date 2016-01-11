@@ -18,15 +18,11 @@ public class Satyr : Monster {
 	private int _patrolRange;
 
 	[SerializeField]
-	private int _speedAccelerate;
-
-	[SerializeField]
 	private GameObject[] _music;
 
 	[SerializeField]
 	private int _timeToDeploy;
 
-	[SerializeField]
 	private float _deployTimer;
 
 	/// <summary>
@@ -103,7 +99,8 @@ public class Satyr : Monster {
 	public override void Walking()
     {
 		if (_deployTimer < 0) {
-			Debug.Log ("MINA");
+			Instantiate(_music[RandomNumber(0,_music.Length-1)],transform.position,Quaternion.Euler(Vector3.zero));
+			_deployTimer = _timeToDeploy;
 		} else
 			_deployTimer -= Time.deltaTime;
         if (WhereIsATarget(_freeDestination,true) >= 1)
