@@ -95,6 +95,7 @@ public class MainCharacter : Character
 	{
 		_Rig2D = GetComponent<Rigidbody2D>();
 		_animator = GetComponent<Animator>();
+        _Render2D = GetComponent<SpriteRenderer>();
 
         Coins = 10;
         Messenger.AddListener<Direction>(Messages.PlayerGoesThroughTheDoor, OnRoomChange);

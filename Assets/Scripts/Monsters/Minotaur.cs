@@ -8,14 +8,10 @@ public class Minotaur : Monster
         Idle = 0,
         Melee,
         Magic,
-        Rocks,
+        //Rocks,
         Minions
     }
 
-    #region
-    [SerializeField]
-    private Projectile[] _magicProjectiles;
-    #endregion
     private MinotaurAction _actualAction;
     private GameObject _player;
 
@@ -28,7 +24,13 @@ public class Minotaur : Monster
     private float _magicDelayTimer = 0;
     private bool _magicDirecion;
     [SerializeField]
+    private Projectile[] _magicProjectiles;
+    [SerializeField]
     private float _magicDelay;
+
+    [SerializeField]
+    private Monster _minion;
+    private bool _minionsSpawned = false;
 
 	void Start () 
     {
@@ -48,7 +50,7 @@ public class Minotaur : Monster
 
         if(_actualAction == MinotaurAction.Idle)
         {
-            _actualAction = (MinotaurAction)RandomNumber(1, 2);
+            _actualAction = (MinotaurAction)RandomNumber(1, 3);
                 _actionTimer = 0;
         }
 
@@ -60,9 +62,10 @@ public class Minotaur : Monster
             case MinotaurAction.Magic:
                 MagicAttack();
                 break;
-            case MinotaurAction.Rocks:
-                break;
+            //case MinotaurAction.Rocks:
+            //    break;
             case MinotaurAction.Minions:
+                SpawnMinions();
                 break;
         }
     }
@@ -184,7 +187,7 @@ public class Minotaur : Monster
     #region Action Magic
     private void MagicAttack()
     {
-        if (_actionTimer > 4)
+        if (_actionTimer > 2)
         {
             _actualAction = MinotaurAction.Idle;
         }
@@ -217,5 +220,29 @@ public class Minotaur : Monster
         bullet.GetComponent<Rigidbody2D>().velocity = velocity;
         bullet.GetComponent<Projectile>().Damage = _attackPower;
     }
+    #endregion
+
+    #region Action Minions
+
+    private void SpawnMinions()
+    {
+        if(_actionTimer >= 1.0f)
+        {
+            _actualAction = MinotaurAction.Idle;
+            _minionsSpawned = false;
+            return;
+        }
+
+        if (!_minionsSpawned)
+        {
+            _minionsSpawned = true;
+            var m1 = Instantiate(_minion);
+            m1.transform.position = new Vector2(this.transform.position.x + 0.5f, this.transform.position.y);
+
+            var m2 = Instantiate(_minion);
+            m2.transform.position = new Vector2(this.transform.position.x - 0.5f, this.transform.position.y);
+        }
+    }
+
     #endregion
 }

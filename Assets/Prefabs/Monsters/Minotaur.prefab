@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103878}
   m_LocalRotation: {x: 0, y: 0, z: .0087265363, w: .999961913}
-  m_LocalPosition: {x: 4.92199993, y: -6.04400015, z: 0}
+  m_LocalPosition: {x: -5.28000021, y: -5.26000023, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,8 +40,8 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103878}
-  m_Mass: 100
-  m_LinearDrag: 0
+  m_Mass: 1000
+  m_LinearDrag: 1
   m_AngularDrag: .0500000007
   m_GravityScale: 1
   m_IsKinematic: 0
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthPoints: 1000
   _attackPower: 2
-  _bulletVelocityFactor: 3
-  _maxSpeed: 14
+  _bulletVelocityFactor: 6
+  _maxSpeed: 200
   _range: 100
   _attackDistance: .200000003
   Difficulty: 100
@@ -115,7 +115,8 @@ MonoBehaviour:
   - {fileID: 11492602, guid: 221f3f911cf07e64da6c3131f7531a1f, type: 2}
   - {fileID: 11413224, guid: 52fc98a43d3a05f40afbd8731bc8e856, type: 2}
   - {fileID: 11499476, guid: a3f39ccb89d42b846a55b4fb9f14de45, type: 2}
-  _magicDelay: 0
+  _magicDelay: .239999995
+  _minion: {fileID: 11450728, guid: a192e71166087084eac323ba051e04c1, type: 2}
 --- !u!212 &21266870
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -185,6 +186,11 @@ Prefab:
       propertyPath: _attackDistance
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _minion
+      value: 
+      objectReference: {fileID: 11450728, guid: a192e71166087084eac323ba051e04c1,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 103878}
