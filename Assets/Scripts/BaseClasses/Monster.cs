@@ -53,6 +53,13 @@ public abstract class Monster : Character {
     /// </summary>
     public float Difficulty;
 
+	[Tooltip("Najniższy poziom na którym można go spotkać.")]
+	[SerializeField]
+	/// <summary>
+	/// 	Parametr serializowany, określa najniższy poziom na którym można spotkać potwora
+	/// </summary>
+	public float MinimumLevel;
+
 	/// <summary>
 	/// 	Metoda uruchamiana podczas utworzenia obiektu
 	/// </summary>

@@ -436,11 +436,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22470478, guid: 6c5a6436e64fd0b48b3538c686d577fd, type: 2}
       propertyPath: m_Pivot.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22470478, guid: 6c5a6436e64fd0b48b3538c686d577fd, type: 2}
       propertyPath: m_Pivot.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 123016, guid: 6c5a6436e64fd0b48b3538c686d577fd, type: 2}
       propertyPath: m_Name
@@ -754,7 +754,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 77d3ece14a461c044bde88bf8fb8a87e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .200000003
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -902,11 +902,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22427822, guid: 3aa74744bcc68814c897ee233e81b0a5, type: 2}
       propertyPath: m_Pivot.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22427822, guid: 3aa74744bcc68814c897ee233e81b0a5, type: 2}
       propertyPath: m_Pivot.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3aa74744bcc68814c897ee233e81b0a5, type: 2}
@@ -1052,11 +1052,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22447376, guid: ef1b6210b6f315349863228662ff0739, type: 2}
       propertyPath: m_Pivot.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22447376, guid: ef1b6210b6f315349863228662ff0739, type: 2}
       propertyPath: m_Pivot.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef1b6210b6f315349863228662ff0739, type: 2}
@@ -1359,11 +1359,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22446084, guid: ac9d5a34281e4604eba154066857b44c, type: 2}
       propertyPath: m_Pivot.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22446084, guid: ac9d5a34281e4604eba154066857b44c, type: 2}
       propertyPath: m_Pivot.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac9d5a34281e4604eba154066857b44c, type: 2}
@@ -1507,7 +1507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsters:
-  - {fileID: 11410862, guid: d7aa6907c6485da42870e60d08118ea2, type: 2}
+  - {fileID: 11463872, guid: d7aa6907c6485da42870e60d08118ea2, type: 2}
   - {fileID: 11441574, guid: e09bc0e471563944e9c5f3e3a58cf1c4, type: 2}
   _bosses:
   - {fileID: 11479756, guid: c0d5c097700c52644961a96d0bca15b1, type: 2}
@@ -1600,11 +1600,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22489918, guid: 27f7e4fc0f531fc42ae7d6a86fead47e, type: 2}
       propertyPath: m_Pivot.x
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 22489918, guid: 27f7e4fc0f531fc42ae7d6a86fead47e, type: 2}
       propertyPath: m_Pivot.y
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27f7e4fc0f531fc42ae7d6a86fead47e, type: 2}
