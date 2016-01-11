@@ -95,12 +95,12 @@ MonoBehaviour:
   _attackPower: 1
   _bulletVelocityFactor: 3
   _maxSpeed: 50
-  _range: 6
-  _attackDistance: 4
+  _range: 5
+  _attackDistance: 2
   Difficulty: 5
   _patrolX: 0
   _patrolY: 0
-  _runAwayRange: 2
+  _runAwayRange: 1
   _spear: {fileID: 171424, guid: c341010355bf14348990427866756d85, type: 2}
 --- !u!212 &21267020
 SpriteRenderer:
@@ -146,6 +146,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _runAwayRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _attackDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _range
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

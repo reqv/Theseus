@@ -6,7 +6,7 @@
  *
  * \section features_sec Cechy gry
  *
- * - Gra będzie podzielona na rozdziały.
+ * - Gra będzie podzielona na rozdziały (w wersji podstawowej 1 rozdział).
  * - W każdym rozdziale będzie 5 poziomów.
  * - W każdym poziomie będzie wygenerowana losowa (z danego niewielkiego przedziału) ilość pomieszczeń.
  * - W każdym poziomie będzie pokój finałowy w którym będzie Strażnik pilnujący zejścia do kolejnej części labiryntu.
