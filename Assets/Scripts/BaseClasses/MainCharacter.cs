@@ -51,6 +51,13 @@ public class MainCharacter : Character
     /// Maksymalne zdrowie postaci
     /// </summary>
     private int _maxHealthPoints;
+
+    [Tooltip("Magiczna pochodnia której aktualnie używa gracz")]
+    [SerializeField]
+    /// <summary>
+    /// Magiczna pochodnia której aktualnie używa gracz
+    /// </summary>
+    private MagicTorch _torch;
 	#endregion
 
     /// <summary>
@@ -72,6 +79,7 @@ public class MainCharacter : Character
 
     private int _coins;
 
+    [HideInInspector]
     /// <summary>
     /// Ilość monet którą posiada gracz
     /// </summary>
@@ -85,6 +93,40 @@ public class MainCharacter : Character
         {
             _coins = value;
             Messenger.Broadcast<int>(Messages.PlayerCoinsChanged, _coins);
+        }
+    }
+    
+    [HideInInspector]
+    /// <summary>
+    /// Zdrowie Gracza
+    /// </summary>
+    public int HealthPoints
+    {
+        get
+        {
+            return _healthPoints;
+        }
+
+        set
+        {
+            _healthPoints = value;
+            if (_healthPoints > _maxHealthPoints)
+                _healthPoints = _maxHealthPoints;
+
+            Messenger.Broadcast<int,int>(Messages.PlayerHealthChanged, _healthPoints, _maxHealthPoints);
+        }
+    }
+    
+    public GameObject Torch
+    {
+        get
+        {
+            return _fireball;
+        }
+        set
+        {
+            _fireball = value;
+            FindObjectOfType<GUIManager>().UpdateTorch(_fireball.GetComponent<SpriteRenderer>().sprite);
         }
     }
 

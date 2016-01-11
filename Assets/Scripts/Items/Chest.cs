@@ -60,15 +60,10 @@ public class Chest : Item {
 			rarity = RandomNumber (0, 100);
 			if (rarity < 81) {
 				var initLoot = _loot [RandomNumber(0, _loot.Length-1)];
-
-                item = Instantiate(initLoot, transform.position - pozycja, Quaternion.Euler(Vector3.zero)) as GameObject;
-                try { item.transform.SetParent(gameManager.ActualRoom.transform);}
-                catch { };
+                Item.Drop(initLoot, transform.position - pozycja);
 			} else {
 				var initLoot = _rareLoot [RandomNumber(0, _rareLoot.Length-1)];
-                item = Instantiate(initLoot, transform.position - pozycja, Quaternion.Euler(Vector3.zero)) as GameObject;
-                try { item.transform.SetParent(gameManager.ActualRoom.transform); }
-                catch { };
+                Item.Drop(initLoot, transform.position - pozycja);
 			}
 		}
 	}

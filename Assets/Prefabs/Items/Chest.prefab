@@ -94,9 +94,13 @@ MonoBehaviour:
   _fromChest: 0
   _maxItems: 2
   _rareLoot:
-  - {fileID: 11446332, guid: 979e40e28ee39474eb06d7832bd38ee9, type: 2}
+  - {fileID: 11462356, guid: dbb6b9552eb53414685dc8de3369cff5, type: 2}
+  - {fileID: 11421878, guid: a55d082418ab83d4eb7e9831079ba060, type: 2}
+  - {fileID: 11404240, guid: 97f854e915612934ba7028d2b8468add, type: 2}
+  - {fileID: 11482362, guid: fcdeed54b9a7c544fb13bc10ea2b8c9d, type: 2}
   _loot:
   - {fileID: 11427694, guid: d050ef1abf8e19f4389640f515a597db, type: 2}
+  - {fileID: 11446332, guid: 979e40e28ee39474eb06d7832bd38ee9, type: 2}
 --- !u!212 &21283604
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,9 +135,42 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: _loot.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _rareLoot.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: 1005726265
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _loot.Array.data[1]
+      value: 
+      objectReference: {fileID: 11446332, guid: 979e40e28ee39474eb06d7832bd38ee9,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: _rareLoot.Array.data[0]
+      value: 
+      objectReference: {fileID: 11462356, guid: dbb6b9552eb53414685dc8de3369cff5,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: _rareLoot.Array.data[1]
+      value: 
+      objectReference: {fileID: 11421878, guid: a55d082418ab83d4eb7e9831079ba060,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: _rareLoot.Array.data[2]
+      value: 
+      objectReference: {fileID: 11404240, guid: 97f854e915612934ba7028d2b8468add,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: _rareLoot.Array.data[3]
+      value: 
+      objectReference: {fileID: 11482362, guid: fcdeed54b9a7c544fb13bc10ea2b8c9d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130950}

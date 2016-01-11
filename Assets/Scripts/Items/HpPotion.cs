@@ -19,6 +19,6 @@ public class HpPotion : Item {
 	/// <param name="other">Obiekt z którym nastąpiło zderzenie.</param>
 	public override void EffectOfItem(Collision2D other)
 	{
-		Debug.Log ("Działam !");
+        other.gameObject.GetComponent<MainCharacter>().HealthPoints++;
 	}
 }

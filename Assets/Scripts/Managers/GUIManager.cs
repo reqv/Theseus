@@ -31,6 +31,8 @@ public class GUIManager : MonoBehaviour
     private Text _coins;
     [SerializeField]
     private Image _itemPrefab;
+    [SerializeField]
+    private Image _torch;
 
     [SerializeField]
     private Image _bossHealthBar;
@@ -89,12 +91,17 @@ public class GUIManager : MonoBehaviour
         _coins.text = coins.ToString();
     }
 
-    void UpdateItems(Sprite itemSprite)
+    public void UpdateItems(Sprite itemSprite)
     {
         var newItem = Instantiate(_itemPrefab);
         newItem.sprite = itemSprite;
         newItem.transform.SetParent(_itemsContainer.transform);
         newItem.transform.localScale = Vector3.one;
+    }
+
+    public void UpdateTorch(Sprite torchSprite)
+    {
+        _torch.sprite = torchSprite;
     }
 
     void UpdateBoss()
