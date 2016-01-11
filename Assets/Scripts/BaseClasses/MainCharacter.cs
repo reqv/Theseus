@@ -239,28 +239,10 @@ public class MainCharacter : Character
 		if (Mathf.Abs(xAxis) > 0
 			|| Mathf.Abs(yAxis) > 0)
 		{
-			_animator.SetBool("IsWalking", true);
+			_animator.SetBool("Walking", true);
 		}
 		else
-			_animator.SetBool("IsWalking", false);
-
-		if (_Rig2D.velocity.x > 0)
-		{
-			_animator.SetInteger("Direction", 1);
-		}
-		else if (_Rig2D.velocity.x < 0)
-		{
-			_animator.SetInteger("Direction", 3);
-		}
-
-		if (_Rig2D.velocity.y > 0)
-		{
-			_animator.SetInteger("Direction", 0);
-		}
-		else if (_Rig2D.velocity.y < 0)
-		{
-			_animator.SetInteger("Direction", 2);
-		}
+            _animator.SetBool("Walking", false);
 
 	}
 
@@ -279,31 +261,37 @@ public class MainCharacter : Character
 				ThrowFireball(new Vector3(0, 0.1f), new Vector2(0, _fireballVelocity)
 					+ new Vector2(_Rig2D.velocity.x, 0));
 				_actualThrowDelay = 0;
+                _animator.SetBool("Attacking", true);
 				return;
 			}
 			if (Input.GetKey(KeyCode.S))
 			{
                 ThrowFireball(new Vector3(0, -0.1f), new Vector2(0, -_fireballVelocity)
 					+ new Vector2(_Rig2D.velocity.x, 0));
-				_actualThrowDelay = 0;
+                _actualThrowDelay = 0;
+                _animator.SetBool("Attacking", true);
 				return;
 			}
 			if (Input.GetKey(KeyCode.A))
 			{
                 ThrowFireball(new Vector3(-0.1f, 0), new Vector2(-_fireballVelocity, 0)
 					+ new Vector2(0, _Rig2D.velocity.y));
-				_actualThrowDelay = 0;
+                _actualThrowDelay = 0;
+                _animator.SetBool("Attacking", true);
 				return;
 			}
 			if (Input.GetKey(KeyCode.D))
 			{
                 ThrowFireball(new Vector3(0.1f, 0), new Vector2(_fireballVelocity, 0)
 					+ new Vector2(0, _Rig2D.velocity.y));
-				_actualThrowDelay = 0;
+                _actualThrowDelay = 0;
+                _animator.SetBool("Attacking", true);
 				return;
 			}
 
-		}
+            _animator.SetBool("Attacking", false);
+        }
+
 	}
 
     /// <summary>

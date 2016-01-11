@@ -713,6 +713,15 @@ Prefab:
       propertyPath: _maxSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 21253214, guid: 48fe3d395cc7e3e43bb08b4a72c09813, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300008, guid: 73eebbac9a6c58e459660f6aab9d56f2,
+        type: 3}
+    - target: {fileID: 9520556, guid: 48fe3d395cc7e3e43bb08b4a72c09813, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c17e9f1465adc9844a2828571ba6e86d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48fe3d395cc7e3e43bb08b4a72c09813, type: 2}
   m_IsPrefabParent: 0

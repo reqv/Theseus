@@ -74,7 +74,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeToLive: 1
-  _damageTags: []
+  _damageTags:
+  - Player
   _additionalCCEffect: 0
   _additionalCCEffectTime: 0
 --- !u!212 &21267016
