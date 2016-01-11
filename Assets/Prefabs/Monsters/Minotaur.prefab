@@ -12,9 +12,11 @@ GameObject:
   - 95: {fileID: 9508026}
   - 50: {fileID: 5005350}
   - 114: {fileID: 11479756}
+  - 58: {fileID: 5886184}
+  - 61: {fileID: 6117244}
   m_Layer: 8
   m_Name: Minotaur
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,9 +27,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103878}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.21000004, y: -5.53999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: .0087265363, w: .999961913}
+  m_LocalPosition: {x: 4.92199993, y: -6.04400015, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -47,6 +49,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &5886184
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103878}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -.419999987, y: -.330000013}
+  serializedVersion: 2
+  m_Radius: .214362621
+--- !u!61 &6117244
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103878}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: .117889926, y: -.431264371}
+  serializedVersion: 2
+  m_Size: {x: .377816677, y: 1.14748573}
 --- !u!95 &9508026
 Animator:
   serializedVersion: 3
@@ -56,7 +84,7 @@ Animator:
   m_GameObject: {fileID: 103878}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21456ba50c89c75439c4e8674c6227ef, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -78,10 +106,16 @@ MonoBehaviour:
   _healthPoints: 1000
   _attackPower: 2
   _bulletVelocityFactor: 3
-  _maxSpeed: 10
+  _maxSpeed: 14
   _range: 100
-  _attackDistance: 100
+  _attackDistance: .200000003
   Difficulty: 100
+  _magicProjectiles:
+  - {fileID: 11440736, guid: 206f3ef2ed6486f409c9ebc576be07e0, type: 2}
+  - {fileID: 11492602, guid: 221f3f911cf07e64da6c3131f7531a1f, type: 2}
+  - {fileID: 11413224, guid: 52fc98a43d3a05f40afbd8731bc8e856, type: 2}
+  - {fileID: 11499476, guid: a3f39ccb89d42b846a55b4fb9f14de45, type: 2}
+  _magicDelay: 0
 --- !u!212 &21266870
 SpriteRenderer:
   m_ObjectHideFlags: 1
