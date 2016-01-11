@@ -13,12 +13,6 @@ using System.Collections;
 public class MainCharacter : Character
 {
     #region Serialized Fields
-    [Tooltip("Współczynnik prędkości ruchu gracza")]
-    [SerializeField]
-    /// <summary>
-    /// Współczynnik prędkości ruchu gracza
-    /// </summary>
-    private float _moveVelocityFactor;
     [Tooltip("Odstęp czasu między kolejnymi atakami")]
     [SerializeField]
     /// <summary>
@@ -116,6 +110,77 @@ public class MainCharacter : Character
             Messenger.Broadcast<int,int>(Messages.PlayerHealthChanged, _healthPoints, _maxHealthPoints);
         }
     }
+
+    [HideInInspector]
+    /// <summary>
+    /// MAksymalne Zdrowie Gracza
+    /// </summary>
+    public int MaxHealthPoints
+    {
+        get
+        {
+            return _maxHealthPoints;
+        }
+
+        set
+        {
+            _maxHealthPoints = value;
+            _healthPoints = _maxHealthPoints;
+            Messenger.Broadcast<int, int>(Messages.PlayerHealthChanged, _healthPoints, _maxHealthPoints);
+        }
+    }
+
+    [HideInInspector]
+    /// <summary>
+    /// Czas pomiędzy poszczególnymi atakami
+    /// </summary>
+    public float AttackDelay
+    {
+        get
+        {
+            return _throwDelay;
+        }
+
+        set
+        {
+            _throwDelay = value;
+            Messenger.Broadcast<int, int>(Messages.PlayerHealthChanged, _healthPoints, _maxHealthPoints);
+        }
+    }
+
+    [HideInInspector]
+    /// <summary>
+    /// Siła ataku
+    /// </summary>
+    public int AttackPower
+    {
+        get
+        {
+            return _attackPower;
+        }
+
+        set
+        {
+            _attackPower = value;
+        }
+    }
+
+    [HideInInspector]
+    /// <summary>
+    /// Czas pomiędzy poszczególnymi atakami
+    /// </summary>
+    public float MovementSpeed
+    {
+        get
+        {
+            return _maxSpeed;
+        }
+
+        set
+        {
+            _maxSpeed = value;
+        }
+    }
     
     public GameObject Torch
     {
@@ -150,10 +215,14 @@ public class MainCharacter : Character
     /// </summary>
 	void Update () 
 	{
+        CheckPersonalStatus();
+        if (_status ==  Status.Stunned)
+            return;
+
 		var xAxis = Input.GetAxis ("Horizontal");
 		var yAxis = Input.GetAxis ("Vertical");
 
-		_Rig2D.velocity = new Vector2(xAxis * _moveVelocityFactor, yAxis * _moveVelocityFactor);
+        _Rig2D.velocity = new Vector2(xAxis * _maxSpeed, yAxis * _maxSpeed);
 
 		UpdateAnimator(xAxis, yAxis);
 		CheckThrow();

@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: 71aa9ddc801dc0a4f9f050193ba3df28
-timeCreated: 1452471422
+timeCreated: 1452515427
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: moce_0
     21300002: moce_1
     21300004: moce_2
+    21300006: moce_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -78,6 +79,16 @@ TextureImporter:
         serializedVersion: 2
         x: 441
         y: 36
+        width: 140
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: moce_3
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 34
         width: 140
         height: 141
       alignment: 0

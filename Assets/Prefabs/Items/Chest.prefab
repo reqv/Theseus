@@ -98,6 +98,10 @@ MonoBehaviour:
   - {fileID: 11421878, guid: a55d082418ab83d4eb7e9831079ba060, type: 2}
   - {fileID: 11404240, guid: 97f854e915612934ba7028d2b8468add, type: 2}
   - {fileID: 11482362, guid: fcdeed54b9a7c544fb13bc10ea2b8c9d, type: 2}
+  - {fileID: 11460050, guid: 4e3c9edcdb96ba84791f66f818eefcfb, type: 2}
+  - {fileID: 11460572, guid: 7b3de0f90c8cd5042a2cc64d09fbf64f, type: 2}
+  - {fileID: 11400038, guid: 57babb3d982e5b846907f4a9db5acf21, type: 2}
+  - {fileID: 11425510, guid: 3dc6739600ec3fe41a567e746c3966b3, type: 2}
   _loot:
   - {fileID: 11427694, guid: d050ef1abf8e19f4389640f515a597db, type: 2}
   - {fileID: 11446332, guid: 979e40e28ee39474eb06d7832bd38ee9, type: 2}
@@ -140,7 +144,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _rareLoot.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
@@ -170,6 +174,26 @@ Prefab:
       propertyPath: _rareLoot.Array.data[3]
       value: 
       objectReference: {fileID: 11482362, guid: fcdeed54b9a7c544fb13bc10ea2b8c9d,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: _rareLoot.Array.data[4]
+      value: 
+      objectReference: {fileID: 11460050, guid: 4e3c9edcdb96ba84791f66f818eefcfb,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: _rareLoot.Array.data[5]
+      value: 
+      objectReference: {fileID: 11460572, guid: 7b3de0f90c8cd5042a2cc64d09fbf64f,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: _rareLoot.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400038, guid: 57babb3d982e5b846907f4a9db5acf21,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: _rareLoot.Array.data[7]
+      value: 
+      objectReference: {fileID: 11425510, guid: 3dc6739600ec3fe41a567e746c3966b3,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
