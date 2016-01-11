@@ -97,7 +97,8 @@ MonoBehaviour:
   _maxSpeed: 30
   _range: 0
   _attackDistance: 0
-  Difficulty: 0
+  Difficulty: 4
+  MinimumLevel: 1
   _patrolRange: 3
   _music:
   - {fileID: 110864, guid: 89e3810ba6e75b74181f57e710796d6c, type: 2}
@@ -129,7 +130,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -282359015
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1cff9fd47d166514b901f6fe48d49c22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,7 +142,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: Difficulty
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MinimumLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: -282359015
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 140836}

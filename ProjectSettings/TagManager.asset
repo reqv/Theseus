@@ -13,7 +13,7 @@ TagManager:
   - Player
   - Projectile
   - PlayerProjectile
-  - SoundTheme
+  - Obstacle
   layers:
   - Default
   - TransparentFX

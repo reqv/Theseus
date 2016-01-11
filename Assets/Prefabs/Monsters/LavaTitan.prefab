@@ -98,6 +98,7 @@ MonoBehaviour:
   _range: 5
   _attackDistance: 2
   Difficulty: 1
+  MinimumLevel: 2
   _patrolRange: 3
   _projectileSpeed: 3
   _magic: {fileID: 138262, guid: 73a7bab7de9deca418919604321197c0, type: 2}
@@ -150,6 +151,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MinimumLevel
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
