@@ -101,6 +101,7 @@ MonoBehaviour:
   _fireball: {fileID: 173552, guid: 3cb6e0681367ec44ebbb74d91d686f5f, type: 2}
   _afterAttackInviolabilityTime: .5
   _maxHealthPoints: 10
+  _torch: {fileID: 11475624, guid: 2e4605a566ce2f247b62b645e48a5a0f, type: 2}
 --- !u!212 &21253214
 SpriteRenderer:
   m_ObjectHideFlags: 1

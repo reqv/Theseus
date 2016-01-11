@@ -72,4 +72,13 @@ public abstract class Item : TheseusGameObject {
 	/// 	Metoda abstrakcyjna, implementowana w potomkach. Określa specyficzne działanie przedmiotu.
 	/// </summary>
 	public abstract void EffectOfItem(Collision2D other);
+
+    public static GameObject Drop(Item item, Vector2 position)
+    {
+        var newItem = Instantiate(item, position, Quaternion.Euler(Vector3.zero)) as GameObject;
+        try { newItem.transform.SetParent(FindObjectOfType<GameManager>().ActualRoom.transform); }
+        catch { };
+
+        return newItem;
+    }
 }
