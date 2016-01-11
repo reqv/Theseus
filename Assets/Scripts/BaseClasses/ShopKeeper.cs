@@ -66,7 +66,7 @@ public class ShopKeeper : Monster
             si.transform.SetParent(transform.parent);
 
             int randomItem = UnityEngine.Random.Range(0, _availableItems.Length);
-            si.Prepare(_availableItems[0].Item, _availableItems[0].Cost);
+            si.Prepare(_availableItems[randomItem].Item, _availableItems[randomItem].Cost);
         }
     }
 

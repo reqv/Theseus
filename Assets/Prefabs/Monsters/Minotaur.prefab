@@ -27,8 +27,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103878}
-  m_LocalRotation: {x: 0, y: 0, z: 0.008726536, w: 0.9999619}
-  m_LocalPosition: {x: -5.28, y: -5.26, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .0087265363, w: .999961913}
+  m_LocalPosition: {x: -5.28000021, y: -5.26000023, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,10 +40,9 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103878}
-  m_UseAutoMass: 0
   m_Mass: 1000
   m_LinearDrag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: .0500000007
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -57,13 +56,12 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103878}
   m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.42, y: -0.33}
+  m_Offset: {x: -.280000001, y: -.25999999}
   serializedVersion: 2
-  m_Radius: 0.21436262
+  m_Radius: .129999995
 --- !u!61 &6117244
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -71,13 +69,12 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103878}
   m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.117889926, y: -0.43126437}
+  m_Offset: {x: .117889926, y: -.431264371}
   serializedVersion: 2
-  m_Size: {x: 0.37781668, y: 1.1474857}
+  m_Size: {x: .377816677, y: 1.14748573}
 --- !u!95 &9508026
 Animator:
   serializedVersion: 3
@@ -111,14 +108,15 @@ MonoBehaviour:
   _bulletVelocityFactor: 6
   _maxSpeed: 200
   _range: 100
-  _attackDistance: 0.2
+  _attackDistance: .200000003
   Difficulty: 100
+  MinimumLevel: 0
   _magicProjectiles:
   - {fileID: 11440736, guid: 206f3ef2ed6486f409c9ebc576be07e0, type: 2}
   - {fileID: 11492602, guid: 221f3f911cf07e64da6c3131f7531a1f, type: 2}
   - {fileID: 11413224, guid: 52fc98a43d3a05f40afbd8731bc8e856, type: 2}
   - {fileID: 11499476, guid: a3f39ccb89d42b846a55b4fb9f14de45, type: 2}
-  _magicDelay: 0.24
+  _magicDelay: .239999995
   _minion: {fileID: 11450728, guid: a192e71166087084eac323ba051e04c1, type: 2}
 --- !u!212 &21266870
 SpriteRenderer:
@@ -138,18 +136,14 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -282359015
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7eca0444734bfe84b8c07bc1d523fbcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -201,6 +195,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: -282359015
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.x
+      value: -.280000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.y
+      value: -.25999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: .129999995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

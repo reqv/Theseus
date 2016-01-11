@@ -15,8 +15,8 @@ public class Minotaur : Monster
     private MinotaurAction _actualAction;
     private GameObject _player;
 
-    private Vector3 _meleeOffsetR = new Vector3(0.4f, 0.35f, 0);
-    private Vector3 _meleeOffsetL = new Vector3(-0.4f, 0.35f, 0);
+    private Vector3 _meleeOffsetR = new Vector3(0.3f, 0.3f, 0);
+    private Vector3 _meleeOffsetL = new Vector3(-0.3f, 0.3f, 0);
     private bool _readyToAttack = false;
     private bool _meleePerformed = false;
     private float _actionTimer = 0;
@@ -50,7 +50,7 @@ public class Minotaur : Monster
 
         if(_actualAction == MinotaurAction.Idle)
         {
-            _actualAction = (MinotaurAction)RandomNumber(1, 3);
+            _actualAction = (MinotaurAction)RandomNumber(1, 2);
                 _actionTimer = 0;
         }
 
