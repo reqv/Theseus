@@ -22,10 +22,14 @@ public class Chest : Item {
 	/// </summary>
 	private Item[] _loot;
 
+
+	/// <summary>
+	/// 	Flaga sprawdzająca, czy skrzynia została otwarta.
+	/// </summary>
 	private bool _opened = false;
 
 	/// <summary>
-	/// 	Metoda uruchamiana podczas utworzenia pieniądza
+	/// 	Nadpisana metoda uruchamiana podczas utworzenia skrzyni. Pozwala na pobranie Animatora.
 	/// </summary>
 	public override void Start ()
 	{
@@ -37,8 +41,9 @@ public class Chest : Item {
 	/// 	Metoda zawierająca efekt działania przedmiotu.
 	/// </summary>
 	/// <remarks>
-	/// 	
+	/// 	Skrzynia po dotknięciu przez gracza wyrzuca z siebie losową liczbę itemów o różnej wartości. (20% szans na elitarny przedmiot )
 	/// </remarks>
+	/// <param name="other">Obiekt z którym nastąpiło zderzenie.</param>
 	public override void EffectOfItem(Collision2D other)
 	{
 		if (_opened)
