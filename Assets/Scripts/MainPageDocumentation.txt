@@ -23,7 +23,7 @@
  *
  * - <a href="https://pl.linkedin.com/in/lukaszrabiec">Łukasz "w0okiee" Rabiec</a> - Lider zespołu. Odpowiedzialny za algorytm generowania pomieszczeń oraz linię fabularną.
  * - <a href="https://pl.linkedin.com/pub/jakub-majewski/98/b6a/b12">Jakub "Dzejkopp" Majewski</a> - Programista Unity. Odpowiedzialny za mechanikę gracza oraz środowisko Unity.
- * - Wojciech "Wojtas" Janeczek </a> - Programista Unity. Odpowiedzialny za sztuczną inteligencję.
+ * - Wojciech "Janek" Janeczek </a> - Programista Unity. Odpowiedzialny za sztuczną inteligencję.
  * - <a href="http://www.aviene.pl"> Dominika "Aviene" Różycka </a> - Grafik. Odpowiedzialna za grafikę pomieszczeń, logo oraz menu.
  * - Michał "Anioł" Walkowski </a> - Grafik. Odpowiedzialny za wygląd przeciwników i innych postaci.
  */

@@ -393,7 +393,7 @@ public class MainCharacter : Character
     protected override void Die()
     {
         GameManager._level = 1;
-        Application.LoadLevel(Application.loadedLevel);
+        Application.LoadLevel("Menu");
     }
 
     /// <summary>

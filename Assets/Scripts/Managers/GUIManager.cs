@@ -147,5 +147,6 @@ public class GUIManager : MonoBehaviour
         var sound = GameObject.FindGameObjectWithTag("SoundTheme");
         _previousClip = sound.GetComponent<AudioSource>().clip;
         sound.GetComponent<AudioSource>().clip = _bossClip;
+        sound.GetComponent<AudioSource>().Play();
     }
 }

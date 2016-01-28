@@ -14,6 +14,12 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         _aSource = _soundManager.GetComponents<AudioSource>();
+        var toDelete = FindObjectOfType<MainCharacter>();
+        if (toDelete != null)
+            Destroy(toDelete.gameObject);
+        var toDelete2 = FindObjectOfType<GUIManager>();
+        if (toDelete2 != null)
+            Destroy(toDelete2.gameObject);
     }
 
     public void NewGame()

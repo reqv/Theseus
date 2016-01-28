@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
                 Destroy(toDelete.gameObject);
             var toDelete2 = FindObjectOfType<GUIManager>();
             if (toDelete2 != null)
-                Destroy(toDelete2);
+                Destroy(toDelete2.gameObject);
             Application.LoadLevelAdditive("test");
         }
 

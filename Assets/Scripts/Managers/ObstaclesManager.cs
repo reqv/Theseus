@@ -25,7 +25,7 @@ public class ObstaclesManager : MonoBehaviour
     /// <param name="actualRoom">Pokój w którym będą przeszkody</param>
     public void SpawnObstacles(GameObject actualRoom)
     {
-        int obstaclesPerRoom = Random.Range(0, 7);
+        int obstaclesPerRoom = Random.Range(1, 4);
         int obstaclesCounter = 0;
 
         do
