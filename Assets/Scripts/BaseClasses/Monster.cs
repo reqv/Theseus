@@ -72,6 +72,7 @@ public abstract class Monster : Character {
 		_realRange = _range;
 		_realAttackDistance = _attackDistance;
 		TakingDamage (0);	// Sprawdza, czy potwor ma wiecej niz 0 zycia na starcie
+		SetCrowdControl(Status.Stunned,0.2f);	// chwilowe zatrzymanie potworów na starcie
 	}
 
 	/// <summary>

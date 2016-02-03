@@ -97,7 +97,7 @@ MonoBehaviour:
   _maxSpeed: 0.1
   _range: 0
   _attackDistance: 0.3
-  Difficulty: 2
+  Difficulty: 1
   MinimumLevel: 1
 --- !u!212 &21235372
 SpriteRenderer:
@@ -146,6 +146,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MinimumLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Difficulty
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

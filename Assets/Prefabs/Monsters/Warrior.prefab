@@ -91,14 +91,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1233c8a3a9fa14b84a3e6111b66177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 1
+  _healthPoints: 3
   _attackPower: 1
   _bulletVelocityFactor: 0
-  _maxSpeed: 65
+  _maxSpeed: 30
   _range: 0
   _attackDistance: 0.3
-  Difficulty: 3
-  MinimumLevel: 2
+  Difficulty: 2
+  MinimumLevel: 1
   _freeFlipTimer: 5
 --- !u!212 &21251576
 SpriteRenderer:
@@ -151,11 +151,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Difficulty
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MinimumLevel
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _healthPoints
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _maxSpeed
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

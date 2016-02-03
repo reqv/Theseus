@@ -97,9 +97,9 @@ MonoBehaviour:
   _maxSpeed: 30
   _range: 0
   _attackDistance: 0
-  Difficulty: 4
+  Difficulty: 2
   MinimumLevel: 1
-  _patrolRange: 3
+  _patrolRange: 2
   _music:
   - {fileID: 110864, guid: 89e3810ba6e75b74181f57e710796d6c, type: 2}
   - {fileID: 189404, guid: a31b4586bdcdfad468efe96c8db8c35f, type: 2}
@@ -145,7 +145,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: Difficulty
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MinimumLevel
@@ -154,6 +154,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: -282359015
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _patrolRange
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

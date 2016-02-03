@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a019f66e3dae441b562c67abb71493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 100
+  _healthPoints: 50
   _attackPower: 2
   _bulletVelocityFactor: 6
   _maxSpeed: 200
@@ -168,7 +168,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _healthPoints
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _attackPower

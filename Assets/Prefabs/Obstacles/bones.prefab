@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21220760}
   - 58: {fileID: 5843222}
   - 114: {fileID: 11477478}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bones
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -95,6 +95,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

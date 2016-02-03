@@ -223,8 +223,12 @@ public class MainCharacter : Character
 	void Update () 
 	{
         CheckPersonalStatus();
-        if (_status ==  Status.Stunned)
-            return;
+		if (_status == Status.Stunned) {
+			_Rig2D.velocity = Vector2.zero;
+			UpdateAnimator(0, 0);
+			return;
+		}
+            
 
 		var xAxis = Input.GetAxis ("Horizontal");
 		var yAxis = Input.GetAxis ("Vertical");

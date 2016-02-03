@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0599999987, y: -5.19000006, z: 0}
+  m_LocalPosition: {x: 0.06, y: -5.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,6 +39,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130950}
+  m_UseAutoMass: 0
   m_Mass: 300
   m_LinearDrag: 5
   m_AngularDrag: 5
@@ -55,12 +56,13 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130950}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.0189999994, y: 0}
+  m_Offset: {x: -0.019, y: 0}
   serializedVersion: 2
-  m_Radius: .200000003
+  m_Radius: 0.2
 --- !u!95 &9544064
 Animator:
   serializedVersion: 3
@@ -92,7 +94,7 @@ MonoBehaviour:
   _impact: 0
   _cleanDelay: 3
   _fromChest: 0
-  _maxItems: 2
+  _maxItems: 3
   _rareLoot:
   - {fileID: 11462356, guid: dbb6b9552eb53414685dc8de3369cff5, type: 2}
   - {fileID: 11421878, guid: a55d082418ab83d4eb7e9831079ba060, type: 2}
@@ -123,14 +125,18 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1005726265
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 14cc492c6b70df94185310951650df9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -195,6 +201,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11425510, guid: 3dc6739600ec3fe41a567e746c3966b3,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: _maxItems
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130950}

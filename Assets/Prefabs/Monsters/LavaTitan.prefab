@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 154110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,15 +91,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5bf6837d54ff3a46aef73416aa2651a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 1
+  _healthPoints: 4
   _attackPower: 1
   _bulletVelocityFactor: 2
   _maxSpeed: 8
   _range: 5
   _attackDistance: 2
-  Difficulty: 1
-  MinimumLevel: 2
-  _patrolRange: 3
+  Difficulty: 3
+  MinimumLevel: 1
+  _patrolRange: 2
   _projectileSpeed: 3
   _magic: {fileID: 138262, guid: 73a7bab7de9deca418919604321197c0, type: 2}
   _minion: {fileID: 184720, guid: 81a8faab2164e8e4497e38b31a3fcf7e, type: 2}
@@ -154,7 +154,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MinimumLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _patrolRange
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Difficulty
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _healthPoints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
