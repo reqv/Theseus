@@ -127,7 +127,6 @@ public class GameManager : MonoBehaviour
     /// <param name="direction"></param>
     void OnRoomChange(Direction direction)
     {
-        Debug.Log("Hejka");
         switch(direction)
         {
             case Direction.Top:

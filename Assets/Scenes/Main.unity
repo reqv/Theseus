@@ -452,6 +452,30 @@ Prefab:
       propertyPath: _obstaclesManager
       value: 
       objectReference: {fileID: 984628068}
+    - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
+      propertyPath: _outerWallTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 152442, guid: 43fb4961eee5e164fbeb7736c7b302ad, type: 2}
+    - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
+      propertyPath: _outerWallTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 131082, guid: 258d625431a9d0f44b04708c70ea49a7, type: 2}
+    - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
+      propertyPath: _outerWallTiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 103758, guid: 1edb56f9e75e2634fb3fd8f98cb9d5a4, type: 2}
+    - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
+      propertyPath: _outerWallTiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 126828, guid: 38924acb85a1d7746a96aa751f3cb98c, type: 2}
+    - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
+      propertyPath: _outerWallCornerTiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 132096, guid: 8360b1b630776b043942c301e45a78b7, type: 2}
+    - target: {fileID: 11430350, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
+      propertyPath: _outerWallCornerTiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 175392, guid: 589bb762ae913f5439e403c34d002725, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebd07392ea4a0594d9312ed62bb6bc1b, type: 2}
   m_IsPrefabParent: 0

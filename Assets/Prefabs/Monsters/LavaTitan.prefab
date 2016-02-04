@@ -101,7 +101,7 @@ MonoBehaviour:
   MinimumLevel: 1
   _patrolRange: 2
   _projectileSpeed: 3
-  _magic: {fileID: 138262, guid: 73a7bab7de9deca418919604321197c0, type: 2}
+  _magic: {fileID: 181996, guid: 73a7bab7de9deca418919604321197c0, type: 2}
   _minion: {fileID: 184720, guid: 81a8faab2164e8e4497e38b31a3fcf7e, type: 2}
 --- !u!212 &21251742
 SpriteRenderer:
@@ -180,6 +180,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _magic
+      value: 
+      objectReference: {fileID: 181996, guid: 73a7bab7de9deca418919604321197c0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 154110}

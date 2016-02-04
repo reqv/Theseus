@@ -35,6 +35,8 @@ public class Chest : Item {
 	{
 		base.Start ();
 		_Anim = GetComponent<Animator> ();
+		if (_opened)
+			_Anim.SetBool ("Opened", true);
 	}
 
 	/// <summary>
@@ -58,7 +60,7 @@ public class Chest : Item {
 
 		for (int i = 0; i < howMany; i++) {
 			rarity = RandomNumber (0, 100);
-			if (rarity < 81) {
+			if (rarity < 76) {
 				var initLoot = _loot [RandomNumber(0, _loot.Length-1)];
                 Item.Drop(initLoot, transform.position - pozycja);
 			} else {

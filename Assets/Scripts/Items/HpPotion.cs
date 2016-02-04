@@ -20,5 +20,6 @@ public class HpPotion : Item {
 	public override void EffectOfItem(Collision2D other)
 	{
         other.gameObject.GetComponent<MainCharacter>().HealthPoints++;
+		other.gameObject.GetComponent<MainCharacter>().HealthPoints++;
 	}
 }

@@ -39,9 +39,10 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115418}
+  m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0.05
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -55,12 +56,13 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115418}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .00488710403, y: -.164929509}
+  m_Offset: {x: 0.004887104, y: -0.16492951}
   serializedVersion: 2
-  m_Size: {x: .125466526, y: .184965909}
+  m_Size: {x: 0.12546653, y: 0.18496591}
 --- !u!95 &9520556
 Animator:
   serializedVersion: 3
@@ -95,11 +97,10 @@ MonoBehaviour:
   _maxSpeed: 0
   _range: 0
   _attackDistance: 0
-  _moveVelocityFactor: 2
-  _throwDelay: .5
+  _throwDelay: 0.5
   _fireballVelocity: 4
-  _fireball: {fileID: 173552, guid: 3cb6e0681367ec44ebbb74d91d686f5f, type: 2}
-  _afterAttackInviolabilityTime: .5
+  _fireball: {fileID: 172994, guid: 3cb6e0681367ec44ebbb74d91d686f5f, type: 2}
+  _afterAttackInviolabilityTime: 0.5
   _maxHealthPoints: 10
   _torch: {fileID: 11475624, guid: 2e4605a566ce2f247b62b645e48a5a0f, type: 2}
 --- !u!212 &21253214
@@ -120,14 +121,18 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -282359015
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 551d094b92bb8094d9e5c734b9526a12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -138,7 +143,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _fireball
       value: 
-      objectReference: {fileID: 173552, guid: 3cb6e0681367ec44ebbb74d91d686f5f, type: 2}
+      objectReference: {fileID: 172994, guid: 3cb6e0681367ec44ebbb74d91d686f5f, type: 2}
     - target: {fileID: 0}
       propertyPath: _fireballVelocity
       value: 6
